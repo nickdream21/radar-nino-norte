@@ -86,6 +86,7 @@ describe('App', () => {
   beforeEach(() => {
     window.history.replaceState(null, '', '/');
     prepararHistorial();
+    window.localStorage.clear();
     // Las pantallas con datos no deben salir a la red en las pruebas.
     vi.stubGlobal(
       'fetch',
@@ -99,7 +100,8 @@ describe('App', () => {
 
   it('cada sección está a un toque, tiene un h1 y recibe el foco al llegar', async () => {
     render(<App />);
-    expect(screen.getByRole('heading', { level: 1, name: 'Mi distrito' })).toBeInTheDocument();
+    // Sin distrito guardado, Mi distrito empieza por elegirlo.
+    expect(screen.getByRole('heading', { level: 1, name: '¿Dónde vives?' })).toBeInTheDocument();
     expect(screen.queryByText(/producto\(s\) disponibles/)).not.toBeInTheDocument();
 
     const barra = within(screen.getByRole('navigation', { name: 'Secciones' }));
@@ -121,13 +123,13 @@ describe('App', () => {
     act(() => {
       fireEvent.click(barra.getByRole('link', { name: 'Mi distrito' }));
     });
-    expect(
-      await screen.findByRole('heading', { level: 1, name: 'Mi distrito' }),
-    ).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { level: 1, name: '¿Dónde vives?' })).toHaveFocus();
   });
 
-  it('Mi distrito lo dice con honestidad y lleva a El Niño y al Mapa', () => {
+  it('Mi distrito con distrito guardado lo dice con honestidad y lleva a El Niño y al Mapa', () => {
+    window.localStorage.setItem('radar:distrito', '200101');
     render(<App />);
+    expect(screen.getByRole('heading', { level: 1, name: 'Piura' })).toBeInTheDocument();
     expect(
       screen.getByText(
         /Estamos preparando el pronóstico de lluvia por distrito\. Mientras tanto, mira los avisos de SENAMHI\./,
