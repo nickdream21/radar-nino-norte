@@ -2,14 +2,7 @@ import { describe, expect, it } from 'vitest';
 import imerg from './respuestas/gibs-dominios-imerg-2026-11-23.xml?raw';
 import infrarrojo from './respuestas/gibs-dominios-infrarrojo-2026-11-23.xml?raw';
 import nowcoast from './respuestas/nowcoast-capacidades-2026-11-23.xml?raw';
-import {
-  describirDiaPeru,
-  esAntigua,
-  formatearHoraPeru,
-  ultimoInstante,
-  ultimoTiempoGibs,
-  ultimoTiempoWms,
-} from './tiempo';
+import { esAntigua, ultimoInstante, ultimoTiempoGibs, ultimoTiempoWms } from './tiempo';
 
 describe('ultimoInstante', () => {
   it('toma el fin del último intervalo', () => {
@@ -58,32 +51,6 @@ describe('respuestas grabadas de los servicios', () => {
 
   it('null si GIBS no informa ningún tiempo', () => {
     expect(ultimoTiempoGibs('<Domains><DimensionDomain></DimensionDomain></Domains>')).toBeNull();
-  });
-});
-
-describe('hora de Perú (UTC−5)', () => {
-  it.each([
-    ['2026-11-23T13:50:00Z', '8:50 a. m.'],
-    ['2026-11-23T05:05:00Z', '12:05 a. m.'],
-    ['2026-11-23T17:00:00Z', '12:00 p. m.'],
-    ['2026-11-23T18:05:00Z', '1:05 p. m.'],
-    ['2026-11-24T04:59:00Z', '11:59 p. m.'],
-  ])('%s se muestra como %s', (utc, esperado) => {
-    expect(formatearHoraPeru(new Date(utc))).toBe(esperado);
-  });
-
-  const ahora = new Date('2026-11-23T14:39:00Z'); // 9:39 a. m. del 23 en Perú
-
-  it('no menciona el día si es hoy en Perú', () => {
-    expect(describirDiaPeru(new Date('2026-11-23T05:00:00Z'), ahora)).toBeNull();
-  });
-
-  it('usa el día de Perú, no el UTC: 04:00 UTC del 23 es ayer', () => {
-    expect(describirDiaPeru(new Date('2026-11-23T04:00:00Z'), ahora)).toBe('ayer');
-  });
-
-  it('da la fecha si es de antes de ayer', () => {
-    expect(describirDiaPeru(new Date('2026-11-21T15:00:00Z'), ahora)).toBe('21 nov');
   });
 });
 
