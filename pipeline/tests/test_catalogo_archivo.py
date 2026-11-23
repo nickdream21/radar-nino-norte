@@ -86,6 +86,68 @@ def test_zona_igual_a_la_regla(catalogo: CatalogoDistritos) -> None:
     assert set(Counter(d.zona for d in catalogo.distritos)) == {"A", "B", "C", "D"}
 
 
+# Zonas tras la revisión del meteorólogo (regla de zonas.py), distrito por distrito.
+ZONAS_REVISADAS: dict[str, str] = {
+    # De C a D: cuenca del Santa.
+    "131002": "D",  # Angasmarca
+    "131003": "D",  # Cachicadán
+    "131005": "D",  # Mollepata
+    "131007": "D",  # Santa Cruz de Chuca
+    # De D a C: vertiente atlántica por debajo de 1500 m.
+    "060603": "C",  # Choros
+    "060615": "C",  # Toribio Casanova
+    "060801": "C",  # Jaén
+    "060802": "C",  # Bellavista
+    "060805": "C",  # Huabal
+    "060807": "C",  # Pomahuaca
+    "060808": "C",  # Pucará
+    "060811": "C",  # San José del Alto
+    "060812": "C",  # Santa Rosa
+    "060901": "C",  # San Ignacio
+    "060903": "C",  # Huarango
+    "060904": "C",  # La Coipa
+    "060905": "C",  # Namballe
+    "060906": "C",  # San José de Lourdes
+    "130807": "C",  # Ongón
+    # De B a A: valles por debajo de 1000 m cerca del mar o al sur de -6,75°.
+    "200702": "A",  # El Alto
+    "140110": "A",  # Oyotún
+    "061108": "A",  # Nanchoc
+    "060508": "A",  # Yonán
+    "060502": "A",  # Chilete
+    "130201": "A",  # Ascope
+    "130108": "A",  # Poroto
+    "130110": "A",  # Simbal
+    # De B a C: zonas forzadas (ladera húmeda).
+    "061102": "C",  # Bolívar
+    "061106": "C",  # La Florida
+    "200305": "C",  # Lalaquiz
+    # Sin cambio.
+    "140102": "B",  # Chongoyape
+    "140310": "B",  # Salas
+    "200607": "A",  # Querecotillo
+    "200304": "C",  # Huarmaca
+    "060409": "C",  # Huambos
+    "060702": "C",  # Chugur
+    "061310": "C",  # Uticyacu
+    "060410": "D",  # Lajas
+}
+
+
+def test_zonas_revisadas_por_el_meteorologo(catalogo: CatalogoDistritos) -> None:
+    por_ubigeo = {d.ubigeo: d for d in catalogo.distritos}
+
+    assert {u: por_ubigeo[u].zona for u in ZONAS_REVISADAS} == ZONAS_REVISADAS
+    assert Counter(d.zona for d in catalogo.distritos) == {"A": 99, "B": 30, "C": 81, "D": 117}
+    # Fuera del Santa, la sierra del Pacífico entre 2500 y 3000 m sigue en C.
+    sierra = [
+        d
+        for d in catalogo.distritos
+        if d.vertiente == "pacifico" and 2500 < d.capital.altitud_m <= 3000
+    ]
+    assert Counter(d.zona for d in sierra if d.cuenca != "Cuenca Santa") == {"C": 17}
+
+
 def test_ejemplos_de_la_tabla_y_todo_tumbes(catalogo: CatalogoDistritos) -> None:
     assert ejemplos_discrepantes(catalogo) == []
 
@@ -116,8 +178,10 @@ def test_todas_las_fuentes_atribuidas(catalogo: CatalogoDistritos) -> None:
 def test_dudosos_marcados(catalogo: CatalogoDistritos) -> None:
     revisar = {d.ubigeo for d in catalogo.distritos if d.revisar}
 
-    # Alto Trujillo (ubicado con GeoNames) y Huarmaca (junto a la divisoria).
-    assert {"130112", "200304"} <= revisar
+    # Alto Trujillo (ubicado con GeoNames), Huarmaca (junto a la divisoria), las zonas
+    # forzadas y los que el meteorólogo pidió contrastar con percentiles.
+    assert {"130112", "200304", "061102", "061106", "200305", "140102", "240203"} <= revisar
+    assert not any("texto de la tabla" in m for d in catalogo.distritos for m in d.revisar)
 
 
 def test_zona_alterada_se_rechaza(tmp_path: Path) -> None:

@@ -1,39 +1,41 @@
 """Regla de zonas pluviométricas (A, B, C, D) de cada distrito.
 
-La tabla del meteorólogo del proyecto define las zonas por altitud, por vertiente
-y con lugares de ejemplo. Esta regla la vuelve reproducible usando solo datos
-medidos en la capital distrital, y está ajustada para que todos los ejemplos de
-la tabla caigan en su zona. Se evalúa en este orden y gana la primera que se cumple:
+La zona solo sirve para elegir los umbrales de lluvia diaria de cada distrito. No
+describe cómo le afecta El Niño costero: eso depende de la vertiente (Pacífico o
+Atlántico), no de la zona.
 
-1. **D** si la capital drena al Atlántico (cuenca del Marañón), a cualquier altitud.
+La regla es la revisada por el meteorólogo del proyecto y usa solo datos medidos en
+la capital distrital. Se evalúa en este orden y gana la primera que se cumple:
+
+1. Vertiente atlántica (cuenca del Marañón): **C** por debajo de
+   ``UMBRAL_ATLANTICO_M`` (1500 m) y **D** desde ahí (valles bajos de Jaén y San
+   Ignacio frente a la sierra alta de Cajamarca y Huamachuco).
 2. **B** si el distrito es de Tumbes ("todo Tumbes").
-3. **D** si está a más de ``UMBRAL_SIERRA_ALTA_M`` (3000 m).
-4. **C** si está entre 1000 y 3000 m.
-5. **B** si está entre 200 y 1000 m.
-6. **B** si está por debajo de 200 m pero a más de ``UMBRAL_INTERIOR_KM`` (60 km) del
-   mar: la llanura interior del Alto Piura, Chira medio y Olmos-Motupe.
-7. **A** en el resto: por debajo de 200 m y a menos de 60 km del mar.
+3. **D** si está en la cuenca del Santa (vertiente del Pacífico), a cualquier altitud.
+4. **D** por encima de ``UMBRAL_SIERRA_ALTA_M`` (3000 m).
+5. **C** entre 1000 y 3000 m.
+6. **A** por debajo de 1000 m si la capital está a menos de ``UMBRAL_LITORAL_KM``
+   (20 km) del mar o al sur de ``LATITUD_SUR`` (-6,75°): costa y valles áridos.
+7. **B** entre 200 y 1000 m.
+8. **B** por debajo de 200 m y a más de ``UMBRAL_INTERIOR_KM`` (60 km) del mar: la
+   llanura interior del Alto Piura, Chira medio y Olmos-Motupe.
+9. **A** en el resto.
 
-Decisiones donde la tabla es ambigua:
+Los cortes (3000 m, 1500 m, 60 km, 20 km, -6,75°) son criterio experto provisional,
+pendiente de contraste con percentiles de lluvia de CHIRPS.
 
-- **Vertiente.** Sale de las unidades hidrográficas oficiales de la ANA (región
-  hidrográfica del Pacífico o del Amazonas) en el punto de la capital, no de la
-  altitud: en Huancabamba, Jaén y San Ignacio la cuenca del Marañón baja de 1000 m.
-- **Llanura interior por debajo de 200 m.** La tabla pone en B a Tambogrande,
-  Chulucanas, Morropón y Olmos, que están por debajo de 200 m, y en A a Piura,
-  Chiclayo y Trujillo. Lo que los separa es la distancia al mar: los distritos bajos
-  quedan en dos grupos, hasta 50 km (Piura 46 km, Sullana 44 km) y desde 68 km
-  (Salas, Lancones, Motupe, Tambogrande 81 km), y 60 km cae en ese hueco.
-- **Sierra alta en la vertiente del Pacífico.** La tabla dice "más de 2500 m" para D,
-  pero da como ejemplos de C a Ayabaca (2718 m), Contumazá (2660 m) y Otuzco (2642 m),
-  y todos sus ejemplos de D drenan al Marañón. Para respetar los ejemplos, en el
-  Pacífico se usa 3000 m; los distritos entre 2500 y 3000 m se marcan para revisión
-  porque con el texto literal serían D.
+Algunos distritos tienen la zona fijada a mano (``ZONAS_FORZADAS``), con su motivo,
+cuando el meteorólogo sabe que la capital no representa bien el régimen de lluvia.
+La excepción y su motivo quedan siempre en ``revisar``.
+
+La vertiente sale de las unidades hidrográficas oficiales de la ANA en el punto de
+la capital, no de la altitud: en Huancabamba, Jaén y San Ignacio la cuenca del
+Marañón baja de 1000 m.
 
 Un distrito se marca para revisión cuando un cambio pequeño en sus datos (el error
-del modelo de elevación, que la capital no represente a todo el distrito o la
-posición de la divisoria) le cambiaría la zona, o cuando cae en la franja en que el
-texto y los ejemplos de la tabla no coinciden. Los márgenes están en ``MARGEN_*``.
+del modelo de elevación o la posición de la divisoria) le cambiaría la zona, cuando
+su zona está forzada o cuando el meteorólogo lo pidió (``REVISION_PENDIENTE``). Los
+márgenes están en ``MARGEN_*``.
 """
 
 import math
@@ -43,25 +45,62 @@ from radar.contratos.distritos import Vertiente, Zona
 
 UMBRAL_COSTA_M = 200
 UMBRAL_SIERRA_M = 1000
+UMBRAL_ATLANTICO_M = 1500
+"""En la vertiente atlántica separa los valles (C) de la sierra alta (D)."""
 UMBRAL_SIERRA_ALTA_M = 3000
-UMBRAL_SIERRA_ALTA_TABLA_M = 2500
-"""El umbral literal de la tabla, que contradice sus ejemplos de la vertiente del Pacífico."""
 UMBRAL_INTERIOR_KM = 60.0
-"""Distancia al mar a partir de la cual la llanura baja deja de ser costa árida."""
+"""Distancia al mar a partir de la cual la llanura baja deja de ser costa (A) y pasa a B."""
+UMBRAL_LITORAL_KM = 20.0
+"""Por debajo de 1000 m y más cerca del mar que esto, la capital es costa y valles áridos (A)."""
+LATITUD_SUR = -6.75
+"""Al sur de esta latitud los valles por debajo de 1000 m son áridos (A)."""
 
 DEPARTAMENTO_TUMBES = "24"
+CUENCA_SANTA = "Cuenca Santa"
+"""Nombre de la unidad hidrográfica del Santa tal como lo da la ANA."""
 
 MARGEN_ALTITUD_M: dict[int, int] = {
     UMBRAL_COSTA_M: 50,
     UMBRAL_SIERRA_M: 100,
+    UMBRAL_ATLANTICO_M: 150,
     UMBRAL_SIERRA_ALTA_M: 150,
 }
-"""Margen de duda alrededor de cada umbral de altitud (error del modelo de elevación)."""
+"""Margen de duda alrededor de cada umbral de altitud (error del modelo de elevación).
+
+Solo genera un motivo si mover la altitud dentro del margen cambia la zona: el de
+1500 m, por tanto, solo afecta a la vertiente atlántica.
+"""
 MARGEN_INTERIOR_KM = 10.0
 MARGEN_DIVISORIA_KM = 5.0
 
+
+@dataclass(frozen=True)
+class ZonaForzada:
+    """Zona fijada a mano para un distrito, con su justificación."""
+
+    zona: Zona
+    motivo: str
+
+
+_LADERA_HUMEDA = (
+    "ladera húmeda entre 900 y 1000 m; criterio del meteorólogo con confianza media-baja"
+)
+
+ZONAS_FORZADAS: dict[str, ZonaForzada] = {
+    "061102": ZonaForzada("C", _LADERA_HUMEDA),  # Bolívar (San Miguel)
+    "061106": ZonaForzada("C", _LADERA_HUMEDA),  # La Florida (San Miguel)
+    "200305": ZonaForzada("C", _LADERA_HUMEDA),  # Lalaquiz (Huancabamba)
+}
+"""Excepciones a la regla. Cada una debe justificarse; la lista ha de ser corta."""
+
+REVISION_PENDIENTE: dict[str, str] = {
+    "140102": "pendiente de contraste con percentiles",  # Chongoyape
+    "240203": "pendiente de contraste con percentiles",  # Canoas de Punta Sal
+}
+"""Distritos que el meteorólogo pidió revisar aunque la regla no los vea dudosos."""
+
 EJEMPLOS_TABLA: dict[str, Zona] = {
-    # A. Costa árida.
+    # A. Costa y valles áridos.
     "200701": "A",  # Pariñas (Talara)
     "200501": "A",  # Paita
     "200801": "A",  # Sechura
@@ -74,19 +113,19 @@ EJEMPLOS_TABLA: dict[str, Zona] = {
     "200114": "B",  # Tambo Grande (así lo escribe el INEI)
     "200111": "B",  # Las Lomas
     "140308": "B",  # Olmos
-    # C. Sierra occidental.
+    # C. Sierra occidental y valles bajos de la vertiente oriental.
     "200201": "C",  # Ayabaca
     "200202": "C",  # Frías
     "200302": "C",  # Canchaque
     "061301": "C",  # Santa Cruz (provincia de Santa Cruz; no el de Cutervo)
     "060501": "C",  # Contumazá
     "130601": "C",  # Otuzco
-    # D. Sierra alta y vertiente oriental.
+    "060801": "C",  # Jaén
+    "060901": "C",  # San Ignacio
+    # D. Sierra alta.
     "060101": "D",  # Cajamarca
     "060401": "D",  # Chota
     "060601": "D",  # Cutervo
-    "060801": "D",  # Jaén
-    "060901": "D",  # San Ignacio
     "130901": "D",  # Huamachuco
     "130809": "D",  # Pataz
 }
@@ -100,26 +139,39 @@ class DatosZona:
     ubigeo: str
     altitud_m: int
     vertiente: Vertiente
+    cuenca: str
     distancia_costa_km: float
+    latitud: float
+    """Latitud de la capital, en grados (negativa al sur del ecuador)."""
     distancia_divisoria_km: float = math.inf
     """Solo para decidir si la zona es dudosa; la zona no depende de ella."""
 
 
-def zona(datos: DatosZona) -> Zona:
-    """Zona pluviométrica según la regla del módulo."""
+def zona_por_regla(datos: DatosZona) -> Zona:
+    """Zona según la regla del módulo, sin aplicar las excepciones."""
     if datos.vertiente == "atlantico":
-        return "D"
+        return "C" if datos.altitud_m < UMBRAL_ATLANTICO_M else "D"
     if datos.ubigeo.startswith(DEPARTAMENTO_TUMBES):
         return "B"
+    if datos.cuenca == CUENCA_SANTA:
+        return "D"
     if datos.altitud_m > UMBRAL_SIERRA_ALTA_M:
         return "D"
     if datos.altitud_m >= UMBRAL_SIERRA_M:
         return "C"
+    if datos.distancia_costa_km < UMBRAL_LITORAL_KM or datos.latitud < LATITUD_SUR:
+        return "A"
     if datos.altitud_m >= UMBRAL_COSTA_M:
         return "B"
     if datos.distancia_costa_km > UMBRAL_INTERIOR_KM:
         return "B"
     return "A"
+
+
+def zona(datos: DatosZona) -> Zona:
+    """Zona del distrito: la forzada si la tiene; si no, la de la regla."""
+    forzada = ZONAS_FORZADAS.get(datos.ubigeo)
+    return forzada.zona if forzada is not None else zona_por_regla(datos)
 
 
 def _cambia(datos: DatosZona, variante: DatosZona) -> Zona | None:
@@ -128,9 +180,23 @@ def _cambia(datos: DatosZona, variante: DatosZona) -> Zona | None:
     return otra if otra != zona(datos) else None
 
 
+def motivo_divisoria(distancia_km: float, otra: Zona) -> str:
+    """Motivo de revisión por cercanía a la divisoria Pacífico-Atlántico."""
+    return (
+        f"capital a {distancia_km:.1f} km de la divisoria"
+        f" Pacífico-Atlántico (en la otra vertiente sería zona {otra})"
+    )
+
+
 def motivos_revision(datos: DatosZona) -> list[str]:
     """Por qué la zona del distrito es fronteriza o discutible; vacía si no lo es."""
     motivos: list[str] = []
+    forzada = ZONAS_FORZADAS.get(datos.ubigeo)
+    if forzada is not None:
+        motivos.append(
+            f"zona {forzada.zona} fijada a mano (la regla daría {zona_por_regla(datos)}):"
+            f" {forzada.motivo}"
+        )
     for umbral, margen in MARGEN_ALTITUD_M.items():
         if abs(datos.altitud_m - umbral) > margen:
             continue
@@ -142,16 +208,6 @@ def motivos_revision(datos: DatosZona) -> list[str]:
                     f" {umbral} m (con {altitud} m sería zona {otra})"
                 )
                 break
-    if (
-        zona(datos) == "C"
-        and datos.vertiente == "pacifico"
-        and datos.altitud_m > UMBRAL_SIERRA_ALTA_TABLA_M
-    ):
-        motivos.append(
-            f"altitud {datos.altitud_m} m: con el texto de la tabla (más de"
-            f" {UMBRAL_SIERRA_ALTA_TABLA_M} m) sería zona D; es C por los ejemplos de la"
-            " tabla (Ayabaca, Contumazá, Otuzco)"
-        )
     if abs(datos.distancia_costa_km - UMBRAL_INTERIOR_KM) <= MARGEN_INTERIOR_KM:
         for distancia in (
             UMBRAL_INTERIOR_KM - MARGEN_INTERIOR_KM,
@@ -169,8 +225,8 @@ def motivos_revision(datos: DatosZona) -> list[str]:
         opuesta: Vertiente = "pacifico" if datos.vertiente == "atlantico" else "atlantico"
         otra = _cambia(datos, replace(datos, vertiente=opuesta))
         if otra is not None:
-            motivos.append(
-                f"capital a {datos.distancia_divisoria_km:.1f} km de la divisoria"
-                f" Pacífico-Atlántico (en la otra vertiente sería zona {otra})"
-            )
+            motivos.append(motivo_divisoria(datos.distancia_divisoria_km, otra))
+    pendiente = REVISION_PENDIENTE.get(datos.ubigeo)
+    if pendiente is not None:
+        motivos.append(pendiente)
     return motivos

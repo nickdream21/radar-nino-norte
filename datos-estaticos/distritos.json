@@ -112,9 +112,7 @@
       "cuenca": "Cuenca Jequetepeque",
       "distancia_costa_km": 102.2,
       "zona": "C",
-      "revisar": [
-        "altitud 2788 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
-      ]
+      "revisar": []
     },
     {
       "ubigeo": "060104",
@@ -654,7 +652,9 @@
       "cuenca": "Intercuenca Alto Marañón IV",
       "distancia_costa_km": 165.7,
       "zona": "D",
-      "revisar": []
+      "revisar": [
+        "altitud 1649 m, a 150 m o menos del umbral de 1500 m (con 1350 m sería zona C)"
+      ]
     },
     {
       "ubigeo": "060406",
@@ -785,8 +785,7 @@
       "distancia_costa_km": 86.5,
       "zona": "C",
       "revisar": [
-        "altitud 2969 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)",
-        "altitud 2969 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+        "altitud 2969 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)"
       ]
     },
     {
@@ -933,9 +932,7 @@
       "cuenca": "Cuenca Jequetepeque",
       "distancia_costa_km": 77.4,
       "zona": "C",
-      "revisar": [
-        "altitud 2660 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
-      ]
+      "revisar": []
     },
     {
       "ubigeo": "060502",
@@ -952,7 +949,7 @@
       "vertiente": "pacifico",
       "cuenca": "Cuenca Jequetepeque",
       "distancia_costa_km": 82.2,
-      "zona": "B",
+      "zona": "A",
       "revisar": []
     },
     {
@@ -989,9 +986,7 @@
       "cuenca": "Cuenca Chicama",
       "distancia_costa_km": 67.7,
       "zona": "C",
-      "revisar": [
-        "altitud 2542 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
-      ]
+      "revisar": []
     },
     {
       "ubigeo": "060505",
@@ -1045,9 +1040,7 @@
       "cuenca": "Cuenca Jequetepeque",
       "distancia_costa_km": 68.8,
       "zona": "C",
-      "revisar": [
-        "altitud 2766 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
-      ]
+      "revisar": []
     },
     {
       "ubigeo": "060508",
@@ -1064,7 +1057,7 @@
       "vertiente": "pacifico",
       "cuenca": "Cuenca Jequetepeque",
       "distancia_costa_km": 51.0,
-      "zona": "B",
+      "zona": "A",
       "revisar": []
     },
     {
@@ -1101,7 +1094,9 @@
       "cuenca": "Cuenca Chamaya",
       "distancia_costa_km": 134.6,
       "zona": "D",
-      "revisar": []
+      "revisar": [
+        "altitud 1551 m, a 150 m o menos del umbral de 1500 m (con 1350 m sería zona C)"
+      ]
     },
     {
       "ubigeo": "060603",
@@ -1118,7 +1113,7 @@
       "vertiente": "atlantico",
       "cuenca": "Intercuenca Alto Marañón IV",
       "distancia_costa_km": 171.7,
-      "zona": "D",
+      "zona": "C",
       "revisar": []
     },
     {
@@ -1137,7 +1132,9 @@
       "cuenca": "Intercuenca Alto Marañón IV",
       "distancia_costa_km": 167.6,
       "zona": "D",
-      "revisar": []
+      "revisar": [
+        "altitud 1572 m, a 150 m o menos del umbral de 1500 m (con 1350 m sería zona C)"
+      ]
     },
     {
       "ubigeo": "060605",
@@ -1227,7 +1224,9 @@
       "cuenca": "Intercuenca Alto Marañón IV",
       "distancia_costa_km": 161.5,
       "zona": "D",
-      "revisar": []
+      "revisar": [
+        "altitud 1611 m, a 150 m o menos del umbral de 1500 m (con 1350 m sería zona C)"
+      ]
     },
     {
       "ubigeo": "060610",
@@ -1334,8 +1333,10 @@
       "vertiente": "atlantico",
       "cuenca": "Intercuenca Alto Marañón IV",
       "distancia_costa_km": 164.9,
-      "zona": "D",
-      "revisar": []
+      "zona": "C",
+      "revisar": [
+        "altitud 1468 m, a 150 m o menos del umbral de 1500 m (con 1650 m sería zona D)"
+      ]
     },
     {
       "ubigeo": "060701",
@@ -1372,7 +1373,6 @@
       "distancia_costa_km": 116.8,
       "zona": "C",
       "revisar": [
-        "altitud 2745 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)",
         "capital a 4.4 km de la divisoria Pacífico-Atlántico (en la otra vertiente sería zona D)"
       ]
     },
@@ -1409,7 +1409,7 @@
       "vertiente": "atlantico",
       "cuenca": "Intercuenca Alto Marañón III",
       "distancia_costa_km": 175.0,
-      "zona": "D",
+      "zona": "C",
       "revisar": []
     },
     {
@@ -1427,7 +1427,7 @@
       "vertiente": "atlantico",
       "cuenca": "Intercuenca Alto Marañón III",
       "distancia_costa_km": 189.1,
-      "zona": "D",
+      "zona": "C",
       "revisar": []
     },
     {
@@ -1446,7 +1446,9 @@
       "cuenca": "Cuenca Chamaya",
       "distancia_costa_km": 158.4,
       "zona": "D",
-      "revisar": []
+      "revisar": [
+        "altitud 1614 m, a 150 m o menos del umbral de 1500 m (con 1350 m sería zona C)"
+      ]
     },
     {
       "ubigeo": "060804",
@@ -1481,8 +1483,10 @@
       "vertiente": "atlantico",
       "cuenca": "Cuenca Chinchipe",
       "distancia_costa_km": 175.2,
-      "zona": "D",
-      "revisar": []
+      "zona": "C",
+      "revisar": [
+        "altitud 1370 m, a 150 m o menos del umbral de 1500 m (con 1650 m sería zona D)"
+      ]
     },
     {
       "ubigeo": "060806",
@@ -1500,7 +1504,9 @@
       "cuenca": "Cuenca Chinchipe",
       "distancia_costa_km": 177.7,
       "zona": "D",
-      "revisar": []
+      "revisar": [
+        "altitud 1587 m, a 150 m o menos del umbral de 1500 m (con 1350 m sería zona C)"
+      ]
     },
     {
       "ubigeo": "060807",
@@ -1517,7 +1523,7 @@
       "vertiente": "atlantico",
       "cuenca": "Cuenca Chamaya",
       "distancia_costa_km": 124.3,
-      "zona": "D",
+      "zona": "C",
       "revisar": []
     },
     {
@@ -1535,7 +1541,7 @@
       "vertiente": "atlantico",
       "cuenca": "Cuenca Chamaya",
       "distancia_costa_km": 124.1,
-      "zona": "D",
+      "zona": "C",
       "revisar": []
     },
     {
@@ -1589,8 +1595,10 @@
       "vertiente": "atlantico",
       "cuenca": "Cuenca Chinchipe",
       "distancia_costa_km": 179.0,
-      "zona": "D",
-      "revisar": []
+      "zona": "C",
+      "revisar": [
+        "altitud 1359 m, a 150 m o menos del umbral de 1500 m (con 1650 m sería zona D)"
+      ]
     },
     {
       "ubigeo": "060812",
@@ -1607,7 +1615,7 @@
       "vertiente": "atlantico",
       "cuenca": "Intercuenca Alto Marañón I",
       "distancia_costa_km": 215.5,
-      "zona": "D",
+      "zona": "C",
       "revisar": []
     },
     {
@@ -1625,7 +1633,7 @@
       "vertiente": "atlantico",
       "cuenca": "Cuenca Chinchipe",
       "distancia_costa_km": 207.9,
-      "zona": "D",
+      "zona": "C",
       "revisar": []
     },
     {
@@ -1661,7 +1669,7 @@
       "vertiente": "atlantico",
       "cuenca": "Cuenca Chinchipe",
       "distancia_costa_km": 212.6,
-      "zona": "D",
+      "zona": "C",
       "revisar": []
     },
     {
@@ -1679,8 +1687,10 @@
       "vertiente": "atlantico",
       "cuenca": "Cuenca Chinchipe",
       "distancia_costa_km": 193.0,
-      "zona": "D",
-      "revisar": []
+      "zona": "C",
+      "revisar": [
+        "altitud 1499 m, a 150 m o menos del umbral de 1500 m (con 1650 m sería zona D)"
+      ]
     },
     {
       "ubigeo": "060905",
@@ -1697,7 +1707,7 @@
       "vertiente": "atlantico",
       "cuenca": "Cuenca Chinchipe",
       "distancia_costa_km": 208.6,
-      "zona": "D",
+      "zona": "C",
       "revisar": []
     },
     {
@@ -1715,7 +1725,7 @@
       "vertiente": "atlantico",
       "cuenca": "Cuenca Chinchipe",
       "distancia_costa_km": 217.7,
-      "zona": "D",
+      "zona": "C",
       "revisar": []
     },
     {
@@ -1878,9 +1888,7 @@
       "cuenca": "Cuenca Jequetepeque",
       "distancia_costa_km": 89.2,
       "zona": "C",
-      "revisar": [
-        "altitud 2607 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
-      ]
+      "revisar": []
     },
     {
       "ubigeo": "061102",
@@ -1897,9 +1905,9 @@
       "vertiente": "pacifico",
       "cuenca": "Cuenca Zaña",
       "distancia_costa_km": 57.8,
-      "zona": "B",
+      "zona": "C",
       "revisar": [
-        "altitud 931 m, a 100 m o menos del umbral de 1000 m (con 1100 m sería zona C)"
+        "zona C fijada a mano (la regla daría A): ladera húmeda entre 900 y 1000 m; criterio del meteorólogo con confianza media-baja"
       ]
     },
     {
@@ -1919,8 +1927,7 @@
       "distancia_costa_km": 90.0,
       "zona": "C",
       "revisar": [
-        "altitud 2876 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)",
-        "altitud 2876 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+        "altitud 2876 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)"
       ]
     },
     {
@@ -1939,9 +1946,7 @@
       "cuenca": "Cuenca Chancay-Lambayeque",
       "distancia_costa_km": 105.6,
       "zona": "C",
-      "revisar": [
-        "altitud 2838 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
-      ]
+      "revisar": []
     },
     {
       "ubigeo": "061105",
@@ -1959,9 +1964,7 @@
       "cuenca": "Cuenca Jequetepeque",
       "distancia_costa_km": 71.3,
       "zona": "C",
-      "revisar": [
-        "altitud 2841 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
-      ]
+      "revisar": []
     },
     {
       "ubigeo": "061106",
@@ -1978,9 +1981,9 @@
       "vertiente": "pacifico",
       "cuenca": "Cuenca Zaña",
       "distancia_costa_km": 68.7,
-      "zona": "B",
+      "zona": "C",
       "revisar": [
-        "altitud 980 m, a 100 m o menos del umbral de 1000 m (con 1100 m sería zona C)"
+        "zona C fijada a mano (la regla daría A): ladera húmeda entre 900 y 1000 m; criterio del meteorólogo con confianza media-baja"
       ]
     },
     {
@@ -2000,8 +2003,7 @@
       "distancia_costa_km": 94.4,
       "zona": "C",
       "revisar": [
-        "altitud 2923 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)",
-        "altitud 2923 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+        "altitud 2923 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)"
       ]
     },
     {
@@ -2019,7 +2021,7 @@
       "vertiente": "pacifico",
       "cuenca": "Cuenca Zaña",
       "distancia_costa_km": 52.8,
-      "zona": "B",
+      "zona": "A",
       "revisar": []
     },
     {
@@ -2075,8 +2077,7 @@
       "distancia_costa_km": 98.0,
       "zona": "C",
       "revisar": [
-        "altitud 2920 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)",
-        "altitud 2920 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+        "altitud 2920 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)"
       ]
     },
     {
@@ -2095,9 +2096,7 @@
       "cuenca": "Cuenca Chancay-Lambayeque",
       "distancia_costa_km": 103.8,
       "zona": "C",
-      "revisar": [
-        "altitud 2611 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
-      ]
+      "revisar": []
     },
     {
       "ubigeo": "061113",
@@ -2116,8 +2115,7 @@
       "distancia_costa_km": 65.7,
       "zona": "C",
       "revisar": [
-        "altitud 2912 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)",
-        "altitud 2912 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+        "altitud 2912 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)"
       ]
     },
     {
@@ -2228,9 +2226,7 @@
       "cuenca": "Cuenca Chancay-Lambayeque",
       "distancia_costa_km": 109.5,
       "zona": "C",
-      "revisar": [
-        "altitud 2539 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
-      ]
+      "revisar": []
     },
     {
       "ubigeo": "061303",
@@ -2537,7 +2533,7 @@
       "vertiente": "pacifico",
       "cuenca": "Cuenca Moche",
       "distancia_costa_km": 33.1,
-      "zona": "B",
+      "zona": "A",
       "revisar": []
     },
     {
@@ -2573,7 +2569,7 @@
       "vertiente": "pacifico",
       "cuenca": "Cuenca Moche",
       "distancia_costa_km": 32.0,
-      "zona": "B",
+      "zona": "A",
       "revisar": []
     },
     {
@@ -2629,10 +2625,8 @@
       "vertiente": "pacifico",
       "cuenca": "Cuenca Chicama",
       "distancia_costa_km": 32.5,
-      "zona": "B",
-      "revisar": [
-        "altitud 235 m, a 50 m o menos del umbral de 200 m (con 150 m sería zona A)"
-      ]
+      "zona": "A",
+      "revisar": []
     },
     {
       "ubigeo": "130202",
@@ -3012,9 +3006,7 @@
       "cuenca": "Cuenca Moche",
       "distancia_costa_km": 58.1,
       "zona": "C",
-      "revisar": [
-        "altitud 2642 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
-      ]
+      "revisar": []
     },
     {
       "ubigeo": "130602",
@@ -3397,7 +3389,7 @@
       "vertiente": "atlantico",
       "cuenca": "Intercuenca Alto Huallaga",
       "distancia_costa_km": 199.2,
-      "zona": "D",
+      "zona": "C",
       "revisar": []
     },
     {
@@ -3668,9 +3660,7 @@
       "cuenca": "Cuenca Santa",
       "distancia_costa_km": 82.4,
       "zona": "D",
-      "revisar": [
-        "altitud 3112 m, a 150 m o menos del umbral de 3000 m (con 2850 m sería zona C)"
-      ]
+      "revisar": []
     },
     {
       "ubigeo": "131002",
@@ -3687,11 +3677,8 @@
       "vertiente": "pacifico",
       "cuenca": "Cuenca Santa",
       "distancia_costa_km": 93.8,
-      "zona": "C",
-      "revisar": [
-        "altitud 2865 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)",
-        "altitud 2865 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
-      ]
+      "zona": "D",
+      "revisar": []
     },
     {
       "ubigeo": "131003",
@@ -3708,11 +3695,8 @@
       "vertiente": "pacifico",
       "cuenca": "Cuenca Santa",
       "distancia_costa_km": 87.9,
-      "zona": "C",
-      "revisar": [
-        "altitud 2881 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)",
-        "altitud 2881 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
-      ]
+      "zona": "D",
+      "revisar": []
     },
     {
       "ubigeo": "131004",
@@ -3730,9 +3714,7 @@
       "cuenca": "Cuenca Santa",
       "distancia_costa_km": 99.2,
       "zona": "D",
-      "revisar": [
-        "altitud 3076 m, a 150 m o menos del umbral de 3000 m (con 2850 m sería zona C)"
-      ]
+      "revisar": []
     },
     {
       "ubigeo": "131005",
@@ -3749,10 +3731,8 @@
       "vertiente": "pacifico",
       "cuenca": "Cuenca Santa",
       "distancia_costa_km": 99.6,
-      "zona": "C",
-      "revisar": [
-        "altitud 2675 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
-      ]
+      "zona": "D",
+      "revisar": []
     },
     {
       "ubigeo": "131006",
@@ -3787,11 +3767,8 @@
       "vertiente": "pacifico",
       "cuenca": "Cuenca Santa",
       "distancia_costa_km": 86.8,
-      "zona": "C",
-      "revisar": [
-        "altitud 2912 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)",
-        "altitud 2912 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
-      ]
+      "zona": "D",
+      "revisar": []
     },
     {
       "ubigeo": "131008",
@@ -3971,7 +3948,9 @@
       "cuenca": "Cuenca Chancay-Lambayeque",
       "distancia_costa_km": 61.7,
       "zona": "B",
-      "revisar": []
+      "revisar": [
+        "pendiente de contraste con percentiles"
+      ]
     },
     {
       "ubigeo": "140103",
@@ -4097,9 +4076,7 @@
       "cuenca": "Cuenca Zaña",
       "distancia_costa_km": 47.6,
       "zona": "A",
-      "revisar": [
-        "altitud 173 m, a 50 m o menos del umbral de 200 m (con 250 m sería zona B)"
-      ]
+      "revisar": []
     },
     {
       "ubigeo": "140110",
@@ -4116,10 +4093,8 @@
       "vertiente": "pacifico",
       "cuenca": "Cuenca Zaña",
       "distancia_costa_km": 52.3,
-      "zona": "B",
-      "revisar": [
-        "altitud 201 m, a 50 m o menos del umbral de 200 m (con 150 m sería zona A)"
-      ]
+      "zona": "A",
+      "revisar": []
     },
     {
       "ubigeo": "140111",
@@ -4825,9 +4800,7 @@
       "cuenca": "Cuenca Chira",
       "distancia_costa_km": 149.0,
       "zona": "C",
-      "revisar": [
-        "altitud 2718 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
-      ]
+      "revisar": []
     },
     {
       "ubigeo": "200202",
@@ -5082,9 +5055,9 @@
       "vertiente": "pacifico",
       "cuenca": "Cuenca Piura",
       "distancia_costa_km": 138.8,
-      "zona": "B",
+      "zona": "C",
       "revisar": [
-        "altitud 969 m, a 100 m o menos del umbral de 1000 m (con 1100 m sería zona C)"
+        "zona C fijada a mano (la regla daría B): ladera húmeda entre 900 y 1000 m; criterio del meteorólogo con confianza media-baja"
       ]
     },
     {
@@ -5626,7 +5599,7 @@
       "vertiente": "pacifico",
       "cuenca": "Intercuenca 13931",
       "distancia_costa_km": 4.7,
-      "zona": "B",
+      "zona": "A",
       "revisar": []
     },
     {
@@ -5969,7 +5942,9 @@
       "cuenca": "Intercuenca 13935",
       "distancia_costa_km": 2.5,
       "zona": "B",
-      "revisar": []
+      "revisar": [
+        "pendiente de contraste con percentiles"
+      ]
     },
     {
       "ubigeo": "240301",

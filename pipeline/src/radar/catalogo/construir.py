@@ -37,6 +37,13 @@ CLASES_CABECERA = frozenset({"PPLC", "PPLA", "PPLA2", "PPLA3"})
 """Rasgos de GeoNames que marcan la sede de una división administrativa."""
 TOLERANCIA_FUERA_DE_UNIDAD_KM = 2.0
 """Una capital costera puede caer justo fuera del contorno simplificado de su cuenca."""
+MOTIVO_FUERA_DE_UNIDAD = "la capital cae fuera de las unidades hidrográficas"
+MOTIVO_CAPITAL_GEONAMES = (
+    "distrito creado después del censo 2017: la ubicación de la capital es de GeoNames, no del INEI"
+)
+MOTIVOS_DE_UBICACION = (MOTIVO_FUERA_DE_UNIDAD, MOTIVO_CAPITAL_GEONAMES)
+"""Comienzo de los motivos de revisión que no salen de la regla de zonas, sino de cómo se
+ubicó la capital. Se conservan al recalcular las zonas sin volver a descargar."""
 
 
 class CatalogoIncompleto(Exception):
@@ -238,6 +245,9 @@ def construir_catalogo(
             ubigeo=ubigeo,
             altitud_m=round(altitud),
             vertiente=unidad.vertiente,
+            cuenca=unidad.nombre,
+            # Redondeada como se guarda, igual que la distancia a la costa.
+            latitud=round(ubicacion.punto[1], 5),
             # Redondeada como se guarda, para que la regla dé lo mismo al releer el archivo.
             distancia_costa_km=round(
                 distancia_a_lineas_km(ubicacion.punto, insumos.costa.tramos), 1
@@ -247,15 +257,12 @@ def construir_catalogo(
         revisar = motivos_revision(datos)
         if fuera_km > TOLERANCIA_FUERA_DE_UNIDAD_KM:
             revisar.append(
-                f"la capital cae fuera de las unidades hidrográficas; se usó la más"
-                f" cercana ({unidad.nombre}, a {fuera_km:.1f} km)"
+                f"{MOTIVO_FUERA_DE_UNIDAD}; se usó la más cercana ({unidad.nombre}, a"
+                f" {fuera_km:.1f} km)"
             )
         if ubicacion.fuente == "geonames":
             informe.capitales_sin_censo.append(f"{ubigeo} {nombre_distrito}")
-            revisar.append(
-                "distrito creado después del censo 2017: la ubicación de la capital es de"
-                " GeoNames, no del INEI"
-            )
+            revisar.append(MOTIVO_CAPITAL_GEONAMES)
         distritos.append(
             Distrito(
                 ubigeo=ubigeo,

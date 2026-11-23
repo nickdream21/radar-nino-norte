@@ -14,7 +14,12 @@ from pydantic import Field, model_validator
 from radar.contratos.base import Contrato, FechaUtc
 
 Zona = Literal["A", "B", "C", "D"]
-"""A costa árida, B Tumbes y piedemonte, C sierra occidental, D sierra alta y vertiente oriental."""
+"""Zona pluviométrica: elige los umbrales de lluvia diaria del distrito, nada más.
+
+A costa y valles áridos, B Tumbes y piedemonte, C sierra occidental y valles bajos de la
+vertiente oriental, D sierra alta. El efecto de El Niño costero depende de ``Vertiente``,
+no de la zona.
+"""
 
 Vertiente = Literal["pacifico", "atlantico"]
 """Región hidrográfica a la que drena la capital: Pacífico, o Amazonas (cuenca del Marañón)."""
