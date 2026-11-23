@@ -26,7 +26,13 @@ cd pipeline
 uv run radar generar-distritos
 ```
 
-La orden descarga todas las fuentes (gasta unas 330 unidades de la cuota diaria de Open-Meteo, una por capital) y escribe el archivo. Hay que regenerarlo cuando el INEI cree o modifique distritos o cuando cambie la regla de zonas.
+Después, desde la raíz, regenerar la lista reducida que la web lleva dentro (`apps/web/src/features/mi-distrito/distritos.generado.ts`; CI falla si no está al día):
+
+```sh
+npm run distritos:generar
+```
+
+La orden `generar-distritos` descarga todas las fuentes (gasta unas 330 unidades de la cuota diaria de Open-Meteo, una por capital) y escribe el archivo. Hay que regenerarlo cuando el INEI cree o modifique distritos o cuando cambie la regla de zonas.
 
 ### Procedencia de cada campo
 

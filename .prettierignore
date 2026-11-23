@@ -6,6 +6,7 @@ package-lock.json
 pipeline
 packages/contratos/esquemas
 packages/contratos/src/generado.ts
+apps/web/src/features/mi-distrito/distritos.generado.ts
 datos-estaticos/distritos.json
 datos-estaticos/fuentes
 CHANGELOG.md
