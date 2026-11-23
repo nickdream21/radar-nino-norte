@@ -1,0 +1,408 @@
+{
+  "$defs": {
+    "BloqueEnfen": {
+      "additionalProperties": false,
+      "description": "Estado del sistema de alerta ENFEN. ``fecha_dato`` es la fecha del comunicado.",
+      "properties": {
+        "fuente": {
+          "description": "Origen de los datos, para la atribución.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "url": {
+          "description": "Dirección de la fuente.",
+          "pattern": "^https?://",
+          "type": "string"
+        },
+        "fecha_dato": {
+          "description": "Fecha del dato más reciente del bloque (UTC).",
+          "format": "date-time",
+          "type": "string"
+        },
+        "obtenido_en": {
+          "description": "Momento en que el pipeline leyó la fuente con éxito. Si es anterior a `generado_en`, el bloque se conservó de una publicación previa.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "comunicado": {
+          "$ref": "#/$defs/ComunicadoEnfen"
+        }
+      },
+      "required": [
+        "fuente",
+        "url",
+        "fecha_dato",
+        "obtenido_en",
+        "comunicado"
+      ],
+      "title": "BloqueEnfen",
+      "type": "object"
+    },
+    "BloqueIcen": {
+      "additionalProperties": false,
+      "description": "Índice Costero El Niño (ICEN) del ENFEN, calculado por el IGP.\n\nSolo el valor numérico: la categoría se añadirá cuando se confirmen los umbrales oficiales.",
+      "properties": {
+        "fuente": {
+          "description": "Origen de los datos, para la atribución.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "url": {
+          "description": "Dirección de la fuente.",
+          "pattern": "^https?://",
+          "type": "string"
+        },
+        "fecha_dato": {
+          "description": "Fecha del dato más reciente del bloque (UTC).",
+          "format": "date-time",
+          "type": "string"
+        },
+        "obtenido_en": {
+          "description": "Momento en que el pipeline leyó la fuente con éxito. Si es anterior a `generado_en`, el bloque se conservó de una publicación previa.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "ultimo": {
+          "$ref": "#/$defs/ValorMensual"
+        },
+        "serie": {
+          "description": "Meses en orden cronológico; puede tener huecos, nunca valores rellenados.",
+          "items": {
+            "$ref": "#/$defs/ValorMensual"
+          },
+          "maxItems": 36,
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "fuente",
+        "url",
+        "fecha_dato",
+        "obtenido_en",
+        "ultimo",
+        "serie"
+      ],
+      "title": "BloqueIcen",
+      "type": "object"
+    },
+    "BloqueIndicesSemanales": {
+      "additionalProperties": false,
+      "description": "Índices semanales Niño 1+2 (costa) y Niño 3.4 (Pacífico central).",
+      "properties": {
+        "fuente": {
+          "description": "Origen de los datos, para la atribución.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "url": {
+          "description": "Dirección de la fuente.",
+          "pattern": "^https?://",
+          "type": "string"
+        },
+        "fecha_dato": {
+          "description": "Fecha del dato más reciente del bloque (UTC).",
+          "format": "date-time",
+          "type": "string"
+        },
+        "obtenido_en": {
+          "description": "Momento en que el pipeline leyó la fuente con éxito. Si es anterior a `generado_en`, el bloque se conservó de una publicación previa.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "nino12": {
+          "$ref": "#/$defs/IndiceSemanal"
+        },
+        "nino34": {
+          "$ref": "#/$defs/IndiceSemanal"
+        }
+      },
+      "required": [
+        "fuente",
+        "url",
+        "fecha_dato",
+        "obtenido_en",
+        "nino12",
+        "nino34"
+      ],
+      "title": "BloqueIndicesSemanales",
+      "type": "object"
+    },
+    "BloqueMarPaita": {
+      "additionalProperties": false,
+      "description": "Anomalía diaria de temperatura del mar frente a Paita (Coral Reef Watch, 5 km).",
+      "properties": {
+        "fuente": {
+          "description": "Origen de los datos, para la atribución.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "url": {
+          "description": "Dirección de la fuente.",
+          "pattern": "^https?://",
+          "type": "string"
+        },
+        "fecha_dato": {
+          "description": "Fecha del dato más reciente del bloque (UTC).",
+          "format": "date-time",
+          "type": "string"
+        },
+        "obtenido_en": {
+          "description": "Momento en que el pipeline leyó la fuente con éxito. Si es anterior a `generado_en`, el bloque se conservó de una publicación previa.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "anomalia": {
+          "description": "Promedio de las celdas válidas de la caja, en °C.",
+          "maximum": 15,
+          "minimum": -15,
+          "type": "number"
+        },
+        "caja": {
+          "$ref": "#/$defs/Caja",
+          "description": "Zona mar adentro promediada."
+        },
+        "celdas_validas": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "celdas_totales": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "fuente",
+        "url",
+        "fecha_dato",
+        "obtenido_en",
+        "anomalia",
+        "caja",
+        "celdas_validas",
+        "celdas_totales"
+      ],
+      "title": "BloqueMarPaita",
+      "type": "object"
+    },
+    "Caja": {
+      "additionalProperties": false,
+      "description": "Rectángulo geográfico en grados decimales.",
+      "properties": {
+        "lat_min": {
+          "maximum": 90,
+          "minimum": -90,
+          "type": "number"
+        },
+        "lat_max": {
+          "maximum": 90,
+          "minimum": -90,
+          "type": "number"
+        },
+        "lon_min": {
+          "maximum": 180,
+          "minimum": -180,
+          "type": "number"
+        },
+        "lon_max": {
+          "maximum": 180,
+          "minimum": -180,
+          "type": "number"
+        }
+      },
+      "required": [
+        "lat_min",
+        "lat_max",
+        "lon_min",
+        "lon_max"
+      ],
+      "title": "Caja",
+      "type": "object"
+    },
+    "ComunicadoEnfen": {
+      "additionalProperties": false,
+      "description": "Último comunicado oficial del ENFEN, mantenido a mano en ``datos-estaticos/enfen.json``.",
+      "properties": {
+        "estado": {
+          "description": "Estado del sistema de alerta, p. ej. \"Alerta de El Niño Costero\".",
+          "minLength": 1,
+          "type": "string"
+        },
+        "numero": {
+          "description": "Número del comunicado, \"NN-AAAA\".",
+          "pattern": "^\\d{1,3}-\\d{4}$",
+          "type": "string"
+        },
+        "fecha": {
+          "description": "Fecha de emisión del comunicado.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "enlace": {
+          "description": "Dónde leer el comunicado.",
+          "pattern": "^https?://",
+          "type": "string"
+        }
+      },
+      "required": [
+        "estado",
+        "numero",
+        "fecha",
+        "enlace"
+      ],
+      "title": "ComunicadoEnfen",
+      "type": "object"
+    },
+    "IndiceSemanal": {
+      "additionalProperties": false,
+      "description": "Último valor y serie reciente de una región Niño.",
+      "properties": {
+        "ultimo": {
+          "$ref": "#/$defs/ValorSemanal"
+        },
+        "serie": {
+          "description": "Semanas en orden cronológico; puede tener huecos, nunca valores rellenados.",
+          "items": {
+            "$ref": "#/$defs/ValorSemanal"
+          },
+          "maxItems": 104,
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "ultimo",
+        "serie"
+      ],
+      "title": "IndiceSemanal",
+      "type": "object"
+    },
+    "ValorMensual": {
+      "additionalProperties": false,
+      "description": "Valor del ICEN para un mes.",
+      "properties": {
+        "anio": {
+          "maximum": 2100,
+          "minimum": 1950,
+          "type": "integer"
+        },
+        "mes": {
+          "maximum": 12,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "fecha": {
+          "description": "Primer día del mes, 00:00 UTC.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "valor": {
+          "description": "ICEN en °C.",
+          "maximum": 10,
+          "minimum": -10,
+          "type": "number"
+        }
+      },
+      "required": [
+        "anio",
+        "mes",
+        "fecha",
+        "valor"
+      ],
+      "title": "ValorMensual",
+      "type": "object"
+    },
+    "ValorSemanal": {
+      "additionalProperties": false,
+      "description": "Promedio semanal de temperatura superficial del mar en una región Niño.",
+      "properties": {
+        "fecha": {
+          "description": "Día central de la semana, 00:00 UTC.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "temperatura": {
+          "description": "Temperatura del mar en °C.",
+          "maximum": 40,
+          "minimum": -5,
+          "type": "number"
+        },
+        "anomalia": {
+          "description": "Anomalía respecto a 1991-2020, en °C.",
+          "maximum": 15,
+          "minimum": -15,
+          "type": "number"
+        }
+      },
+      "required": [
+        "fecha",
+        "temperatura",
+        "anomalia"
+      ],
+      "title": "ValorSemanal",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Estado observado de El Niño para el termómetro de la web.",
+  "properties": {
+    "version_esquema": {
+      "const": 1,
+      "default": 1,
+      "type": "integer"
+    },
+    "generado_en": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "indices_semanales": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/BloqueIndicesSemanales"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "icen": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/BloqueIcen"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "mar_paita": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/BloqueMarPaita"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "enfen": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/BloqueEnfen"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "version_esquema",
+    "generado_en",
+    "indices_semanales",
+    "icen",
+    "mar_paita",
+    "enfen"
+  ],
+  "title": "EstadoNino",
+  "type": "object"
+}

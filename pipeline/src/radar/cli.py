@@ -2,13 +2,21 @@
 
 import argparse
 import json
+import logging
 from collections.abc import Sequence
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from radar.contratos import CONTRATOS
-from radar.publicacion import publicar_manifiesto
+from radar.contratos import CONTRATOS, ProductoPublicado
+from radar.fuentes.crw_erddap import FuenteCrwMarPaita
+from radar.fuentes.enfen import FuenteEnfenEstatica
+from radar.fuentes.igp_icen import FuenteIgpIcen
+from radar.fuentes.noaa_cpc import FuenteNoaaCpcSemanal
+from radar.publicacion import FuentesNino, publicar_estado_nino, publicar_manifiesto
+
+DATOS_ESTATICOS = Path(__file__).resolve().parents[3] / "datos-estaticos"
+"""``datos-estaticos/`` en la raíz del repositorio (el pipeline se instala en modo editable)."""
 
 
 def _quitar_titulos_de_campos(esquema: dict[str, Any]) -> None:
@@ -34,13 +42,27 @@ def exportar_esquemas(destino: Path) -> list[Path]:
     return rutas
 
 
-def publicar(destino: Path) -> None:
+def fuentes_nino(datos_estaticos: Path) -> FuentesNino:
+    """Fuentes reales del estado de El Niño."""
+    return FuentesNino(
+        indices_semanales=FuenteNoaaCpcSemanal(),
+        icen=FuenteIgpIcen(),
+        mar_paita=FuenteCrwMarPaita(),
+        enfen=FuenteEnfenEstatica(datos_estaticos / "enfen.json"),
+    )
+
+
+def publicar(destino: Path, fuentes: FuentesNino, ahora: datetime | None = None) -> None:
     """Genera los productos y el manifiesto en ``destino``.
 
-    En la Fase 0 todavía no hay fuentes conectadas: se publica un manifiesto
-    vacío para que la web y el despliegue tengan un recorrido completo.
+    Un producto sin ningún dato que publicar no se registra en el manifiesto.
     """
-    publicar_manifiesto(destino, productos=[], ahora=datetime.now(UTC))
+    ahora = ahora or datetime.now(UTC)
+    productos: list[ProductoPublicado] = []
+    estado_nino = publicar_estado_nino(destino, fuentes, ahora)
+    if estado_nino is not None:
+        productos.append(estado_nino)
+    publicar_manifiesto(destino, productos=productos, ahora=ahora)
 
 
 def main(argv: Sequence[str] | None = None) -> int:
@@ -52,11 +74,18 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     publicacion = ordenes.add_parser("publicar", help="Genera productos y manifiesto.")
     publicacion.add_argument("--destino", type=Path, required=True)
+    publicacion.add_argument(
+        "--datos-estaticos",
+        type=Path,
+        default=DATOS_ESTATICOS,
+        help="Carpeta con los datos mantenidos a mano (por defecto, la del repositorio).",
+    )
 
     argumentos = analizador.parse_args(argv)
     if argumentos.orden == "exportar-esquemas":
         for ruta in exportar_esquemas(argumentos.destino):
             print(ruta)
     else:
-        publicar(argumentos.destino)
+        logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
+        publicar(argumentos.destino, fuentes_nino(argumentos.datos_estaticos))
     return 0

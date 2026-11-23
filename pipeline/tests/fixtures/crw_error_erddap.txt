@@ -1,0 +1,4 @@
+Error {
+    code=500;
+    message="Internal Server Error: Error: destinationVariableName=NOEXISTE wasn't found in datasetID=dhw_5km.";
+}
