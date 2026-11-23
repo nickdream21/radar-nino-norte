@@ -5,6 +5,7 @@
     ".": {
       "release-type": "node",
       "package-name": "radar-nino-norte",
+      "initial-version": "0.1.0",
       "extra-files": ["pipeline/src/radar/__init__.py"]
     }
   }
