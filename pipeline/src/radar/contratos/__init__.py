@@ -16,6 +16,11 @@ from radar.contratos.distritos import (
     Vertiente,
     Zona,
 )
+from radar.contratos.lluvia import (
+    ArchivoLluvia,
+    LluviaDistritos,
+    SistemaArchivado,
+)
 from radar.contratos.manifiesto import Manifiesto, ProductoPublicado
 from radar.contratos.nino import (
     Bloque,
@@ -35,11 +40,13 @@ CONTRATOS: dict[str, type[BaseModel]] = {
     "manifiesto": Manifiesto,
     "estado_nino": EstadoNino,
     "catalogo_distritos": CatalogoDistritos,
+    "lluvia_distritos": LluviaDistritos,
 }
 
 __all__ = [
     "CONTRATOS",
     "DEPARTAMENTOS",
+    "ArchivoLluvia",
     "Bloque",
     "BloqueEnfen",
     "BloqueIcen",
@@ -55,8 +62,10 @@ __all__ = [
     "FechaUtc",
     "FuenteCatalogo",
     "IndiceSemanal",
+    "LluviaDistritos",
     "Manifiesto",
     "ProductoPublicado",
+    "SistemaArchivado",
     "ValorMensual",
     "ValorSemanal",
     "Vertiente",

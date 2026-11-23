@@ -1,0 +1,457 @@
+{
+  "$defs": {
+    "CeldaModelo": {
+      "additionalProperties": false,
+      "description": "Celda de 0.25° que Open-Meteo usó para el distrito (la del sistema ECMWF ancla).",
+      "properties": {
+        "latitud": {
+          "maximum": 90,
+          "minimum": -90,
+          "type": "number"
+        },
+        "longitud": {
+          "maximum": 180,
+          "minimum": -180,
+          "type": "number"
+        },
+        "altitud_m": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Altitud media de la celda en el modelo."
+        }
+      },
+      "required": [
+        "latitud",
+        "longitud",
+        "altitud_m"
+      ],
+      "title": "CeldaModelo",
+      "type": "object"
+    },
+    "CorridaUsada": {
+      "additionalProperties": false,
+      "properties": {
+        "sistema": {
+          "enum": [
+            "ecmwf_ifs",
+            "ecmwf_aifs",
+            "ncep_gefs"
+          ],
+          "type": "string"
+        },
+        "modelo": {
+          "description": "Identificador del modelo en Open-Meteo.",
+          "type": "string"
+        },
+        "inicializacion": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "miembros": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "peso": {
+          "description": "Peso renormalizado entre las corridas usadas.",
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "type": "number"
+        }
+      },
+      "required": [
+        "sistema",
+        "modelo",
+        "inicializacion",
+        "miembros",
+        "peso"
+      ],
+      "title": "CorridaUsada",
+      "type": "object"
+    },
+    "CriteriosNiveles": {
+      "additionalProperties": false,
+      "description": "Porcentajes mínimos (comparados con ``>=``) que activan cada nivel; gana el más alto.",
+      "properties": {
+        "amarillo_t1": {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "naranja_t2": {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "naranja_t3": {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "rojo_t3": {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "rojo_t2": {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "amarillo_t1",
+        "naranja_t2",
+        "naranja_t3",
+        "rojo_t3",
+        "rojo_t2"
+      ],
+      "title": "CriteriosNiveles",
+      "type": "object"
+    },
+    "DiaDistritoLluvia": {
+      "additionalProperties": false,
+      "properties": {
+        "nivel": {
+          "anyOf": [
+            {
+              "enum": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "None: ningún sistema ECMWF tuvo dato."
+        },
+        "probabilidades": {
+          "anyOf": [
+            {
+              "items": {
+                "maximum": 100,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "maxItems": 3,
+              "minItems": 3,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "P(≥T1), P(≥T2) y P(≥T3) de la zona del distrito, en %."
+        }
+      },
+      "required": [
+        "nivel",
+        "probabilidades"
+      ],
+      "title": "DiaDistritoLluvia",
+      "type": "object"
+    },
+    "DiaPronostico": {
+      "additionalProperties": false,
+      "description": "Día pluviométrico: de las 7 a. m. a las 7 a. m. del día siguiente en Perú.",
+      "properties": {
+        "inicio": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "fin": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "sistemas": {
+          "description": "Sistemas con dato ese día.",
+          "items": {
+            "enum": [
+              "ecmwf_ifs",
+              "ecmwf_aifs",
+              "ncep_gefs"
+            ],
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "inicio",
+        "fin",
+        "sistemas"
+      ],
+      "title": "DiaPronostico",
+      "type": "object"
+    },
+    "DistritoLluvia": {
+      "additionalProperties": false,
+      "properties": {
+        "ubigeo": {
+          "pattern": "^\\d{6}$",
+          "type": "string"
+        },
+        "zona": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "type": "string"
+        },
+        "celda": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Índice en ``celdas``; None si no hubo dato."
+        },
+        "mal_representado": {
+          "description": "La celda es mar o su altitud difiere demasiado de la capital.",
+          "type": "boolean"
+        },
+        "dias": {
+          "items": {
+            "$ref": "#/$defs/DiaDistritoLluvia"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        },
+        "tendencia": {
+          "anyOf": [
+            {
+              "enum": [
+                1,
+                2,
+                3
+              ],
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "ubigeo",
+        "zona",
+        "celda",
+        "mal_representado",
+        "dias",
+        "tendencia"
+      ],
+      "title": "DistritoLluvia",
+      "type": "object"
+    },
+    "MetodoLluvia": {
+      "additionalProperties": false,
+      "description": "Criterios con que se calculó el producto, para que viajen con los datos.",
+      "properties": {
+        "modelo": {
+          "const": "m1-v1",
+          "type": "string"
+        },
+        "pesos": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "description": "Pesos nominales de la mezcla.",
+          "propertyNames": {
+            "enum": [
+              "ecmwf_ifs",
+              "ecmwf_aifs",
+              "ncep_gefs"
+            ]
+          },
+          "type": "object"
+        },
+        "umbrales_mm": {
+          "additionalProperties": {
+            "$ref": "#/$defs/UmbralesZona"
+          },
+          "description": "Lluvia diaria de 12 a 12 UTC; provisionales hasta contrastarlos.",
+          "propertyNames": {
+            "enum": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "type": "object"
+        },
+        "niveles": {
+          "$ref": "#/$defs/CriteriosNiveles"
+        },
+        "tope_tendencia": {
+          "enum": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "type": "integer"
+        },
+        "desfase_maximo_h": {
+          "description": "Distancia máxima entre la corrida de un sistema y la ECMWF más reciente.",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "altitud_sierra_m": {
+          "type": "integer"
+        },
+        "diferencia_altitud_costa_m": {
+          "description": "Capital por debajo de altitud_sierra_m: diferencia máxima con la celda.",
+          "type": "integer"
+        },
+        "diferencia_altitud_sierra_m": {
+          "description": "Capital a altitud_sierra_m o más: diferencia máxima con la celda.",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "modelo",
+        "pesos",
+        "umbrales_mm",
+        "niveles",
+        "tope_tendencia",
+        "desfase_maximo_h",
+        "altitud_sierra_m",
+        "diferencia_altitud_costa_m",
+        "diferencia_altitud_sierra_m"
+      ],
+      "title": "MetodoLluvia",
+      "type": "object"
+    },
+    "PeriodoTendencia": {
+      "additionalProperties": false,
+      "description": "Días 4 a 7: un único nivel, el más alto, con tope y confianza baja.",
+      "properties": {
+        "inicio": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "fin": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "confianza": {
+          "const": "baja",
+          "type": "string"
+        }
+      },
+      "required": [
+        "inicio",
+        "fin",
+        "confianza"
+      ],
+      "title": "PeriodoTendencia",
+      "type": "object"
+    },
+    "UmbralesZona": {
+      "additionalProperties": false,
+      "properties": {
+        "t1_mm": {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        },
+        "t2_mm": {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        },
+        "t3_mm": {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "t1_mm",
+        "t2_mm",
+        "t3_mm"
+      ],
+      "title": "UmbralesZona",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Semáforo de lluvia por distrito, sin verificar todavía.",
+  "properties": {
+    "version_esquema": {
+      "const": 1,
+      "default": 1,
+      "type": "integer"
+    },
+    "generado_en": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "verificacion": {
+      "const": "sin_verificar",
+      "type": "string"
+    },
+    "metodo": {
+      "$ref": "#/$defs/MetodoLluvia"
+    },
+    "corridas": {
+      "items": {
+        "$ref": "#/$defs/CorridaUsada"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "dias": {
+      "items": {
+        "$ref": "#/$defs/DiaPronostico"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "type": "array"
+    },
+    "tendencia": {
+      "$ref": "#/$defs/PeriodoTendencia"
+    },
+    "celdas": {
+      "items": {
+        "$ref": "#/$defs/CeldaModelo"
+      },
+      "type": "array"
+    },
+    "distritos": {
+      "items": {
+        "$ref": "#/$defs/DistritoLluvia"
+      },
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": [
+    "version_esquema",
+    "generado_en",
+    "verificacion",
+    "metodo",
+    "corridas",
+    "dias",
+    "tendencia",
+    "celdas",
+    "distritos"
+  ],
+  "title": "LluviaDistritos",
+  "type": "object"
+}

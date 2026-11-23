@@ -5,6 +5,7 @@ coverage
 package-lock.json
 pipeline
 packages/contratos/esquemas
+docs/esquemas
 packages/contratos/src/generado.ts
 datos-estaticos/distritos.json
 datos-estaticos/fuentes
