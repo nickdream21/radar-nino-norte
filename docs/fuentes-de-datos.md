@@ -25,6 +25,15 @@ Resultado de la investigación del 23-nov-2026. "Verificado" significa que el pu
 | Archivo de pronósticos pasados     | Open-Meteo Historical Forecast y Previous Runs                                                                                                                       | IFS 9 km desde 2017; el resto desde 2021–2025                                                                  |
 | Mapa base                          | OpenFreeMap                                                                                                                                                          | Sin clave ni límites; requiere atribución                                                                      |
 
+### Detalles comprobados al construir los adaptadores
+
+Comprobado el 23-nov-2026 al programar `pipeline/src/radar/fuentes/`. Las respuestas grabadas están en `pipeline/tests/fixtures/`.
+
+- **NOAA CPC semanal**: responde sin cabecera `Content-Type`. La fecha es el día central de la semana. Las anomalías negativas quedan pegadas a la temperatura (`20.6-0.1`). La semana nueva aparece el lunes durante el día.
+- **ICEN**: cuatro líneas de cabecera con `%` antes de `% yy mm ICEN`. Es una media móvil de tres meses centrada en el mes indicado, así que el último valor va unos dos meses por detrás (en noviembre, septiembre).
+- **Coral Reef Watch (ERDDAP)**: la latitud va de norte a sur, aunque ERDDAP 2.29 acepta el rango en ambos sentidos. Las celdas sin dato llegan como `null` en `.json` (`_FillValue` −327.68). Un error de consulta responde HTTP 500 con texto `Error {…}`, no JSON.
+- **ENFEN**: `enfen.imarpe.gob.pe` responde 403 con un desafío de Cloudflare a clientes automáticos; los comunicados solo se pueden leer desde un navegador.
+
 ## Condiciones de uso
 
 - **Open-Meteo**: gratuito solo para uso no comercial; menos de 10 000 llamadas al día, 5 000 por hora y 600 por minuto. Datos CC BY 4.0.
