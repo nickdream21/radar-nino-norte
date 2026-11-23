@@ -27,3 +27,13 @@ El pipeline conserva el último dato válido y la web lo muestra como antiguo cu
 ## Vulnerabilidades conocidas
 
 `npm audit` informa avisos moderados en `glob` y `minimatch`, que llegan por `workbox-build` (dependencia de `vite-plugin-pwa`). Solo se ejecutan al construir, no en el navegador del usuario. Se resuelven al actualizar `vite-plugin-pwa`; Dependabot lo propondrá.
+
+## El PR de versión no ejecuta CI por sí solo
+
+GitHub no dispara flujos en los PR creados con el token de Actions, así que el PR de release-please queda bloqueado a la espera de los chequeos obligatorios. Para lanzarlos, cerrar y reabrir el PR:
+
+```sh
+gh pr close <número> && gh pr reopen <número>
+```
+
+Alternativa permanente: dar a release-please un token personal como secreto del repositorio.
