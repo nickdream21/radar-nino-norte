@@ -1,0 +1,10 @@
+node_modules
+dist
+dev-dist
+coverage
+package-lock.json
+pipeline
+packages/contratos/esquemas
+packages/contratos/src/generado.ts
+CHANGELOG.md
+.release-please-manifest.json

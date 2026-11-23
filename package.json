@@ -1,0 +1,33 @@
+{
+  "name": "radar-nino-norte",
+  "private": true,
+  "version": "0.0.0",
+  "description": "PWA de monitoreo y pronóstico de El Niño costero, lluvias, rayos y ríos para el norte del Perú",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @radar/web",
+    "build": "npm run build -w @radar/web",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write .",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "contratos:generar": "npm run generar -w @radar/contratos"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.15.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.14.0",
+    "prettier": "^3.10.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.73.0"
+  }
+}

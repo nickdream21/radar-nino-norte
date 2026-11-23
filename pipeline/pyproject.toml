@@ -1,0 +1,46 @@
+[project]
+name = "radar"
+dynamic = ["version"]
+description = "Ingesta, modelos y publicación de productos de Radar Niño Norte"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "pydantic>=2.9",
+]
+
+[project.scripts]
+radar = "radar.cli:main"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.13",
+    "pytest>=8.3",
+    "pytest-cov>=6.0",
+    "ruff>=0.8",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# La versión vive solo en __init__.py, que release-please actualiza.
+[tool.hatch.version]
+path = "src/radar/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/radar"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF", "DTZ", "PTH"]
+
+[tool.mypy]
+strict = true
+files = ["src", "tests"]
+plugins = ["pydantic.mypy"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=radar --cov-report=term-missing --cov-fail-under=80"

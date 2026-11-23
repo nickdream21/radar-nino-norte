@@ -1,0 +1,17 @@
+{
+  "name": "@radar/contratos",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Tipos TypeScript generados desde los contratos del pipeline",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "generar": "node scripts/generar.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "json-schema-to-typescript": "^16.0.0"
+  }
+}

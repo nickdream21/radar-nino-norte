@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-fondo: #0b2545;
+  --color-superficie: #13315c;
+  --color-acento: #ffb703;
+  --color-texto-suave: #8ecae6;
+}
+
+body {
+  @apply bg-fondo text-white antialiased;
+}

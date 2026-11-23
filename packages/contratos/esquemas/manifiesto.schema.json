@@ -1,0 +1,72 @@
+{
+  "$defs": {
+    "ProductoPublicado": {
+      "additionalProperties": false,
+      "description": "Un archivo de datos publicado para la web.",
+      "properties": {
+        "id": {
+          "description": "Identificador estable.",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+          "type": "string"
+        },
+        "ruta": {
+          "description": "Ruta relativa al manifiesto.",
+          "type": "string"
+        },
+        "fuente": {
+          "description": "Origen de los datos, para la atribución.",
+          "type": "string"
+        },
+        "actualizado_en": {
+          "description": "Momento del dato más reciente.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "vigencia_min": {
+          "description": "Minutos tras los cuales la web debe mostrar el dato como antiguo.",
+          "exclusiveMinimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "ruta",
+        "fuente",
+        "actualizado_en",
+        "vigencia_min"
+      ],
+      "title": "ProductoPublicado",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Índice que la web lee primero para saber qué hay y qué tan reciente es.",
+  "properties": {
+    "version_esquema": {
+      "const": 1,
+      "default": 1,
+      "type": "integer"
+    },
+    "generado_en": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "version_pipeline": {
+      "type": "string"
+    },
+    "productos": {
+      "items": {
+        "$ref": "#/$defs/ProductoPublicado"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "version_esquema",
+    "generado_en",
+    "version_pipeline",
+    "productos"
+  ],
+  "title": "Manifiesto",
+  "type": "object"
+}

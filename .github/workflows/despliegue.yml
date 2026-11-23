@@ -1,0 +1,53 @@
+name: Despliegue
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  construir:
+    name: Construir
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          RADAR_BASE: /${{ github.event.repository.name }}/
+      - name: Añadir los datos publicados (rama datos), si existen
+        run: |
+          if git ls-remote --exit-code --heads origin datos > /dev/null; then
+            git fetch --depth=1 origin datos
+            mkdir -p apps/web/dist/datos
+            git archive FETCH_HEAD | tar -x -C apps/web/dist/datos
+          else
+            echo "La rama datos aún no existe; se despliega sin datos."
+          fi
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/web/dist
+
+  desplegar:
+    name: Desplegar
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - id: despliegue
+        uses: actions/deploy-pages@v4
