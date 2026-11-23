@@ -33,18 +33,32 @@ export default defineConfig({
         ],
       },
       workbox: {
-        // Los datos cambian cada pocos minutos: red primero, y el último dato
-        // válido guardado cuando no hay conexión.
+        // MapLibre (~1,5 MB sin comprimir) no se precarga al instalar: quien nunca abre el
+        // mapa no lo descarga. Se guarda la primera vez que se abre la sección Mapa.
+        globIgnores: ['**/MapaVista-*', '**/maplibre-gl-worker-*'],
         runtimeCaching: [
+          // Los datos cambian cada pocos minutos: red primero, y el último dato
+          // válido guardado cuando no hay conexión.
           {
             urlPattern: ({ url }) => url.pathname.includes('/datos/'),
             handler: 'NetworkFirst',
             options: { cacheName: 'datos', networkTimeoutSeconds: 5 },
           },
+          // Nombres con hash: un archivo guardado nunca cambia.
+          {
+            urlPattern: ({ url }) => /\/assets\/(MapaVista|maplibre-gl-worker)-/.test(url.pathname),
+            handler: 'CacheFirst',
+            options: { cacheName: 'mapa', expiration: { maxEntries: 10 } },
+          },
         ],
       },
     }),
   ],
+  build: {
+    // MapLibre ocupa por sí solo un fragmento de ~1 MB que se carga de forma diferida;
+    // el límite del aviso se sube lo justo para él.
+    chunkSizeWarningLimit: 1100,
+  },
   test: {
     environment: 'jsdom',
     setupFiles: ['./src/pruebas/configuracion.ts'],

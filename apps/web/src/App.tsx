@@ -1,27 +1,43 @@
-import { EstadoDatos } from './features/estado/EstadoDatos';
+import { Suspense, lazy, useEffect, useRef } from 'react';
+import { LimiteError } from './comun/LimiteError';
+import { PantallaInicio } from './features/inicio/PantallaInicio';
+import { BarraNavegacion } from './features/navegacion/BarraNavegacion';
+import { useSeccion } from './features/navegacion/secciones';
 
-const AVISOS_SENAMHI = 'https://www.senamhi.gob.pe/?p=aviso-meteorologico';
+// El mapa y MapLibre se descargan solo al abrir la sección Mapa.
+const SeccionMapa = lazy(() => import('./features/mapa/SeccionMapa'));
 
 export function App() {
+  const seccion = useSeccion();
+  const anterior = useRef(seccion);
+
+  // Al cambiar de sección, el foco pasa a su título para que los lectores de pantalla la anuncien.
+  useEffect(() => {
+    if (anterior.current === seccion) return;
+    anterior.current = seccion;
+    document.getElementById('titulo-seccion')?.focus();
+  }, [seccion]);
+
   return (
-    <main className="mx-auto flex min-h-dvh max-w-xl flex-col gap-6 p-6">
-      <header>
-        <h1 className="text-3xl font-bold">Radar Niño Norte</h1>
-        <p className="text-texto-suave mt-1">
-          El Niño costero, lluvias, rayos y ríos en Tumbes, Piura, Lambayeque, La Libertad y
-          Cajamarca.
-        </p>
-      </header>
-
-      <EstadoDatos />
-
-      <footer className="text-texto-suave mt-auto text-sm">
-        Esta app no es una fuente oficial de alertas. Consulta siempre los{' '}
-        <a className="text-acento underline" href={AVISOS_SENAMHI} rel="noreferrer" target="_blank">
-          avisos de SENAMHI
-        </a>
-        .
-      </footer>
-    </main>
+    <div className="flex h-dvh flex-col">
+      <main className="flex min-h-0 flex-1 flex-col overflow-y-auto">
+        {seccion === 'mapa' ? (
+          <LimiteError
+            alternativa={
+              <p role="alert" className="m-auto p-6 font-semibold">
+                No pudimos abrir el mapa. Revisa tu conexión e inténtalo de nuevo.
+              </p>
+            }
+          >
+            <Suspense fallback={<p className="text-texto-suave m-auto p-6">Cargando el mapa…</p>}>
+              <SeccionMapa />
+            </Suspense>
+          </LimiteError>
+        ) : (
+          <PantallaInicio />
+        )}
+      </main>
+      <BarraNavegacion activa={seccion} />
+    </div>
   );
 }
