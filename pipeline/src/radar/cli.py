@@ -14,6 +14,7 @@ from pydantic import BaseModel
 from radar.catalogo import CatalogoInvalido, cargar_catalogo
 from radar.catalogo.cargar import NOMBRE_ARCHIVO as NOMBRE_CATALOGO
 from radar.catalogo.generar import generar_archivo
+from radar.catalogo.recalcular import cambios_de_zona, recalcular_archivo
 from radar.catalogo.resumen import resumen_catalogo
 from radar.contratos import CONTRATOS, ArchivoLluvia, ProductoPublicado
 from radar.fuentes.crw_erddap import FuenteCrwMarPaita
@@ -181,6 +182,12 @@ def main(argv: Sequence[str] | None = None) -> int:
         ),
     )
 
+    recalculo = ordenes.add_parser(
+        "recalcular-zonas",
+        help="Recalcula zona y revisar del catálogo guardado con la regla vigente (sin red).",
+    )
+    recalculo.add_argument("--catalogo", type=Path, default=DATOS_ESTATICOS / NOMBRE_CATALOGO)
+
     argumentos = analizador.parse_args(argv)
     if argumentos.orden == "exportar-esquemas":
         for ruta in exportar_esquemas(argumentos.destino):
@@ -197,6 +204,9 @@ def main(argv: Sequence[str] | None = None) -> int:
             contacto_wikidata=argumentos.contacto_wikidata,
         )
         print(resumen_catalogo(catalogo, informe, comparaciones))
+    elif argumentos.orden == "recalcular-zonas":
+        anterior, nuevo = recalcular_archivo(argumentos.catalogo)
+        print("\n".join(cambios_de_zona(anterior, nuevo)) or "Ninguna zona cambia.")
     else:
         logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
         logging.getLogger("httpx").setLevel(logging.WARNING)

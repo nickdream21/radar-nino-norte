@@ -26,7 +26,22 @@ cd pipeline
 uv run radar generar-distritos
 ```
 
-La orden descarga todas las fuentes (gasta unas 330 unidades de la cuota diaria de Open-Meteo, una por capital) y escribe el archivo. Hay que regenerarlo cuando el INEI cree o modifique distritos o cuando cambie la regla de zonas.
+Después, desde la raíz, regenerar la lista reducida que la web lleva dentro (`apps/web/src/features/mi-distrito/distritos.generado.ts`; CI falla si no está al día):
+
+```sh
+npm run distritos:generar
+```
+
+La orden `generar-distritos` descarga todas las fuentes (gasta unas 330 unidades de la cuota diaria de Open-Meteo, una por capital) y escribe el archivo. Hay que regenerarlo cuando el INEI cree o modifique distritos o cuando cambie la regla de zonas.
+
+Si solo cambia la regla de zonas, no hace falta descargar nada:
+
+```sh
+cd pipeline
+uv run radar recalcular-zonas
+```
+
+Recalcula `zona` y `revisar` con los datos ya guardados en el archivo, imprime los distritos que cambian de zona y deja el resto del archivo intacto, byte a byte. La distancia a la divisoria Pacífico-Atlántico no se guarda como campo; se relee del motivo de `revisar` que la anota (solo existe para capitales a 5 km o menos de la divisoria, las únicas en que cuenta).
 
 ### Procedencia de cada campo
 
@@ -53,14 +68,24 @@ Las letras, los espacios y los guiones son siempre los del INEI, que escribe en 
 
 ### Zonas
 
-La regla está documentada y probada en `pipeline/src/radar/catalogo/zonas.py`. Se evalúa en este orden con los datos de la capital:
+La zona **solo elige los umbrales de lluvia diaria** de cada distrito. No dice cómo le afecta El Niño costero: cualquier texto sobre ese efecto debe depender de `vertiente`, nunca de `zona`.
 
-1. **D** si drena al Atlántico (cuenca del Marañón), a cualquier altitud.
+La regla está documentada y probada en `pipeline/src/radar/catalogo/zonas.py`. Es la revisada por el meteorólogo del proyecto y se evalúa en este orden con los datos de la capital; gana la primera que se cumple:
+
+1. Vertiente atlántica (cuenca del Marañón): **C** por debajo de 1500 m; **D** desde 1500 m.
 2. **B** si es de Tumbes.
-3. **D** por encima de 3000 m.
-4. **C** entre 1000 y 3000 m.
-5. **B** entre 200 y 1000 m.
-6. **B** por debajo de 200 m y a más de 60 km del mar (llanura del Alto Piura, Chira medio, Olmos-Motupe).
-7. **A** en el resto.
+3. **D** si está en la cuenca del Santa (unidad hidrográfica `Cuenca Santa` de la ANA), a cualquier altitud.
+4. **D** por encima de 3000 m.
+5. **C** de 1000 a 3000 m.
+6. **A** por debajo de 1000 m si la capital está a menos de 20 km del mar o al sur de la latitud -6,75°.
+7. **B** de 200 a 1000 m.
+8. **B** por debajo de 200 m y a más de 60 km del mar (llanura del Alto Piura, Chira medio, Olmos-Motupe).
+9. **A** en el resto.
 
-El umbral de 3000 m (y no los 2500 m del texto de la tabla) y el límite de 60 km hacen que todos los ejemplos de la tabla caigan en su zona. `revisar` explica, distrito por distrito, por qué la zona es dudosa: altitud cerca de un umbral, sierra del Pacífico entre 2500 y 3000 m, distancia al mar cerca de 60 km, capital a menos de 5 km de la divisoria o capital ubicada con GeoNames.
+Las zonas son A costa y valles áridos, B Tumbes y piedemonte, C sierra occidental y valles bajos de la vertiente oriental, D sierra alta.
+
+Los cortes (3000 m, 1500 m, 60 km, 20 km y -6,75°) son **criterio experto provisional**, pendiente de contraste con percentiles de lluvia de CHIRPS.
+
+Excepciones: Bolívar (061102), La Florida (061106) y Lalaquiz (200305) tienen la zona C fijada a mano (`ZONAS_FORZADAS`) por estar en ladera húmeda entre 900 y 1000 m; es criterio del meteorólogo con confianza media-baja. El motivo de cada excepción se guarda en su `revisar`.
+
+`revisar` explica, distrito por distrito, por qué la zona es dudosa: altitud a menos del margen de un umbral (50 m alrededor de 200 m, 100 m alrededor de 1000 m, 150 m alrededor de 1500 m en la vertiente atlántica y de 3000 m) cuando eso cambiaría la zona, distancia al mar cerca de 60 km, capital a menos de 5 km de la divisoria si en la otra vertiente tendría otra zona, zona fijada a mano, capital ubicada con GeoNames o fuera de las unidades hidrográficas, y los distritos que el meteorólogo pidió contrastar con percentiles (Chongoyape y Canoas de Punta Sal).

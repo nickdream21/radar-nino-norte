@@ -11,6 +11,7 @@ export default tseslint.config(
       '**/coverage/**',
       'pipeline/**',
       'packages/contratos/src/generado.ts',
+      'apps/web/src/features/mi-distrito/distritos.generado.ts',
     ],
   },
   js.configs.recommended,
