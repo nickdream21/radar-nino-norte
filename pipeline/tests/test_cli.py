@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 
 from radar import cli
-from radar.cli import DATOS_ESTATICOS, fuentes_nino, main, publicar
+from radar.cli import DATOS_ESTATICOS, ESQUEMA_ARCHIVO, fuentes_lluvia, fuentes_nino, main, publicar
 from radar.contratos import CONTRATOS, EstadoNino, Manifiesto
 from radar.fuentes import FuenteNoDisponible
 from radar.fuentes.crw_erddap import FuenteCrwMarPaita
@@ -75,6 +75,7 @@ def test_main_publicar_sin_ningun_dato_deja_el_manifiesto_vacio(
         )
 
     monkeypatch.setattr(cli, "fuentes_nino", ninguna)
+    monkeypatch.setattr(cli, "fuentes_lluvia", lambda _: None)
 
     assert main(["publicar", "--destino", str(tmp_path / "salida")]) == 0
 
@@ -96,6 +97,13 @@ def test_fuentes_reales_apuntan_a_los_datos_estaticos(tmp_path: Path) -> None:
     }
 
 
+def test_fuentes_de_lluvia_sin_catalogo_valido(tmp_path: Path) -> None:
+    assert fuentes_lluvia(tmp_path) is None
+    reales = fuentes_lluvia(DATOS_ESTATICOS)
+    assert reales is not None
+    assert len(reales.catalogo.distritos) == 327
+
+
 def test_orden_desconocida_falla() -> None:
     with pytest.raises(SystemExit):
         main(["no-existe"])
@@ -106,3 +114,11 @@ def test_fuente_no_disponible_conserva_fuente_y_motivo() -> None:
 
     assert error.fuente == "noaa-cpc"
     assert str(error) == "noaa-cpc: tiempo de espera agotado"
+
+
+def test_esquema_del_archivo_esta_al_dia(tmp_path: Path) -> None:
+    ruta = tmp_path / "archivo.schema.json"
+    assert main(["exportar-esquema-archivo", "--destino", str(ruta)]) == 0
+
+    # Si falla: uv run radar exportar-esquema-archivo
+    assert ruta.read_text(encoding="utf-8") == ESQUEMA_ARCHIVO.read_text(encoding="utf-8")

@@ -271,6 +271,150 @@ export interface ComunicadoEnfen {
 }
 
 /**
+ * Semáforo de lluvia por distrito, sin verificar todavía.
+ */
+export interface LluviaDistritos {
+  version_esquema: 1;
+  generado_en: string;
+  verificacion: 'sin_verificar';
+  metodo: MetodoLluvia;
+  /**
+   * @minItems 1
+   */
+  corridas: [CorridaUsada, ...CorridaUsada[]];
+  /**
+   * @minItems 3
+   * @maxItems 3
+   */
+  dias: [DiaPronostico, DiaPronostico, DiaPronostico];
+  tendencia: PeriodoTendencia;
+  celdas: CeldaModelo[];
+  /**
+   * @minItems 1
+   */
+  distritos: [DistritoLluvia, ...DistritoLluvia[]];
+}
+/**
+ * Criterios con que se calculó el producto, para que viajen con los datos.
+ */
+export interface MetodoLluvia {
+  modelo: 'm1-v1';
+  /**
+   * Pesos nominales de la mezcla.
+   */
+  pesos: {
+    [k: string]: number;
+  };
+  /**
+   * Lluvia diaria de 12 a 12 UTC; provisionales hasta contrastarlos.
+   */
+  umbrales_mm: {
+    [k: string]: UmbralesZona;
+  };
+  niveles: CriteriosNiveles;
+  tope_tendencia: 1 | 2 | 3 | 4;
+  /**
+   * Distancia máxima entre la corrida de un sistema y la ECMWF más reciente.
+   */
+  desfase_maximo_h: number;
+  altitud_sierra_m: number;
+  /**
+   * Capital por debajo de altitud_sierra_m: diferencia máxima con la celda.
+   */
+  diferencia_altitud_costa_m: number;
+  /**
+   * Capital a altitud_sierra_m o más: diferencia máxima con la celda.
+   */
+  diferencia_altitud_sierra_m: number;
+}
+export interface UmbralesZona {
+  t1_mm: number;
+  t2_mm: number;
+  t3_mm: number;
+}
+/**
+ * Porcentajes mínimos (comparados con ``>=``) que activan cada nivel; gana el más alto.
+ */
+export interface CriteriosNiveles {
+  amarillo_t1: number;
+  naranja_t2: number;
+  naranja_t3: number;
+  rojo_t3: number;
+  rojo_t2: number;
+}
+export interface CorridaUsada {
+  sistema: 'ecmwf_ifs' | 'ecmwf_aifs' | 'ncep_gefs';
+  /**
+   * Identificador del modelo en Open-Meteo.
+   */
+  modelo: string;
+  inicializacion: string;
+  miembros: number;
+  /**
+   * Peso renormalizado entre las corridas usadas.
+   */
+  peso: number;
+}
+/**
+ * Día pluviométrico: de las 7 a. m. a las 7 a. m. del día siguiente en Perú.
+ */
+export interface DiaPronostico {
+  inicio: string;
+  fin: string;
+  /**
+   * Sistemas con dato ese día.
+   */
+  sistemas: ('ecmwf_ifs' | 'ecmwf_aifs' | 'ncep_gefs')[];
+}
+/**
+ * Días 4 a 7: un único nivel, el más alto, con tope y confianza baja.
+ */
+export interface PeriodoTendencia {
+  inicio: string;
+  fin: string;
+  confianza: 'baja';
+}
+/**
+ * Celda de 0.25° que Open-Meteo usó para el distrito (la del sistema ECMWF ancla).
+ */
+export interface CeldaModelo {
+  latitud: number;
+  longitud: number;
+  /**
+   * Altitud media de la celda en el modelo.
+   */
+  altitud_m: number | null;
+}
+export interface DistritoLluvia {
+  ubigeo: string;
+  zona: 'A' | 'B' | 'C' | 'D';
+  /**
+   * Índice en ``celdas``; None si no hubo dato.
+   */
+  celda: number | null;
+  /**
+   * La celda es mar o su altitud difiere demasiado de la capital.
+   */
+  mal_representado: boolean;
+  /**
+   * @minItems 3
+   * @maxItems 3
+   */
+  dias: [DiaDistritoLluvia, DiaDistritoLluvia, DiaDistritoLluvia];
+  tendencia: (1 | 2 | 3) | null;
+}
+export interface DiaDistritoLluvia {
+  /**
+   * None: ningún sistema ECMWF tuvo dato.
+   */
+  nivel: (1 | 2 | 3 | 4) | null;
+  /**
+   * P(≥T1), P(≥T2) y P(≥T3) de la zona del distrito, en %.
+   */
+  probabilidades: [number, number, number] | null;
+}
+
+/**
  * Índice que la web lee primero para saber qué hay y qué tan reciente es.
  */
 export interface Manifiesto {
