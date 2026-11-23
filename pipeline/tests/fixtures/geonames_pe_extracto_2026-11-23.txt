@@ -1,0 +1,85 @@
+3691148	Tumbes	Tumbes	TBP,Tumbes,Tumbesas,Tumbez,Tumpis,Tumpiurbo,Tүmbes,tong bei si,tounbesu,tumabesa,tumbesa,tumbeseu,tuምbesi,twmbs,twmbys  pyrw,Тумбес,Түмбес,تومبس,تومبیس، پیرو,ټwmbs,ټومبس,तुम्बेस,তুম্বেস,ਤੁਮਬੇਸ,ტუმბესი,ቱምቤስ,トゥンベス,通贝斯,툼베스	-3.55592	-80.44258	P	PPLA	PE		24	2401	240101		96946		4	America/Lima	2026-04-14
+3691174	Provincia de Trujillo	Provincia de Trujillo	Provincia de Trujillo,Trujillo	-8.07004	-78.90444	A	ADM2	PE		13	1301			0		247	America/Lima	2024-04-20
+3691175	Trujillo	Trujillo	TRU,Troxillo,Truchiljas,Truhillu,Trujillo,Trukhijo,Trukhil'jo,Trukhil'o,Trukhiljo,Trukhillo,Turgalium,te lu xi e,teuluhiyo,tiruhiyo,toruhiryo,trujillo,trujilo,trwhyw,trwkhyw,trwkhyw  byrw,Трухилло,Трухильо,Трухилјо,Трухійо,Трухільё,טרוחיו,تروخيو، بيرو,تروخیو,ٹrwjylw,ٹروجیلو,ټrwjylw,ټروجيلو,त्रुजिल्लो,ত্রুজিলো,ਟ੍ਰੁਜਿਲੋ,ტრუხილიო,ትሩሂዮ,トルヒーリョ,特鲁希略,트루히요	-8.11599	-79.02998	P	PPLA	PE		13	1301	130101		1067700		31	America/Lima	2026-06-21
+3691530	Tambo Grande	Tambo Grande		-4.92694	-80.34472	P	PPLA3	PE		20	2001	200114		30033		69	America/Lima	2012-07-19
+3693524	Provincia de Piura	Provincia de Piura	Piura,Piura Province,Provincia de Piura	-5.21416	-80.40617	A	ADM2	PE		20	2001			0		242	America/Lima	2022-11-06
+3693525	Departamento de Piura	Departamento de Piura	Departamento Piura,Departamento de Piura,Departemento Piura,Khu vuc Piura,Khu vực Piura,P'jura,Pioura,Piura,Piura Boelgesi,Piura Bölgesi,Piura Department,Piura Jach'a Suyu,Piura Jach’a Suyu,Piura Khu,Piura megye,Piura-regionen,Piuran alue,Piuros departamentas,Piwra Suyu,Piwra jacha suyu,Pjuras departaments,Regio Piurensis,Regio de Piura,Region P'jura,Region Piura,Region de Piura,Regió de Piura,Región de Piura,Rehgijon P'jura,Wilayah Piura,aqlym bywra,pi wu la de qu,pi'ura,pi'ura ancala,pi'ura pradesa,piulaju,piura xian,piyura pakuti,piyura pradesa,piyura prantam,pywra,Πιούρα,Пиура,Пьюра,Регіон П'юра,Рэгіён П'юра,إقليم بيورا,پیورا,پیورا علاقہ,पिउरा प्रदेश,পিউরা অঞ্চল,ਪਿਉਰਾ,પિયુરા પ્રદેશ,பியூரா பகுதி,పియూరా ప్రాంతం,ಪಿಯುರಾ ಪ್ರದೇಶ,පියුරා කලාපය,แคว้นปิวรา,პიურა,ፒውra,ፒውራ,ピウラ県,皮乌拉地区,皮烏拉地區,피우라주	-5	-80.33333	A	ADM1	PE		20				1856809		119	America/Lima	2026-04-16
+3693528	Piura	Piura	P'jura,PIU,Piura,Piwra,Pjura,Pjuro,bywra,pi wu la,pi'ura,piula,piura,piw ra,pywra,pywrh,Пиура,Пьюра,Пюра,Піура,פיורה,بيورا,پیورا,पिउरा,পিউরা,ਪਿਉਰਾ,ปิวรา,პიურა,ፒውra,ፒውራ,ピウラ,皮乌拉,피우라	-5.18192	-80.65715	P	PPLA	PE		20	2001	200101		630000		29	America/Lima	2026-06-21
+3694256	Olmos	Olmos	Olmos,Олмос	-5.98472	-79.74528	P	PPLA3	PE		14	1403	140308		9800		175	America/Lima	2026-09-02
+3695781	Departamento de La Libertad	Departamento de La Libertad	Departamento La Libertad,Departamento de La Libertad,Khu vuc La Libertad,Khu vực La Libertad,La Libertad,La Libertad Boelgesi,La Libertad Bölgesi,La Libertad Department,La Libertad Jach'a Suyu,La Libertad Jach’a Suyu,La Libertad Khu,La Libertad jach'a suyu,La Libertad megye,La Libertad-regionen,La Libertado departamentas,La Limpertant,La-Libertad,Lalibertadas departaments,Liberdade,Libertad,Qispi kay Suyu,Regio Libertatis,Regio de La Libertad,Region La Libertad,Region de La Libertad,Regió de La Libertad,Región de La Libertad,Tlalxeliuhcayotl La Libertad,Tlālxeliuhcāyōtl La Libertad,Wilayah La Libertad,aqlym la lybrtad,la li bo ta de da qu,la libaratada,la libartad pradesa,la libartad prantam,la libartada pradesa,la libarteda ancala,la liberitadi,la liperttat pakuti,la lybrtad,lalibeleutadeuju,mntqh la lybrtad,rehgijon La-Libertad,Λα Λιμπερτάντ,Ла Либертад,Ла-Либертад,Ла-Лібертад,рэгіён Ла-Лібертад,Լա Լիբերտադ,إقليم لا ليبرتاد,لا لبرٹڈ,لا لیبرتاد,لا لیورتاد علاقہ,منطقه لا لیبرتاد,ला लिबर्टद प्रदेश,ला लिबर्टाड प्रदेश,লা লিবার্টেড অঞ্চল,ਲਾ ਲਿਬਰਤਾਦ,લા લિબર્ટાડ પ્રદેશ,லா லிபேர்ட்டட் பகுதி,లా లిబర్టాడ్ ప్రాంతం,ಲಾ ಲಿಬರ್ಟಾಡ್ ಪ್ರದೇಶ,ලා ලිබරෙටෙඩ් කලාපය,แคว้นลาลิเบร์ตัด,ლა-ლიბერტადი,ላ ሊበርታድ,ラ・リベルタ県,拉利伯塔德大区,拉利伯塔德大區,라리베르타드주	-8	-78.5	A	ADM1	PE		13				1617050		2889	America/Lima	2026-04-16
+3699088	Cajamarca	Cajamarca	CJA,Cajamarca,Caxamarca,Kachamarka,Kajamarka,Kakhamarka,Kasamarko,Kashamarka,Kaŝamarko,Qajamarka,Qashamarka,ka ha ma ka,ka ha mar ka,kahamaleuka,kahamaruka,kajamaraka,kajamarika,kajamarka,kakhamarka,kakhamrka,Кахамарка,كاخامركا,کاجامارکا,کاخامارکا,काजामर्का,কাজামার্কা,ਕਾਜਾਮਾਰਕਾ,กาฮามาร์กา,კახამარკა,ካጃማርካ,カハマルカ,卡哈馬卡,카하마르카	-7.16378	-78.50027	P	PPLA	PE		06	0601	060101		201329	2700	2684	America/Lima	2026-04-14
+3754359	Huabal	Huabal		-4.78519	-80.0805	P	PPLL	PE		20	2001	200114		0		1221	America/Lima	2012-10-07
+3754366	Guayabo	Guayabo		-4.78905	-80.07651	P	PPLL	PE		20	2001	200114		0		1313	America/Lima	2012-10-07
+3762380	Montegrande	Montegrande	Monte Grande,Montegrande	-5.71491	-78.79614	P	PPLX	PE		06	0608	060801		0		859	America/Lima	2025-03-12
+3762382	Miraflores	Miraflores	Miraflores	-5.70056	-78.81147	P	PPLX	PE		06	0608	060801		0		859	America/Lima	2025-03-12
+3762385	Magllanal	Magllanal	Magllanal	-5.70637	-78.818	P	PPLX	PE		06	0608	060801		0		905	America/Lima	2025-03-12
+3810933	Zona de Irrigación y Colonización San Lorenzo	Zona de Irrigacion y Colonizacion San Lorenzo		-4.80861	-80.26538	P	PPLL	PE		20	2001	200114		0		153	America/Lima	2012-10-07
+3810936	San Ramón	San Ramon		-4.92767	-80.33808	P	PPLL	PE		20	2001	200114		0		64	America/Lima	2012-10-07
+3817167	La Tranca	La Tranca		-4.925	-80.59778	P	PPLL	PE		20	2001	200114		0		113	America/Lima	2012-07-19
+3817203	Dos Compuertas	Dos Compuertas		-4.95907	-80.65579	P	PPLL	PE		20	2001	200101		0		75	America/Lima	2012-12-06
+3818338	El Milagro	El Milagro		-3.52556	-80.44972	P	PPLL	PE		24	2401	240101		0		4	America/Lima	2012-07-19
+3818348	El Bebedero	El Bebedero		-3.55337	-80.45616	P	PPLL	PE		24	2401	240101		13		2	America/Lima	2020-05-06
+3818349	La Tuna	La Tuna		-3.54824	-80.44091	P	PPLL	PE		24	2401	240101		0		5	America/Lima	2012-10-07
+3818354	Asentamiento Humano Salamanca	Asentamiento Humano Salamanca		-3.55641	-80.4448	P	PPLX	PE		24	2401	240101		0		6	America/Lima	2012-10-07
+3818355	Asentamiento Humano Las Malvinas	Asentamiento Humano Las Malvinas		-3.55853	-80.44164	P	PPLX	PE		24	2401	240101		0		9	America/Lima	2012-10-07
+3818357	Buena Vista	Buena Vista		-3.57158	-80.45074	P	PPLL	PE		24	2401	240101		0		23	America/Lima	2012-10-07
+3818358	Las Mercedes	Las Mercedes		-3.57811	-80.44411	P	PPLL	PE		24	2401	240101		0		25	America/Lima	2012-10-07
+3818380	El Potrero	El Potrero		-3.50449	-80.38705	P	PPLL	PE		24	2401	240101		0		2	America/Lima	2012-10-07
+3819926	Sondor L	Sondor L		-6.21278	-79.82556	P	PPLL	PE		14	1403	140308		0		133	America/Lima	2012-07-19
+3830355	San Antonio	San Antonio		-6.02778	-80.01667	P	PPLL	PE		14	1403	140308		0		71	America/Lima	2012-07-19
+7778705	Palermo	Palermo		-8.10988	-79.01507	P	PPLS	PE		13	1301	130101		0		44	America/Lima	2012-07-19
+7778706	Aranjuez	Aranjuez		-8.10342	-79.01505	P	PPLS	PE		13	1301	130101		0		51	America/Lima	2012-07-19
+7778740	Santa Rosa	Santa Rosa		-8.11999	-79.00174	P	PPLL	PE		13	1301	130101		0		31	America/Lima	2012-07-19
+8349657	El Tallan	El Tallan		-5.43897	-80.61364	A	ADM3	PE		20	2001	200108		0		17	America/Lima	2017-01-23
+8349805	La Arena	La Arena		-5.31095	-80.76308	A	ADM3	PE		20	2001	200109		0		18	America/Lima	2017-01-23
+8349822	Jaen	Jaen	Jaen District,Jaén District	-5.77021	-78.85252	A	ADM3	PE		06	0608	060801		0		1837	America/Lima	2022-11-18
+8350117	Huanchaco	Huanchaco		-8.00081	-79.05909	A	ADM3	PE		13	1301	130104		0		169	America/Lima	2017-01-24
+8350345	Salaverry	Salaverry		-8.25392	-78.89891	A	ADM3	PE		13	1301	130109		0		151	America/Lima	2017-01-24
+8350388	Cura Mori	Cura Mori		-5.35618	-80.5926	A	ADM3	PE		20	2001	200107		0		45	America/Lima	2017-01-24
+8350399	Laredo	Laredo		-8.10526	-78.85509	A	ADM3	PE		13	1301	130106		0		561	America/Lima	2017-01-24
+8350405	Simbal	Simbal		-7.91837	-78.82709	A	ADM3	PE		13	1301	130110		0		766	America/Lima	2017-01-24
+8350411	Catacaos	Catacaos	Catacaos,Catacaos distritu,Distretto di Catacaos,Distrikt Catacaos,Distrito de Catacaos,ka ta kao si qu,კატაკაოსის რაიონი,卡塔考斯區	-5.49037	-80.33467	A	ADM3	PE		20	2001	200105		0		204	America/Lima	2017-01-20
+8350423	Pataz	Pataz		-7.73245	-77.58955	A	ADM3	PE		13	1308	130809		0		2991	America/Lima	2017-01-24
+8350440	La Union	La Union		-5.32219	-80.8637	A	ADM3	PE		20	2001	200110		0		49	America/Lima	2017-01-25
+8350449	Piura	Piura		-5.08296	-80.66832	A	ADM3	PE		20	2001	200101		0		53	America/Lima	2016-05-17
+8350497	Cajamarca	Cajamarca	Cajamarca,Distretto di Cajamarca,Distrikt Cajamarca,Distrito de Cajamarca,Kashamarka distritu,Qajamarka jisk'a t'aqa suyu,ka ha ma ka qu,mdyryt kakhamarka,مديرية كاخاماركا,卡哈馬卡區	-7.07751	-78.56109	A	ADM3	PE		06	0601	060101		0		3248	America/Lima	2017-01-07
+8350585	Olmos	Olmos	Olmos District	-6.06424	-80.07332	A	ADM3	PE		14	1403	140308		0		61	America/Lima	2022-11-15
+8350622	Castilla	Castilla		-5.12963	-80.51445	A	ADM3	PE		20	2001	200104		0		145	America/Lima	2017-01-23
+8350636	Tumbes	Tumbes	Province de Tumbes,Provincia Tumbes,Provincia de Tumbes,Provincia di Tumbes,Provinz Tumbes,Tumbes Province,Tumpis jiska suyu,Tumpis pruwinsya,tong bei si sheng,ტუმბესი,ტუმბესის პროვინცია,通貝斯省	-3.55366	-80.41617	A	ADM3	PE		24	2401	240101		0		24	America/Lima	2012-07-18
+8350639	Tambo Grande	Tambo Grande		-4.91806	-80.33307	A	ADM3	PE		20	2001	200114		0		68	America/Lima	2017-01-25
+8350648	Las Lomas	Las Lomas		-4.68906	-80.21446	A	ADM3	PE		20	2001	200111		0		335	America/Lima	2017-01-25
+8350772	Florencia De Mora	Florencia De Mora		-8.08243	-79.02141	A	ADM3	PE		13	1301	130103		0		93	America/Lima	2016-05-17
+8351019	La Esperanza	La Esperanza		-8.06341	-79.05594	A	ADM3	PE		13	1301	130105		0		102	America/Lima	2017-01-30
+8351200	Victor Larco Herrera	Victor Larco Herrera		-8.1395	-79.04566	A	ADM3	PE		13	1301	130111		0		11	America/Lima	2017-01-26
+8351226	Moche	Moche		-8.15976	-79.00064	A	ADM3	PE		13	1301	130107		0		19	America/Lima	2012-07-18
+8351227	Trujillo	Trujillo	Province de Trujillo,Provincia de Trujillo,Provincia di Trujillo,Truhillu pruwinsya,Trujillo Province,Trujillo jiska suyu,astan trwzhylw  prw,te lu xi e sheng,tʼrukhilios pʼrovintsia,استان تروژیلو، پرو,ტრუხილიო,ტრუხილიოს პროვინცია,特魯希略省	-8.11259	-79.02386	A	ADM3	PE		13	1301	130101		0		40	America/Lima	2012-07-18
+8351232	El Porvenir	El Porvenir		-8.05161	-78.99596	A	ADM3	PE		13	1301	130102		0		157	America/Lima	2017-01-28
+8351235	Poroto	Poroto		-8.03527	-78.75401	A	ADM3	PE		13	1301	130108		0		1017	America/Lima	2017-01-28
+12077072	Veintiseis De Octubre	Veintiseis De Octubre		-5.16138	-80.69654	A	ADM3	PE		20	2001	200115		0		33	America/Lima	2019-09-05
+13238981	Shucapampa	Shucapampa	Shucapampa	-7.18031	-78.50579	P	PPLX	PE		06	0601	060101		0		2623	America/Lima	2025-03-12
+13239013	Ramón Castilla	Ramon Castilla	Ramon Castilla,Ramón Castilla	-7.16209	-78.5084	P	PPLX	PE		06	0601	060101		0		2623	America/Lima	2025-03-12
+13239064	La Tulpuna	La Tulpuna	La Tulpuna	-7.17613	-78.50781	P	PPLX	PE		06	0601	060101		0		2623	America/Lima	2025-03-12
+13239089	Chontapaccha	Chontapaccha	Chontapaccha	-7.15071	-78.52397	P	PPLX	PE		06	0601	060101		0		2662	America/Lima	2025-03-12
+13239091	El Ingenio	El Ingenio	El Ingenio	-7.14929	-78.51424	P	PPLX	PE		06	0601	060101		0		2664	America/Lima	2025-03-12
+13239168	San Vicente	San Vicente	San Vicente	-7.16108	-78.52586	P	PPLX	PE		06	0601	060101		0		2693	America/Lima	2025-03-12
+13239245	San Martín de Porres	San Martin de Porres	San Martin de Porres,San Martín de Porres	-7.17371	-78.49553	P	PPLX	PE		06	0601	060101		0		2606	America/Lima	2025-03-12
+13239253	Mollepampa	Mollepampa	Mollepampa	-7.18208	-78.50161	P	PPLX	PE		06	0601	060101		0		2623	America/Lima	2025-03-12
+13239329	Bellavista	Bellavista	Bellavista	-7.16649	-78.51511	P	PPLX	PE		06	0601	060101		0		2623	America/Lima	2025-03-12
+13239452	Ciudad Universitaria	Ciudad Universitaria	Ciudad Universitaria	-7.16669	-78.49724	P	PPLX	PE		06	0601	060101		0		2606	America/Lima	2025-03-12
+13239489	Dos de Mayo	Dos de Mayo	2 de Mayo,Dos de Mayo	-7.15736	-78.51521	P	PPLX	PE		06	0601	060101		0		2636	America/Lima	2025-03-12
+13239495	Santa Elena	Santa Elena	Santa Elena	-7.17147	-78.51129	P	PPLX	PE		06	0601	060101		0		2628	America/Lima	2025-03-12
+13239510	Santa Rosa	Santa Rosa	Santa Rosa	-7.14531	-78.52062	P	PPLX	PE		06	0601	060101		0		2692	America/Lima	2025-03-12
+13239554	La Colmena	La Colmena	La Colmena	-7.1551	-78.51226	P	PPLX	PE		06	0601	060101		0		2636	America/Lima	2025-03-12
+13239585	Miraflores	Miraflores	Miraflores	-7.17206	-78.50739	P	PPLX	PE		06	0601	060101		0		2609	America/Lima	2025-03-12
+13239602	Estanco	Estanco	Estanco	-7.16401	-78.51851	P	PPLX	PE		06	0601	060101		0		2651	America/Lima	2025-03-12
+13239627	Nuevo Cajamarca	Nuevo Cajamarca	Nuevo Cajamarca	-7.17911	-78.49755	P	PPLX	PE		06	0601	060101		0		2610	America/Lima	2025-03-12
+13239762	Aranjuez	Aranjuez	Aranjuez	-7.16662	-78.50539	P	PPLX	PE		06	0601	060101		0		2609	America/Lima	2025-03-12
+13239794	Samanacruz	Samanacruz	Samanacruz	-7.13921	-78.52551	P	PPLX	PE		06	0601	060101		0		2771	America/Lima	2025-03-12
+13239816	Cumbe Mayo	Cumbe Mayo	Cumbe Mayo	-7.15975	-78.52066	P	PPLX	PE		06	0601	060101		0		2651	America/Lima	2025-03-12
+13239847	La Merced	La Merced	La Merced	-7.1559	-78.51866	P	PPLX	PE		06	0601	060101		0		2662	America/Lima	2025-03-12
+13239848	San Sebastián	San Sebastian	San Sebastian,San Sebastián	-7.16391	-78.51231	P	PPLX	PE		06	0601	060101		0		2623	America/Lima	2025-03-12
+13239869	San José	San Jose	San Jose,San José	-7.15211	-78.51985	P	PPLX	PE		06	0601	060101		0		2662	America/Lima	2025-03-12
+13239900	Magna Vallejo	Magna Vallejo	Magna Vallejo	-7.1656	-78.50253	P	PPLX	PE		06	0601	060101		0		2609	America/Lima	2025-03-12
+13239953	Las Torresitas	Las Torresitas	Las Torresitas	-7.14897	-78.49994	P	PPLX	PE		06	0601	060101		0		2649	America/Lima	2025-03-12
+13562177	Alto Trujillo	Alto Trujillo		-8.06273	-79.00998	P	PPL	PE		13	1301	130102		0	92	129	America/Lima	2026-01-07
+8349721	Trita	Trita		-6.15647	-77.98114	A	ADM3	PE		01	0105	010523		0		2708	America/Lima	2017-01-23

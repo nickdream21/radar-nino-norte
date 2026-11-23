@@ -1,0 +1,6047 @@
+{
+  "version_esquema": 1,
+  "generado_en": "2026-11-23T15:26:16.742750Z",
+  "fuentes": [
+    {
+      "campos": "ubigeo, nombre, provincia, departamento",
+      "nombre": "INEI, Registro Nacional de Municipalidades (RENAMU) 2026",
+      "url": "https://www.datosabiertos.gob.pe/dataset/registro-nacional-de-municipalidades-renamu-2026-instituto-nacional-de-estad%C3%ADstica-e",
+      "licencia": "Open Data Commons Attribution License (ODC-By) 1.0",
+      "atribucion": "Instituto Nacional de Estadística e Informática (INEI), RENAMU 2026",
+      "descargado_en": "2026-11-23T15:26:09.014521Z"
+    },
+    {
+      "campos": "capital.nombre, capital.latitud, capital.longitud",
+      "nombre": "INEI, centros poblados de los Censos Nacionales 2017 (geoservidor IDE INEI)",
+      "url": "https://geoespacial.inei.gob.pe/geoserver/Interoperabilidad/ows",
+      "licencia": "Información pública del Estado peruano, de acceso libre y gratuito (sin restricciones de acceso declaradas en el servicio)",
+      "atribucion": "Instituto Nacional de Estadística e Informática (INEI), Censos Nacionales 2017",
+      "descargado_en": "2026-11-23T15:26:10.861707Z"
+    },
+    {
+      "campos": "tildes de los nombres (solo si coinciden letra por letra con el INEI)",
+      "nombre": "Wikidata (consulta SPARQL)",
+      "url": "https://query.wikidata.org/sparql",
+      "licencia": "CC0 1.0",
+      "atribucion": "Wikidata",
+      "descargado_en": "2026-11-23T15:19:27Z"
+    },
+    {
+      "campos": "enlace INEI-Wikidata, capitales posteriores al censo 2017, contraste",
+      "nombre": "GeoNames (volcado PE)",
+      "url": "https://download.geonames.org/export/dump/PE.zip",
+      "licencia": "CC BY 4.0",
+      "atribucion": "GeoNames (www.geonames.org)",
+      "descargado_en": "2026-11-23T15:26:13.597790Z"
+    },
+    {
+      "campos": "vertiente, cuenca",
+      "nombre": "ANA, unidades hidrográficas del Perú (GeoSNIRH)",
+      "url": "https://geosnirh.ana.gob.pe/server/rest/services/Hosted/UnidadesHidrograficas/FeatureServer/0/query",
+      "licencia": "Información pública del Estado peruano; solo se guarda el nombre de la unidad y su región hidrográfica, no su geometría",
+      "atribucion": "Autoridad Nacional del Agua (ANA), Sistema Nacional de Información de Recursos Hídricos",
+      "descargado_en": "2026-11-23T15:26:15.502897Z"
+    },
+    {
+      "campos": "distancia_costa_km",
+      "nombre": "Natural Earth 1:10m, línea de costa (v5.1.2)",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_coastline.geojson",
+      "licencia": "Dominio público",
+      "atribucion": "Made with Natural Earth",
+      "descargado_en": "2026-11-23T15:26:16.742750Z"
+    },
+    {
+      "campos": "capital.altitud_m",
+      "nombre": "Open-Meteo Elevation API (Copernicus DEM GLO-90)",
+      "url": "https://api.open-meteo.com/v1/elevation",
+      "licencia": "Copernicus DEM GLO-90: licencia gratuita de Copernicus con redistribución permitida; servicio Open-Meteo, datos CC BY 4.0",
+      "atribucion": "Copernicus DEM GLO-90 © DLR e.V. 2010-2014 y © Airbus Defence and Space GmbH 2014-2018, provisto en el marco de COPERNICUS por la Unión Europea y la ESA; altitud servida por Open-Meteo.com",
+      "descargado_en": "2026-11-23T15:26:21.684603Z"
+    }
+  ],
+  "distritos": [
+    {
+      "ubigeo": "060101",
+      "nombre": "Cajamarca",
+      "provincia": "Cajamarca",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Cajamarca",
+        "latitud": -7.1546,
+        "longitud": -78.5107,
+        "altitud_m": 2706,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 117.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060102",
+      "nombre": "Asunción",
+      "provincia": "Cajamarca",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Asunción",
+        "latitud": -7.32471,
+        "longitud": -78.51854,
+        "altitud_m": 2222,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 106.0,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060103",
+      "nombre": "Chetilla",
+      "provincia": "Cajamarca",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Chetilla",
+        "latitud": -7.14684,
+        "longitud": -78.67332,
+        "altitud_m": 2788,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 102.2,
+      "zona": "C",
+      "revisar": [
+        "altitud 2788 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "060104",
+      "nombre": "Cospán",
+      "provincia": "Cajamarca",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Cospán",
+        "latitud": -7.42719,
+        "longitud": -78.54227,
+        "altitud_m": 2464,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chicama",
+      "distancia_costa_km": 95.7,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060105",
+      "nombre": "Encañada",
+      "provincia": "Cajamarca",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Encañada",
+        "latitud": -7.08693,
+        "longitud": -78.34446,
+        "altitud_m": 3100,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 137.0,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060106",
+      "nombre": "Jesús",
+      "provincia": "Cajamarca",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Jesús",
+        "latitud": -7.24869,
+        "longitud": -78.37927,
+        "altitud_m": 2554,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 122.5,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060107",
+      "nombre": "Llacanora",
+      "provincia": "Cajamarca",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Llacanora",
+        "latitud": -7.19373,
+        "longitud": -78.42653,
+        "altitud_m": 2611,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 123.5,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060108",
+      "nombre": "Los Baños del Inca",
+      "provincia": "Cajamarca",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Los Baños del Inca",
+        "latitud": -7.16362,
+        "longitud": -78.46446,
+        "altitud_m": 2658,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 121.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060109",
+      "nombre": "Magdalena",
+      "provincia": "Cajamarca",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Magdalena",
+        "latitud": -7.25085,
+        "longitud": -78.65962,
+        "altitud_m": 1284,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 97.7,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060110",
+      "nombre": "Matará",
+      "provincia": "Cajamarca",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Matará",
+        "latitud": -7.25466,
+        "longitud": -78.25972,
+        "altitud_m": 2819,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 131.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060111",
+      "nombre": "Namora",
+      "provincia": "Cajamarca",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Namora",
+        "latitud": -7.20283,
+        "longitud": -78.32473,
+        "altitud_m": 2735,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 130.3,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060112",
+      "nombre": "San Juan",
+      "provincia": "Cajamarca",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "San Juan",
+        "latitud": -7.29158,
+        "longitud": -78.49758,
+        "altitud_m": 2307,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 110.4,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060201",
+      "nombre": "Cajabamba",
+      "provincia": "Cajabamba",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Cajabamba",
+        "latitud": -7.6231,
+        "longitud": -78.04598,
+        "altitud_m": 2656,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 122.9,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060202",
+      "nombre": "Cachachi",
+      "provincia": "Cajabamba",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Cachachi",
+        "latitud": -7.44893,
+        "longitud": -78.26895,
+        "altitud_m": 3228,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 116.0,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060203",
+      "nombre": "Condebamba",
+      "provincia": "Cajabamba",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Cauday",
+        "latitud": -7.57369,
+        "longitud": -78.06983,
+        "altitud_m": 2804,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 123.8,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060204",
+      "nombre": "Sitacocha",
+      "provincia": "Cajabamba",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Lluchubamba",
+        "latitud": -7.51957,
+        "longitud": -77.96955,
+        "altitud_m": 3192,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 136.3,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060301",
+      "nombre": "Celendín",
+      "provincia": "Celendín",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Celendín",
+        "latitud": -6.86695,
+        "longitud": -78.14312,
+        "altitud_m": 2618,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 167.8,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060302",
+      "nombre": "Chumuch",
+      "provincia": "Celendín",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Chumuch",
+        "latitud": -6.60268,
+        "longitud": -78.20035,
+        "altitud_m": 2195,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 172.6,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060303",
+      "nombre": "Cortegana",
+      "provincia": "Celendín",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Chimuch (Cortegana)",
+        "latitud": -6.51316,
+        "longitud": -78.32876,
+        "altitud_m": 2331,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 164.7,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060304",
+      "nombre": "Huasmín",
+      "provincia": "Celendín",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Huasmín",
+        "latitud": -6.83758,
+        "longitud": -78.24484,
+        "altitud_m": 2528,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 158.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060305",
+      "nombre": "Jorge Chávez",
+      "provincia": "Celendín",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Lucmapampa",
+        "latitud": -6.94107,
+        "longitud": -78.0918,
+        "altitud_m": 2625,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 169.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060306",
+      "nombre": "José Gálvez",
+      "provincia": "Celendín",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Huacapampa",
+        "latitud": -6.9255,
+        "longitud": -78.13284,
+        "altitud_m": 2598,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 166.1,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060307",
+      "nombre": "Miguel Iglesias",
+      "provincia": "Celendín",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Chalán",
+        "latitud": -6.65017,
+        "longitud": -78.23237,
+        "altitud_m": 2795,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 167.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060308",
+      "nombre": "Oxamarca",
+      "provincia": "Celendín",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Oxamarca",
+        "latitud": -7.04222,
+        "longitud": -78.06826,
+        "altitud_m": 2812,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 162.9,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060309",
+      "nombre": "Sorochuco",
+      "provincia": "Celendín",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Sorochuco",
+        "latitud": -6.91193,
+        "longitud": -78.25516,
+        "altitud_m": 2644,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 154.5,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060310",
+      "nombre": "Sucre",
+      "provincia": "Celendín",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Sucre",
+        "latitud": -6.94276,
+        "longitud": -78.13537,
+        "altitud_m": 2616,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 164.9,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060311",
+      "nombre": "Utco",
+      "provincia": "Celendín",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Utco",
+        "latitud": -6.89638,
+        "longitud": -78.06346,
+        "altitud_m": 2197,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 174.4,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060312",
+      "nombre": "La Libertad de Pallán",
+      "provincia": "Celendín",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "La Libertad de Pallán",
+        "latitud": -6.72385,
+        "longitud": -78.28249,
+        "altitud_m": 2927,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 158.8,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060401",
+      "nombre": "Chota",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Chota",
+        "latitud": -6.55974,
+        "longitud": -78.647,
+        "altitud_m": 2401,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 131.5,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060402",
+      "nombre": "Anguía",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Anguía",
+        "latitud": -6.34186,
+        "longitud": -78.60537,
+        "altitud_m": 2613,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 148.5,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060403",
+      "nombre": "Chadín",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Chadín",
+        "latitud": -6.4714,
+        "longitud": -78.41944,
+        "altitud_m": 2435,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 158.3,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060404",
+      "nombre": "Chiguirip",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Chiguirip",
+        "latitud": -6.42842,
+        "longitud": -78.7214,
+        "altitud_m": 2632,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 132.4,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060405",
+      "nombre": "Chimbán",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Chimbán",
+        "latitud": -6.25155,
+        "longitud": -78.47875,
+        "altitud_m": 1649,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 165.7,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060406",
+      "nombre": "Choropampa",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Choropampa",
+        "latitud": -6.37118,
+        "longitud": -78.41202,
+        "altitud_m": 2209,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 164.5,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060407",
+      "nombre": "Cochabamba",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Cochabamba",
+        "latitud": -6.47399,
+        "longitud": -78.88575,
+        "altitud_m": 1667,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 114.9,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060408",
+      "nombre": "Conchán",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Conchán",
+        "latitud": -6.44459,
+        "longitud": -78.65577,
+        "altitud_m": 2297,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 137.3,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060409",
+      "nombre": "Huambos",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Huambos",
+        "latitud": -6.45284,
+        "longitud": -78.96115,
+        "altitud_m": 2279,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 110.0,
+      "zona": "C",
+      "revisar": [
+        "capital a 0.3 km de la divisoria Pacífico-Atlántico (en la otra vertiente sería zona D)"
+      ]
+    },
+    {
+      "ubigeo": "060410",
+      "nombre": "Lajas",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Lajas",
+        "latitud": -6.56061,
+        "longitud": -78.73478,
+        "altitud_m": 2136,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 123.0,
+      "zona": "D",
+      "revisar": [
+        "capital a 4.6 km de la divisoria Pacífico-Atlántico (en la otra vertiente sería zona C)"
+      ]
+    },
+    {
+      "ubigeo": "060411",
+      "nombre": "Llama",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Llama",
+        "latitud": -6.51446,
+        "longitud": -79.12033,
+        "altitud_m": 2098,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 92.5,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060412",
+      "nombre": "Miracosta",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Miracosta",
+        "latitud": -6.40452,
+        "longitud": -79.28363,
+        "altitud_m": 2969,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 86.5,
+      "zona": "C",
+      "revisar": [
+        "altitud 2969 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)",
+        "altitud 2969 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "060413",
+      "nombre": "Paccha",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Paccha",
+        "latitud": -6.49744,
+        "longitud": -78.42349,
+        "altitud_m": 2103,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 156.6,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060414",
+      "nombre": "Pión",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Pión",
+        "latitud": -6.17785,
+        "longitud": -78.48246,
+        "altitud_m": 1812,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 170.4,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060415",
+      "nombre": "Querocoto",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Querocoto",
+        "latitud": -6.35963,
+        "longitud": -79.03444,
+        "altitud_m": 2427,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 111.4,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060416",
+      "nombre": "San Juan de Licupis",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Licupis",
+        "latitud": -6.42408,
+        "longitud": -79.24221,
+        "altitud_m": 3009,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 89.5,
+      "zona": "D",
+      "revisar": [
+        "altitud 3009 m, a 150 m o menos del umbral de 3000 m (con 2850 m sería zona C)"
+      ]
+    },
+    {
+      "ubigeo": "060417",
+      "nombre": "Tacabamba",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Tacabamba",
+        "latitud": -6.39278,
+        "longitud": -78.6113,
+        "altitud_m": 2061,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 144.6,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060418",
+      "nombre": "Tocmoche",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Tocmoche",
+        "latitud": -6.41271,
+        "longitud": -79.36076,
+        "altitud_m": 1295,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Motupe",
+      "distancia_costa_km": 78.7,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060419",
+      "nombre": "Chalamarca",
+      "provincia": "Chota",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Chalamarca",
+        "latitud": -6.50296,
+        "longitud": -78.47967,
+        "altitud_m": 2657,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 150.8,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060501",
+      "nombre": "Contumazá",
+      "provincia": "Contumazá",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Contumazá",
+        "latitud": -7.36656,
+        "longitud": -78.80536,
+        "altitud_m": 2660,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 77.4,
+      "zona": "C",
+      "revisar": [
+        "altitud 2660 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "060502",
+      "nombre": "Chilete",
+      "provincia": "Contumazá",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Chilete",
+        "latitud": -7.22131,
+        "longitud": -78.8396,
+        "altitud_m": 849,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 82.2,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060503",
+      "nombre": "Cupisnique",
+      "provincia": "Contumazá",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Trinidad",
+        "latitud": -7.34881,
+        "longitud": -79.02978,
+        "altitud_m": 1880,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 56.9,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060504",
+      "nombre": "Guzmango",
+      "provincia": "Contumazá",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Guzmango",
+        "latitud": -7.38394,
+        "longitud": -78.89612,
+        "altitud_m": 2542,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chicama",
+      "distancia_costa_km": 67.7,
+      "zona": "C",
+      "revisar": [
+        "altitud 2542 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "060505",
+      "nombre": "San Benito",
+      "provincia": "Contumazá",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "San Benito",
+        "latitud": -7.42491,
+        "longitud": -78.92755,
+        "altitud_m": 1393,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chicama",
+      "distancia_costa_km": 62.5,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060506",
+      "nombre": "Santa Cruz de Toled",
+      "provincia": "Contumazá",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Santa Cruz de Toled",
+        "latitud": -7.34456,
+        "longitud": -78.8368,
+        "altitud_m": 2395,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 75.5,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060507",
+      "nombre": "Tantarica",
+      "provincia": "Contumazá",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Catán",
+        "latitud": -7.30057,
+        "longitud": -78.93305,
+        "altitud_m": 2766,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 68.8,
+      "zona": "C",
+      "revisar": [
+        "altitud 2766 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "060508",
+      "nombre": "Yonán",
+      "provincia": "Contumazá",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Tembladera",
+        "latitud": -7.25299,
+        "longitud": -79.13107,
+        "altitud_m": 441,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 51.0,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060601",
+      "nombre": "Cutervo",
+      "provincia": "Cutervo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Cutervo",
+        "latitud": -6.37716,
+        "longitud": -78.81809,
+        "altitud_m": 2651,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 127.5,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060602",
+      "nombre": "Callayúc",
+      "provincia": "Cutervo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Callayúc",
+        "latitud": -6.18102,
+        "longitud": -78.91057,
+        "altitud_m": 1551,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 134.6,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060603",
+      "nombre": "Choros",
+      "provincia": "Cutervo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Choros",
+        "latitud": -5.9001,
+        "longitud": -78.69387,
+        "altitud_m": 463,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 171.7,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060604",
+      "nombre": "Cujillo",
+      "provincia": "Cutervo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Cujillo",
+        "latitud": -6.10705,
+        "longitud": -78.57392,
+        "altitud_m": 1572,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 167.6,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060605",
+      "nombre": "La Ramada",
+      "provincia": "Cutervo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "La Ramada",
+        "latitud": -6.25326,
+        "longitud": -78.57562,
+        "altitud_m": 2122,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 157.1,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060606",
+      "nombre": "Pimpingos",
+      "provincia": "Cutervo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Pimpingos",
+        "latitud": -6.06203,
+        "longitud": -78.75853,
+        "altitud_m": 1738,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 155.9,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060607",
+      "nombre": "Querocotillo",
+      "provincia": "Cutervo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Querocotillo",
+        "latitud": -6.27361,
+        "longitud": -79.03789,
+        "altitud_m": 1962,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 117.3,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060608",
+      "nombre": "San Andrés de Cutervo",
+      "provincia": "Cutervo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "San Andrés de Cutervo",
+        "latitud": -6.23888,
+        "longitud": -78.71282,
+        "altitud_m": 2063,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 146.4,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060609",
+      "nombre": "San Juan de Cutervo",
+      "provincia": "Cutervo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "San Juan de Cutervo",
+        "latitud": -6.16317,
+        "longitud": -78.59804,
+        "altitud_m": 1611,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 161.5,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060610",
+      "nombre": "San Luis de Lucma",
+      "provincia": "Cutervo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "San Luis de Lucma",
+        "latitud": -6.29397,
+        "longitud": -78.60353,
+        "altitud_m": 1905,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 151.8,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060611",
+      "nombre": "Santa Cruz",
+      "provincia": "Cutervo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Santa Cruz",
+        "latitud": -6.09502,
+        "longitud": -78.85264,
+        "altitud_m": 1678,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 145.1,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060612",
+      "nombre": "Santo Domingo de la Capilla",
+      "provincia": "Cutervo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Santo Domingo de la Capilla",
+        "latitud": -6.24471,
+        "longitud": -78.85539,
+        "altitud_m": 1734,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 134.4,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060613",
+      "nombre": "Santo Tomás",
+      "provincia": "Cutervo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Santo Tomás",
+        "latitud": -6.15127,
+        "longitud": -78.68204,
+        "altitud_m": 2143,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 155.4,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060614",
+      "nombre": "Sócota",
+      "provincia": "Cutervo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Sócota",
+        "latitud": -6.31536,
+        "longitud": -78.69941,
+        "altitud_m": 1838,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 142.0,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060615",
+      "nombre": "Toribio Casanova",
+      "provincia": "Cutervo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "La Sacilia",
+        "latitud": -6.00404,
+        "longitud": -78.69841,
+        "altitud_m": 1468,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 164.9,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060701",
+      "nombre": "Bambamarca",
+      "provincia": "Hualgayoc",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Bambamarca",
+        "latitud": -6.67967,
+        "longitud": -78.51885,
+        "altitud_m": 2533,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 137.3,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060702",
+      "nombre": "Chugur",
+      "provincia": "Hualgayoc",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Chugur",
+        "latitud": -6.67076,
+        "longitud": -78.73835,
+        "altitud_m": 2745,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 116.8,
+      "zona": "C",
+      "revisar": [
+        "altitud 2745 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)",
+        "capital a 4.4 km de la divisoria Pacífico-Atlántico (en la otra vertiente sería zona D)"
+      ]
+    },
+    {
+      "ubigeo": "060703",
+      "nombre": "Hualgayoc",
+      "provincia": "Hualgayoc",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Hualgayoc",
+        "latitud": -6.76481,
+        "longitud": -78.60794,
+        "altitud_m": 3530,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 124.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060801",
+      "nombre": "Jaén",
+      "provincia": "Jaén",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Jaén",
+        "latitud": -5.70892,
+        "longitud": -78.8091,
+        "altitud_m": 738,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón III",
+      "distancia_costa_km": 175.0,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060802",
+      "nombre": "Bellavista",
+      "provincia": "Jaén",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Bellavista",
+        "latitud": -5.66764,
+        "longitud": -78.67734,
+        "altitud_m": 425,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón III",
+      "distancia_costa_km": 189.1,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060803",
+      "nombre": "Chontalí",
+      "provincia": "Jaén",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Chontalí",
+        "latitud": -5.64621,
+        "longitud": -79.08837,
+        "altitud_m": 1614,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 158.4,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060804",
+      "nombre": "Colasay",
+      "provincia": "Jaén",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Colasay",
+        "latitud": -5.97851,
+        "longitud": -79.06874,
+        "altitud_m": 1784,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 133.6,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060805",
+      "nombre": "Huabal",
+      "provincia": "Jaén",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Huabal",
+        "latitud": -5.61263,
+        "longitud": -78.89981,
+        "altitud_m": 1370,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chinchipe",
+      "distancia_costa_km": 175.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060806",
+      "nombre": "Las Pirias",
+      "provincia": "Jaén",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Las Pirias",
+        "latitud": -5.62735,
+        "longitud": -78.85283,
+        "altitud_m": 1587,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chinchipe",
+      "distancia_costa_km": 177.7,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060807",
+      "nombre": "Pomahuaca",
+      "provincia": "Jaén",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Pomahuaca",
+        "latitud": -5.93152,
+        "longitud": -79.22951,
+        "altitud_m": 1084,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 124.3,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060808",
+      "nombre": "Pucará",
+      "provincia": "Jaén",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Pucará",
+        "latitud": -6.04139,
+        "longitud": -79.1284,
+        "altitud_m": 899,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 124.1,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060809",
+      "nombre": "Sallique",
+      "provincia": "Jaén",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Sallique",
+        "latitud": -5.65806,
+        "longitud": -79.31518,
+        "altitud_m": 1670,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 141.7,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060810",
+      "nombre": "San Felipe",
+      "provincia": "Jaén",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "San Felipe",
+        "latitud": -5.77033,
+        "longitud": -79.31387,
+        "altitud_m": 1846,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 132.0,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060811",
+      "nombre": "San José del Alto",
+      "provincia": "Jaén",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "San José del Alto",
+        "latitud": -5.46513,
+        "longitud": -79.0179,
+        "altitud_m": 1359,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chinchipe",
+      "distancia_costa_km": 179.0,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060812",
+      "nombre": "Santa Rosa",
+      "provincia": "Jaén",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Santa Rosa",
+        "latitud": -5.43427,
+        "longitud": -78.56655,
+        "altitud_m": 1232,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón I",
+      "distancia_costa_km": 215.5,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060901",
+      "nombre": "San Ignacio",
+      "provincia": "San Ignacio",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "San Ignacio",
+        "latitud": -5.14607,
+        "longitud": -79.00466,
+        "altitud_m": 1287,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chinchipe",
+      "distancia_costa_km": 207.9,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060902",
+      "nombre": "Chirinos",
+      "provincia": "San Ignacio",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Chirinos",
+        "latitud": -5.30589,
+        "longitud": -78.89832,
+        "altitud_m": 1827,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chinchipe",
+      "distancia_costa_km": 201.1,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060903",
+      "nombre": "Huarango",
+      "provincia": "San Ignacio",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Huarango",
+        "latitud": -5.27235,
+        "longitud": -78.7757,
+        "altitud_m": 767,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chinchipe",
+      "distancia_costa_km": 212.6,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060904",
+      "nombre": "La Coipa",
+      "provincia": "San Ignacio",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "La Coipa",
+        "latitud": -5.39278,
+        "longitud": -78.90632,
+        "altitud_m": 1499,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chinchipe",
+      "distancia_costa_km": 193.0,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060905",
+      "nombre": "Namballe",
+      "provincia": "San Ignacio",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Namballe",
+        "latitud": -5.00413,
+        "longitud": -79.08718,
+        "altitud_m": 696,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chinchipe",
+      "distancia_costa_km": 208.6,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060906",
+      "nombre": "San José de Lourdes",
+      "provincia": "San Ignacio",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "San José de Lourdes",
+        "latitud": -5.10305,
+        "longitud": -78.91424,
+        "altitud_m": 1107,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chinchipe",
+      "distancia_costa_km": 217.7,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "060907",
+      "nombre": "Tabaconas",
+      "provincia": "San Ignacio",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Tabaconas",
+        "latitud": -5.31615,
+        "longitud": -79.28337,
+        "altitud_m": 1891,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chinchipe",
+      "distancia_costa_km": 174.9,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061001",
+      "nombre": "Pedro Gálvez",
+      "provincia": "San Marcos",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "San Marcos",
+        "latitud": -7.33584,
+        "longitud": -78.17012,
+        "altitud_m": 2254,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 132.6,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061002",
+      "nombre": "Chancay",
+      "provincia": "San Marcos",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Chancay",
+        "latitud": -7.38819,
+        "longitud": -78.12333,
+        "altitud_m": 2677,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 132.3,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061003",
+      "nombre": "Eduardo Villanueva",
+      "provincia": "San Marcos",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "La Grama",
+        "latitud": -7.46433,
+        "longitud": -78.12988,
+        "altitud_m": 2003,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 126.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061004",
+      "nombre": "Gregorio Pita",
+      "provincia": "San Marcos",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Paucamarca",
+        "latitud": -7.27349,
+        "longitud": -78.16005,
+        "altitud_m": 2700,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 138.1,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061005",
+      "nombre": "Ichocán",
+      "provincia": "San Marcos",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Ichocán",
+        "latitud": -7.36881,
+        "longitud": -78.12972,
+        "altitud_m": 2604,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 133.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061006",
+      "nombre": "José Manuel Quiroz",
+      "provincia": "San Marcos",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Shirac",
+        "latitud": -7.34931,
+        "longitud": -78.04777,
+        "altitud_m": 2766,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 141.4,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061007",
+      "nombre": "José Sabogal",
+      "provincia": "San Marcos",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Venecia",
+        "latitud": -7.2512,
+        "longitud": -78.03664,
+        "altitud_m": 3324,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 149.7,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061101",
+      "nombre": "San Miguel",
+      "provincia": "San Miguel",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "San Miguel de Pallaques",
+        "latitud": -6.99997,
+        "longitud": -78.85009,
+        "altitud_m": 2607,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 89.2,
+      "zona": "C",
+      "revisar": [
+        "altitud 2607 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "061102",
+      "nombre": "Bolívar",
+      "provincia": "San Miguel",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Bolívar",
+        "latitud": -6.97685,
+        "longitud": -79.17795,
+        "altitud_m": 931,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Zaña",
+      "distancia_costa_km": 57.8,
+      "zona": "B",
+      "revisar": [
+        "altitud 931 m, a 100 m o menos del umbral de 1000 m (con 1100 m sería zona C)"
+      ]
+    },
+    {
+      "ubigeo": "061103",
+      "nombre": "Calquis",
+      "provincia": "San Miguel",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Calquis",
+        "latitud": -6.98027,
+        "longitud": -78.85005,
+        "altitud_m": 2876,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 90.0,
+      "zona": "C",
+      "revisar": [
+        "altitud 2876 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)",
+        "altitud 2876 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "061104",
+      "nombre": "Catilluc",
+      "provincia": "San Miguel",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Catilluc",
+        "latitud": -6.80159,
+        "longitud": -78.77917,
+        "altitud_m": 2838,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 105.6,
+      "zona": "C",
+      "revisar": [
+        "altitud 2838 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "061105",
+      "nombre": "El Prado",
+      "provincia": "San Miguel",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "El Prado",
+        "latitud": -7.03366,
+        "longitud": -79.01071,
+        "altitud_m": 2841,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 71.3,
+      "zona": "C",
+      "revisar": [
+        "altitud 2841 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "061106",
+      "nombre": "La Florida",
+      "provincia": "San Miguel",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "La Florida",
+        "latitud": -6.8687,
+        "longitud": -79.12573,
+        "altitud_m": 980,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Zaña",
+      "distancia_costa_km": 68.7,
+      "zona": "B",
+      "revisar": [
+        "altitud 980 m, a 100 m o menos del umbral de 1000 m (con 1100 m sería zona C)"
+      ]
+    },
+    {
+      "ubigeo": "061107",
+      "nombre": "Llapa",
+      "provincia": "San Miguel",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Llapa",
+        "latitud": -6.98084,
+        "longitud": -78.80741,
+        "altitud_m": 2923,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 94.4,
+      "zona": "C",
+      "revisar": [
+        "altitud 2923 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)",
+        "altitud 2923 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "061108",
+      "nombre": "Nanchoc",
+      "provincia": "San Miguel",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Nanchoc",
+        "latitud": -6.9595,
+        "longitud": -79.24255,
+        "altitud_m": 390,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Zaña",
+      "distancia_costa_km": 52.8,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061109",
+      "nombre": "Niepos",
+      "provincia": "San Miguel",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Niepos",
+        "latitud": -6.92654,
+        "longitud": -79.13007,
+        "altitud_m": 2429,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Zaña",
+      "distancia_costa_km": 65.3,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061110",
+      "nombre": "San Gregorio",
+      "provincia": "San Miguel",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "San Gregorio",
+        "latitud": -7.05705,
+        "longitud": -79.09523,
+        "altitud_m": 1820,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chamán",
+      "distancia_costa_km": 61.7,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061111",
+      "nombre": "San Silvestre de Cochán",
+      "provincia": "San Miguel",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "San Silvestre de Cochán",
+        "latitud": -6.9776,
+        "longitud": -78.7739,
+        "altitud_m": 2920,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 98.0,
+      "zona": "C",
+      "revisar": [
+        "altitud 2920 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)",
+        "altitud 2920 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "061112",
+      "nombre": "Tongod",
+      "provincia": "San Miguel",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Tongod",
+        "latitud": -6.75749,
+        "longitud": -78.82502,
+        "altitud_m": 2611,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 103.8,
+      "zona": "C",
+      "revisar": [
+        "altitud 2611 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "061113",
+      "nombre": "Unión Agua Blanca",
+      "provincia": "San Miguel",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Agua Blanca",
+        "latitud": -7.04679,
+        "longitud": -79.06052,
+        "altitud_m": 2912,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 65.7,
+      "zona": "C",
+      "revisar": [
+        "altitud 2912 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)",
+        "altitud 2912 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "061201",
+      "nombre": "San Pablo",
+      "provincia": "San Pablo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "San Pablo",
+        "latitud": -7.11872,
+        "longitud": -78.82335,
+        "altitud_m": 2370,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 87.9,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061202",
+      "nombre": "San Bernardino",
+      "provincia": "San Pablo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "San Bernardino",
+        "latitud": -7.168,
+        "longitud": -78.8293,
+        "altitud_m": 1375,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 85.7,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061203",
+      "nombre": "San Luis",
+      "provincia": "San Pablo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "San Luis Grande",
+        "latitud": -7.157,
+        "longitud": -78.86802,
+        "altitud_m": 1370,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 81.9,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061204",
+      "nombre": "Tumbadén",
+      "provincia": "San Pablo",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Tumbadén",
+        "latitud": -7.02517,
+        "longitud": -78.73964,
+        "altitud_m": 3019,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Jequetepeque",
+      "distancia_costa_km": 99.7,
+      "zona": "D",
+      "revisar": [
+        "altitud 3019 m, a 150 m o menos del umbral de 3000 m (con 2850 m sería zona C)"
+      ]
+    },
+    {
+      "ubigeo": "061301",
+      "nombre": "Santa Cruz",
+      "provincia": "Santa Cruz",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Santa Cruz de Succhabamba",
+        "latitud": -6.62573,
+        "longitud": -78.94429,
+        "altitud_m": 2023,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 99.6,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061302",
+      "nombre": "Andabamba",
+      "provincia": "Santa Cruz",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Andabamba",
+        "latitud": -6.66285,
+        "longitud": -78.81699,
+        "altitud_m": 2539,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 109.5,
+      "zona": "C",
+      "revisar": [
+        "altitud 2539 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "061303",
+      "nombre": "Catache",
+      "provincia": "Santa Cruz",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Catache",
+        "latitud": -6.67368,
+        "longitud": -79.03266,
+        "altitud_m": 1332,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 88.5,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061304",
+      "nombre": "Chancaybaños",
+      "provincia": "Santa Cruz",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Chancaybaños",
+        "latitud": -6.5761,
+        "longitud": -78.86751,
+        "altitud_m": 1605,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 109.7,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061305",
+      "nombre": "La Esperanza",
+      "provincia": "Santa Cruz",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "La Esperanza",
+        "latitud": -6.59262,
+        "longitud": -78.89583,
+        "altitud_m": 1712,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 106.1,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061306",
+      "nombre": "Ninabamba",
+      "provincia": "Santa Cruz",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Ninabamba",
+        "latitud": -6.64966,
+        "longitud": -78.78739,
+        "altitud_m": 2171,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 113.1,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061307",
+      "nombre": "Pulán",
+      "provincia": "Santa Cruz",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Pulán",
+        "latitud": -6.73896,
+        "longitud": -78.9202,
+        "altitud_m": 2056,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 95.4,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061308",
+      "nombre": "Saucepampa",
+      "provincia": "Santa Cruz",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Saucepampa",
+        "latitud": -6.69146,
+        "longitud": -78.91621,
+        "altitud_m": 1933,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 98.4,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061309",
+      "nombre": "Sexi",
+      "provincia": "Santa Cruz",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Sexi",
+        "latitud": -6.56421,
+        "longitud": -79.0515,
+        "altitud_m": 2475,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 94.4,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "061310",
+      "nombre": "Uticyacu",
+      "provincia": "Santa Cruz",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Uticyacu",
+        "latitud": -6.60676,
+        "longitud": -78.7939,
+        "altitud_m": 2334,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 114.8,
+      "zona": "C",
+      "revisar": [
+        "capital a 2.8 km de la divisoria Pacífico-Atlántico (en la otra vertiente sería zona D)"
+      ]
+    },
+    {
+      "ubigeo": "061311",
+      "nombre": "Yauyucán",
+      "provincia": "Santa Cruz",
+      "departamento": "Cajamarca",
+      "capital": {
+        "nombre": "Yauyucán",
+        "latitud": -6.6773,
+        "longitud": -78.8187,
+        "altitud_m": 2499,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 108.6,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130101",
+      "nombre": "Trujillo",
+      "provincia": "Trujillo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Trujillo",
+        "latitud": -8.10012,
+        "longitud": -79.03054,
+        "altitud_m": 45,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137719",
+      "distancia_costa_km": 5.9,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130102",
+      "nombre": "El Porvenir",
+      "provincia": "Trujillo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "El Porvenir",
+        "latitud": -8.08794,
+        "longitud": -78.99786,
+        "altitud_m": 77,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Moche",
+      "distancia_costa_km": 9.3,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130103",
+      "nombre": "Florencia de Mora",
+      "provincia": "Trujillo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Florencia de Mora",
+        "latitud": -8.08284,
+        "longitud": -79.02327,
+        "altitud_m": 92,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137719",
+      "distancia_costa_km": 7.9,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130104",
+      "nombre": "Huanchaco",
+      "provincia": "Trujillo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Huanchaco",
+        "latitud": -8.07987,
+        "longitud": -79.12169,
+        "altitud_m": 0,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137719",
+      "distancia_costa_km": 0.3,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130105",
+      "nombre": "La Esperanza",
+      "provincia": "Trujillo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "La Esperanza",
+        "latitud": -8.05617,
+        "longitud": -79.0518,
+        "altitud_m": 122,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137719",
+      "distancia_costa_km": 8.0,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130106",
+      "nombre": "Laredo",
+      "provincia": "Trujillo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Laredo",
+        "latitud": -8.08965,
+        "longitud": -78.96017,
+        "altitud_m": 95,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Moche",
+      "distancia_costa_km": 11.8,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130107",
+      "nombre": "Moche",
+      "provincia": "Trujillo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Moche",
+        "latitud": -8.17129,
+        "longitud": -79.00918,
+        "altitud_m": 9,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137715",
+      "distancia_costa_km": 1.4,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130108",
+      "nombre": "Poroto",
+      "provincia": "Trujillo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Poroto",
+        "latitud": -8.01135,
+        "longitud": -78.76788,
+        "altitud_m": 622,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Moche",
+      "distancia_costa_km": 33.1,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130109",
+      "nombre": "Salaverry",
+      "provincia": "Trujillo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Salaverry",
+        "latitud": -8.22431,
+        "longitud": -78.97601,
+        "altitud_m": 3,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137715",
+      "distancia_costa_km": 1.2,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130110",
+      "nombre": "Simbal",
+      "provincia": "Trujillo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Simbal",
+        "latitud": -7.97662,
+        "longitud": -78.81347,
+        "altitud_m": 579,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Moche",
+      "distancia_costa_km": 32.0,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130111",
+      "nombre": "Víctor Larco Herrera",
+      "provincia": "Trujillo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Buenos Aires",
+        "latitud": -8.13643,
+        "longitud": -79.04334,
+        "altitud_m": 9,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137719",
+      "distancia_costa_km": 1.9,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130112",
+      "nombre": "Alto Trujillo",
+      "provincia": "Trujillo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Alto Trujillo",
+        "latitud": -8.06273,
+        "longitud": -79.00998,
+        "altitud_m": 148,
+        "fuente_ubicacion": "geonames"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137719",
+      "distancia_costa_km": 10.5,
+      "zona": "A",
+      "revisar": [
+        "distrito creado después del censo 2017: la ubicación de la capital es de GeoNames, no del INEI"
+      ]
+    },
+    {
+      "ubigeo": "130201",
+      "nombre": "Ascope",
+      "provincia": "Ascope",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Ascope",
+        "latitud": -7.7135,
+        "longitud": -79.10728,
+        "altitud_m": 235,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chicama",
+      "distancia_costa_km": 32.5,
+      "zona": "B",
+      "revisar": [
+        "altitud 235 m, a 50 m o menos del umbral de 200 m (con 150 m sería zona A)"
+      ]
+    },
+    {
+      "ubigeo": "130202",
+      "nombre": "Chicama",
+      "provincia": "Ascope",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Chicama",
+        "latitud": -7.84255,
+        "longitud": -79.14404,
+        "altitud_m": 130,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chicama",
+      "distancia_costa_km": 18.9,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130203",
+      "nombre": "Chocope",
+      "provincia": "Ascope",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Chocope",
+        "latitud": -7.79136,
+        "longitud": -79.22298,
+        "altitud_m": 106,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13773",
+      "distancia_costa_km": 17.2,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130204",
+      "nombre": "Magdalena de Cao",
+      "provincia": "Ascope",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Magdalena de Cao",
+        "latitud": -7.87639,
+        "longitud": -79.29597,
+        "altitud_m": 23,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13773",
+      "distancia_costa_km": 4.9,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130205",
+      "nombre": "Paiján",
+      "provincia": "Ascope",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Paiján",
+        "latitud": -7.73461,
+        "longitud": -79.30338,
+        "altitud_m": 82,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13773",
+      "distancia_costa_km": 12.0,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130206",
+      "nombre": "Rázuri",
+      "provincia": "Ascope",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Puerto de Malabrigo",
+        "latitud": -7.70215,
+        "longitud": -79.43769,
+        "altitud_m": 10,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13773",
+      "distancia_costa_km": 0.6,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130207",
+      "nombre": "Santiago de Cao",
+      "provincia": "Ascope",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Santiago de Cao",
+        "latitud": -7.95764,
+        "longitud": -79.24368,
+        "altitud_m": 13,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137719",
+      "distancia_costa_km": 2.0,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130208",
+      "nombre": "Casa Grande",
+      "provincia": "Ascope",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Casa Grande",
+        "latitud": -7.74522,
+        "longitud": -79.18801,
+        "altitud_m": 144,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13773",
+      "distancia_costa_km": 23.4,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130301",
+      "nombre": "Bolívar",
+      "provincia": "Bolívar",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Bolívar",
+        "latitud": -7.15387,
+        "longitud": -77.7023,
+        "altitud_m": 3134,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 184.5,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130302",
+      "nombre": "Bambamarca",
+      "provincia": "Bolívar",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Bambamarca",
+        "latitud": -7.43977,
+        "longitud": -77.69303,
+        "altitud_m": 3468,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 166.7,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130303",
+      "nombre": "Condormarca",
+      "provincia": "Bolívar",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Nuevo Condormarca",
+        "latitud": -7.54658,
+        "longitud": -77.59963,
+        "altitud_m": 2744,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 170.0,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130304",
+      "nombre": "Longotea",
+      "provincia": "Bolívar",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Longotea",
+        "latitud": -7.04377,
+        "longitud": -77.8722,
+        "altitud_m": 2599,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 178.8,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130305",
+      "nombre": "Uchumarca",
+      "provincia": "Bolívar",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Uchumarca",
+        "latitud": -7.04721,
+        "longitud": -77.80551,
+        "altitud_m": 3020,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 183.8,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130306",
+      "nombre": "Ucuncha",
+      "provincia": "Bolívar",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Ucuncha",
+        "latitud": -7.16525,
+        "longitud": -77.85913,
+        "altitud_m": 2605,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón IV",
+      "distancia_costa_km": 170.6,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130401",
+      "nombre": "Chepén",
+      "provincia": "Chepén",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Chepén",
+        "latitud": -7.22764,
+        "longitud": -79.42946,
+        "altitud_m": 133,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chamán",
+      "distancia_costa_km": 20.5,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130402",
+      "nombre": "Pacanga",
+      "provincia": "Chepén",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Pacanga",
+        "latitud": -7.17152,
+        "longitud": -79.48552,
+        "altitud_m": 93,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chamán",
+      "distancia_costa_km": 17.6,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130403",
+      "nombre": "Pueblo Nuevo",
+      "provincia": "Chepén",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Pueblo Nuevo",
+        "latitud": -7.18257,
+        "longitud": -79.52011,
+        "altitud_m": 70,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chamán",
+      "distancia_costa_km": 13.8,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130501",
+      "nombre": "Julcán",
+      "provincia": "Julcán",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Julcán",
+        "latitud": -8.04266,
+        "longitud": -78.48645,
+        "altitud_m": 3398,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Moche",
+      "distancia_costa_km": 58.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130502",
+      "nombre": "Calamarca",
+      "provincia": "Julcán",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Calamarca",
+        "latitud": -8.16997,
+        "longitud": -78.41208,
+        "altitud_m": 3356,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Virú",
+      "distancia_costa_km": 58.6,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130503",
+      "nombre": "Carabamba",
+      "provincia": "Julcán",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Carabamba",
+        "latitud": -8.11249,
+        "longitud": -78.60743,
+        "altitud_m": 3322,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Virú",
+      "distancia_costa_km": 42.9,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130504",
+      "nombre": "Huaso",
+      "provincia": "Julcán",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Huaso",
+        "latitud": -8.2246,
+        "longitud": -78.41405,
+        "altitud_m": 3067,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Virú",
+      "distancia_costa_km": 56.0,
+      "zona": "D",
+      "revisar": [
+        "altitud 3067 m, a 150 m o menos del umbral de 3000 m (con 2850 m sería zona C)"
+      ]
+    },
+    {
+      "ubigeo": "130601",
+      "nombre": "Otuzco",
+      "provincia": "Otuzco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Otuzco",
+        "latitud": -7.90228,
+        "longitud": -78.56546,
+        "altitud_m": 2642,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Moche",
+      "distancia_costa_km": 58.1,
+      "zona": "C",
+      "revisar": [
+        "altitud 2642 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "130602",
+      "nombre": "Agallpampa",
+      "provincia": "Otuzco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Agallpampa",
+        "latitud": -7.98195,
+        "longitud": -78.54663,
+        "altitud_m": 3112,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Moche",
+      "distancia_costa_km": 55.0,
+      "zona": "D",
+      "revisar": [
+        "altitud 3112 m, a 150 m o menos del umbral de 3000 m (con 2850 m sería zona C)"
+      ]
+    },
+    {
+      "ubigeo": "130604",
+      "nombre": "Charat",
+      "provincia": "Otuzco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Charat",
+        "latitud": -7.82385,
+        "longitud": -78.44794,
+        "altitud_m": 2259,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chicama",
+      "distancia_costa_km": 73.7,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130605",
+      "nombre": "Huaranchal",
+      "provincia": "Otuzco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Huaranchal",
+        "latitud": -7.68959,
+        "longitud": -78.44247,
+        "altitud_m": 2187,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chicama",
+      "distancia_costa_km": 83.7,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130606",
+      "nombre": "La Cuesta",
+      "provincia": "Otuzco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "La Cuesta",
+        "latitud": -7.91898,
+        "longitud": -78.70484,
+        "altitud_m": 1886,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Moche",
+      "distancia_costa_km": 45.1,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130608",
+      "nombre": "Mache",
+      "provincia": "Otuzco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Mache",
+        "latitud": -8.0292,
+        "longitud": -78.53511,
+        "altitud_m": 3302,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Moche",
+      "distancia_costa_km": 53.9,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130610",
+      "nombre": "Paranday",
+      "provincia": "Otuzco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Paranday",
+        "latitud": -7.88501,
+        "longitud": -78.70952,
+        "altitud_m": 3122,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Moche",
+      "distancia_costa_km": 47.3,
+      "zona": "D",
+      "revisar": [
+        "altitud 3122 m, a 150 m o menos del umbral de 3000 m (con 2850 m sería zona C)"
+      ]
+    },
+    {
+      "ubigeo": "130611",
+      "nombre": "Salpo",
+      "provincia": "Otuzco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Salpo",
+        "latitud": -8.00307,
+        "longitud": -78.60418,
+        "altitud_m": 3454,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Moche",
+      "distancia_costa_km": 48.3,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130613",
+      "nombre": "Sinsicap",
+      "provincia": "Otuzco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Sinsicap",
+        "latitud": -7.85153,
+        "longitud": -78.75423,
+        "altitud_m": 2296,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Moche",
+      "distancia_costa_km": 46.7,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130614",
+      "nombre": "Usquil",
+      "provincia": "Otuzco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Usquil",
+        "latitud": -7.81525,
+        "longitud": -78.41672,
+        "altitud_m": 3031,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chicama",
+      "distancia_costa_km": 77.0,
+      "zona": "D",
+      "revisar": [
+        "altitud 3031 m, a 150 m o menos del umbral de 3000 m (con 2850 m sería zona C)"
+      ]
+    },
+    {
+      "ubigeo": "130701",
+      "nombre": "San Pedro de Lloc",
+      "provincia": "Pacasmayo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "San Pedro de Lloc",
+        "latitud": -7.41841,
+        "longitud": -79.51469,
+        "altitud_m": 44,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13773",
+      "distancia_costa_km": 7.3,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130702",
+      "nombre": "Guadalupe",
+      "provincia": "Pacasmayo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Guadalupe",
+        "latitud": -7.24373,
+        "longitud": -79.47038,
+        "altitud_m": 100,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chamán",
+      "distancia_costa_km": 15.6,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130703",
+      "nombre": "Jequetepeque",
+      "provincia": "Pacasmayo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Jequetepeque",
+        "latitud": -7.33755,
+        "longitud": -79.56311,
+        "altitud_m": 22,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13773",
+      "distancia_costa_km": 3.1,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130704",
+      "nombre": "Pacasmayo",
+      "provincia": "Pacasmayo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Pacasmayo",
+        "latitud": -7.40113,
+        "longitud": -79.57215,
+        "altitud_m": 10,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13773",
+      "distancia_costa_km": 0.7,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130705",
+      "nombre": "San José",
+      "provincia": "Pacasmayo",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "San José",
+        "latitud": -7.3501,
+        "longitud": -79.45527,
+        "altitud_m": 104,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13773",
+      "distancia_costa_km": 13.7,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130801",
+      "nombre": "Tayabamba",
+      "provincia": "Pataz",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Tayabamba",
+        "latitud": -8.275,
+        "longitud": -77.29604,
+        "altitud_m": 3194,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 165.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130802",
+      "nombre": "Buldibuyo",
+      "provincia": "Pataz",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Buldibuyo",
+        "latitud": -8.12706,
+        "longitud": -77.39535,
+        "altitud_m": 3172,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 159.4,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130803",
+      "nombre": "Chillia",
+      "provincia": "Pataz",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Chillia",
+        "latitud": -8.12451,
+        "longitud": -77.5151,
+        "altitud_m": 3129,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 147.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130804",
+      "nombre": "Huancaspata",
+      "provincia": "Pataz",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Huancaspata",
+        "latitud": -8.45758,
+        "longitud": -77.29827,
+        "altitud_m": 3296,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 155.0,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130805",
+      "nombre": "Huaylillas",
+      "provincia": "Pataz",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Huaylillas",
+        "latitud": -8.1871,
+        "longitud": -77.34383,
+        "altitud_m": 2367,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 162.7,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130806",
+      "nombre": "Huayo",
+      "provincia": "Pataz",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Huayo",
+        "latitud": -8.00445,
+        "longitud": -77.59221,
+        "altitud_m": 2168,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 145.0,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130807",
+      "nombre": "Ongón",
+      "provincia": "Pataz",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Ongón",
+        "latitud": -8.2079,
+        "longitud": -76.98282,
+        "altitud_m": 1341,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Huallaga",
+      "distancia_costa_km": 199.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130808",
+      "nombre": "Parcoy",
+      "provincia": "Pataz",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Parcoy",
+        "latitud": -8.03333,
+        "longitud": -77.47963,
+        "altitud_m": 3112,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 154.7,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130809",
+      "nombre": "Patáz",
+      "provincia": "Pataz",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Patáz",
+        "latitud": -7.785,
+        "longitud": -77.59384,
+        "altitud_m": 2589,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 157.7,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130810",
+      "nombre": "Pías",
+      "provincia": "Pataz",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Pías",
+        "latitud": -7.87186,
+        "longitud": -77.54658,
+        "altitud_m": 2629,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 156.7,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130811",
+      "nombre": "Santiago de Challas",
+      "provincia": "Pataz",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Challas",
+        "latitud": -8.4381,
+        "longitud": -77.32045,
+        "altitud_m": 3298,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 154.1,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130812",
+      "nombre": "Taurija",
+      "provincia": "Pataz",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Taurija",
+        "latitud": -8.30789,
+        "longitud": -77.42354,
+        "altitud_m": 3088,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 150.7,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130813",
+      "nombre": "Urpay",
+      "provincia": "Pataz",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Urpay",
+        "latitud": -8.34785,
+        "longitud": -77.38952,
+        "altitud_m": 2686,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 153.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130901",
+      "nombre": "Huamachuco",
+      "provincia": "Sánchez Carrión",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Huamachuco",
+        "latitud": -7.81118,
+        "longitud": -78.04661,
+        "altitud_m": 3158,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 112.9,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130902",
+      "nombre": "Chugay",
+      "provincia": "Sánchez Carrión",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Chugay",
+        "latitud": -7.78203,
+        "longitud": -77.86833,
+        "altitud_m": 3376,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 131.7,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130903",
+      "nombre": "Cochorco",
+      "provincia": "Sánchez Carrión",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Aricapampa",
+        "latitud": -7.80642,
+        "longitud": -77.71763,
+        "altitud_m": 2589,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 145.1,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130904",
+      "nombre": "Curgos",
+      "provincia": "Sánchez Carrión",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Curgos",
+        "latitud": -7.85992,
+        "longitud": -77.94376,
+        "altitud_m": 3226,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 120.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130905",
+      "nombre": "Marcabal",
+      "provincia": "Sánchez Carrión",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Marcabal",
+        "latitud": -7.70584,
+        "longitud": -78.03357,
+        "altitud_m": 2920,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 119.3,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130906",
+      "nombre": "Sanagorán",
+      "provincia": "Sánchez Carrión",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Sanagorán",
+        "latitud": -7.78623,
+        "longitud": -78.14203,
+        "altitud_m": 2674,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Crisnejas",
+      "distancia_costa_km": 104.6,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130907",
+      "nombre": "Sarín",
+      "provincia": "Sánchez Carrión",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Sarín",
+        "latitud": -7.91128,
+        "longitud": -77.90602,
+        "altitud_m": 2812,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 121.3,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "130908",
+      "nombre": "Sartimbamba",
+      "provincia": "Sánchez Carrión",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Sartimbamba",
+        "latitud": -7.69914,
+        "longitud": -77.74374,
+        "altitud_m": 2705,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 148.2,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "131001",
+      "nombre": "Santiago de Chuco",
+      "provincia": "Santiago de Chuco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Santiago de Chuco",
+        "latitud": -8.14521,
+        "longitud": -78.17351,
+        "altitud_m": 3112,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Santa",
+      "distancia_costa_km": 82.4,
+      "zona": "D",
+      "revisar": [
+        "altitud 3112 m, a 150 m o menos del umbral de 3000 m (con 2850 m sería zona C)"
+      ]
+    },
+    {
+      "ubigeo": "131002",
+      "nombre": "Angasmarca",
+      "provincia": "Santiago de Chuco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Angasmarca",
+        "latitud": -8.13273,
+        "longitud": -78.05588,
+        "altitud_m": 2865,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Santa",
+      "distancia_costa_km": 93.8,
+      "zona": "C",
+      "revisar": [
+        "altitud 2865 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)",
+        "altitud 2865 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "131003",
+      "nombre": "Cachicadán",
+      "provincia": "Santiago de Chuco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Cachicadán",
+        "latitud": -8.09442,
+        "longitud": -78.14895,
+        "altitud_m": 2881,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Santa",
+      "distancia_costa_km": 87.9,
+      "zona": "C",
+      "revisar": [
+        "altitud 2881 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)",
+        "altitud 2881 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "131004",
+      "nombre": "Mollebamba",
+      "provincia": "Santiago de Chuco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Mollebamba",
+        "latitud": -8.17095,
+        "longitud": -77.97394,
+        "altitud_m": 3076,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Santa",
+      "distancia_costa_km": 99.2,
+      "zona": "D",
+      "revisar": [
+        "altitud 3076 m, a 150 m o menos del umbral de 3000 m (con 2850 m sería zona C)"
+      ]
+    },
+    {
+      "ubigeo": "131005",
+      "nombre": "Mollepata",
+      "provincia": "Santiago de Chuco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Mollepata",
+        "latitud": -8.19337,
+        "longitud": -77.95727,
+        "altitud_m": 2675,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Santa",
+      "distancia_costa_km": 99.6,
+      "zona": "C",
+      "revisar": [
+        "altitud 2675 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "131006",
+      "nombre": "Quiruvilca",
+      "provincia": "Santiago de Chuco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Quiruvilca",
+        "latitud": -8.00183,
+        "longitud": -78.31008,
+        "altitud_m": 3966,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Moche",
+      "distancia_costa_km": 77.4,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "131007",
+      "nombre": "Santa Cruz de Chuca",
+      "provincia": "Santiago de Chuco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Santa Cruz de Chuca",
+        "latitud": -8.12027,
+        "longitud": -78.14229,
+        "altitud_m": 2912,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Santa",
+      "distancia_costa_km": 86.8,
+      "zona": "C",
+      "revisar": [
+        "altitud 2912 m, a 150 m o menos del umbral de 3000 m (con 3150 m sería zona D)",
+        "altitud 2912 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "131008",
+      "nombre": "Sitabamba",
+      "provincia": "Santiago de Chuco",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Sitabamba",
+        "latitud": -8.02211,
+        "longitud": -77.73011,
+        "altitud_m": 3073,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Intercuenca Alto Marañón V",
+      "distancia_costa_km": 130.7,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "131101",
+      "nombre": "Cascas",
+      "provincia": "Gran Chimú",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Cascas",
+        "latitud": -7.47957,
+        "longitud": -78.81979,
+        "altitud_m": 1273,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chicama",
+      "distancia_costa_km": 71.2,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "131102",
+      "nombre": "Lucma",
+      "provincia": "Gran Chimú",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Lucma",
+        "latitud": -7.64069,
+        "longitud": -78.55236,
+        "altitud_m": 2166,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chicama",
+      "distancia_costa_km": 78.8,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "131103",
+      "nombre": "Marmot",
+      "provincia": "Gran Chimú",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Compín",
+        "latitud": -7.69844,
+        "longitud": -78.62608,
+        "altitud_m": 1504,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chicama",
+      "distancia_costa_km": 68.4,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "131104",
+      "nombre": "Sayapullo",
+      "provincia": "Gran Chimú",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Sayapullo",
+        "latitud": -7.5957,
+        "longitud": -78.46503,
+        "altitud_m": 2339,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chicama",
+      "distancia_costa_km": 89.2,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "131201",
+      "nombre": "Virú",
+      "provincia": "Virú",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Virú",
+        "latitud": -8.41431,
+        "longitud": -78.75273,
+        "altitud_m": 73,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Virú",
+      "distancia_costa_km": 14.3,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "131202",
+      "nombre": "Chao",
+      "provincia": "Virú",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Chao",
+        "latitud": -8.54045,
+        "longitud": -78.67881,
+        "altitud_m": 79,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Huamansaña",
+      "distancia_costa_km": 11.6,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "131203",
+      "nombre": "Guadalupito",
+      "provincia": "Virú",
+      "departamento": "La Libertad",
+      "capital": {
+        "nombre": "Guadalupito",
+        "latitud": -8.95156,
+        "longitud": -78.62474,
+        "altitud_m": 27,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137711",
+      "distancia_costa_km": 2.8,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140101",
+      "nombre": "Chiclayo",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Chiclayo",
+        "latitud": -6.76685,
+        "longitud": -79.85062,
+        "altitud_m": 27,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137771",
+      "distancia_costa_km": 12.4,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140102",
+      "nombre": "Chongoyape",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Chongoyape",
+        "latitud": -6.64312,
+        "longitud": -79.38527,
+        "altitud_m": 212,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 61.7,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140103",
+      "nombre": "Eten",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Eten",
+        "latitud": -6.90706,
+        "longitud": -79.86248,
+        "altitud_m": 7,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 2.9,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140104",
+      "nombre": "Eten Puerto",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Eten Puerto",
+        "latitud": -6.9255,
+        "longitud": -79.86623,
+        "altitud_m": 6,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137759",
+      "distancia_costa_km": 1.3,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140105",
+      "nombre": "José Leonardo Ortiz",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "José Leonardo Ortiz",
+        "latitud": -6.76296,
+        "longitud": -79.83448,
+        "altitud_m": 30,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137771",
+      "distancia_costa_km": 14.1,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140106",
+      "nombre": "La Victoria",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "La Victoria",
+        "latitud": -6.79444,
+        "longitud": -79.84446,
+        "altitud_m": 26,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137771",
+      "distancia_costa_km": 11.9,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140107",
+      "nombre": "Lagunas",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Mocupe",
+        "latitud": -6.99107,
+        "longitud": -79.62267,
+        "altitud_m": 36,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137753",
+      "distancia_costa_km": 15.8,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140108",
+      "nombre": "Monsefú",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Monsefú",
+        "latitud": -6.8781,
+        "longitud": -79.87242,
+        "altitud_m": 12,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137771",
+      "distancia_costa_km": 4.7,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140109",
+      "nombre": "Nueva Arica",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Nueva Arica",
+        "latitud": -6.87419,
+        "longitud": -79.34359,
+        "altitud_m": 173,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Zaña",
+      "distancia_costa_km": 47.6,
+      "zona": "A",
+      "revisar": [
+        "altitud 173 m, a 50 m o menos del umbral de 200 m (con 250 m sería zona B)"
+      ]
+    },
+    {
+      "ubigeo": "140110",
+      "nombre": "Oyotún",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Oyotún",
+        "latitud": -6.85434,
+        "longitud": -79.3063,
+        "altitud_m": 201,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Zaña",
+      "distancia_costa_km": 52.3,
+      "zona": "B",
+      "revisar": [
+        "altitud 201 m, a 50 m o menos del umbral de 200 m (con 150 m sería zona A)"
+      ]
+    },
+    {
+      "ubigeo": "140111",
+      "nombre": "Picsi",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Picsi",
+        "latitud": -6.71832,
+        "longitud": -79.77055,
+        "altitud_m": 42,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137771",
+      "distancia_costa_km": 22.7,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140112",
+      "nombre": "Pimentel",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Pimentel",
+        "latitud": -6.8354,
+        "longitud": -79.93573,
+        "altitud_m": 7,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137771",
+      "distancia_costa_km": 1.3,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140113",
+      "nombre": "Reque",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Reque",
+        "latitud": -6.86506,
+        "longitud": -79.81908,
+        "altitud_m": 24,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 9.6,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140114",
+      "nombre": "Santa Rosa",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Santa Rosa",
+        "latitud": -6.88177,
+        "longitud": -79.92091,
+        "altitud_m": 8,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137771",
+      "distancia_costa_km": 0.9,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140115",
+      "nombre": "Saña",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Saña",
+        "latitud": -6.91803,
+        "longitud": -79.58324,
+        "altitud_m": 56,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Zaña",
+      "distancia_costa_km": 24.6,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140116",
+      "nombre": "Cayaltí",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Cayaltí",
+        "latitud": -6.89164,
+        "longitud": -79.56229,
+        "altitud_m": 74,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Zaña",
+      "distancia_costa_km": 28.3,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140117",
+      "nombre": "Pátapo",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Pátapo",
+        "latitud": -6.73546,
+        "longitud": -79.6347,
+        "altitud_m": 103,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 34.4,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140118",
+      "nombre": "Pomalca",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Pomalca",
+        "latitud": -6.76988,
+        "longitud": -79.77535,
+        "altitud_m": 46,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137771",
+      "distancia_costa_km": 20.0,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140119",
+      "nombre": "Pucalá",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Pucalá",
+        "latitud": -6.78186,
+        "longitud": -79.61213,
+        "altitud_m": 84,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 33.0,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140120",
+      "nombre": "Tumán",
+      "provincia": "Chiclayo",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Tumán",
+        "latitud": -6.75099,
+        "longitud": -79.70124,
+        "altitud_m": 60,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chancay-Lambayeque",
+      "distancia_costa_km": 27.8,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140201",
+      "nombre": "Ferreñafe",
+      "provincia": "Ferreñafe",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Ferreñafe",
+        "latitud": -6.63894,
+        "longitud": -79.78837,
+        "altitud_m": 41,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137771",
+      "distancia_costa_km": 25.5,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140202",
+      "nombre": "Cañaris",
+      "provincia": "Ferreñafe",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Cañaris",
+        "latitud": -6.04614,
+        "longitud": -79.2653,
+        "altitud_m": 2401,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 112.5,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140203",
+      "nombre": "Incahuasi",
+      "provincia": "Ferreñafe",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Incahuasi",
+        "latitud": -6.23541,
+        "longitud": -79.31699,
+        "altitud_m": 3024,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Motupe",
+      "distancia_costa_km": 94.2,
+      "zona": "D",
+      "revisar": [
+        "altitud 3024 m, a 150 m o menos del umbral de 3000 m (con 2850 m sería zona C)"
+      ]
+    },
+    {
+      "ubigeo": "140204",
+      "nombre": "Manuel Antonio Mesones Muro",
+      "provincia": "Ferreñafe",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Manuel Antonio Mesones Muro",
+        "latitud": -6.64493,
+        "longitud": -79.73876,
+        "altitud_m": 61,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137771",
+      "distancia_costa_km": 29.6,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140205",
+      "nombre": "Pítipo",
+      "provincia": "Ferreñafe",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Pítipo",
+        "latitud": -6.56596,
+        "longitud": -79.78074,
+        "altitud_m": 52,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137771",
+      "distancia_costa_km": 31.3,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140206",
+      "nombre": "Pueblo Nuevo",
+      "provincia": "Ferreñafe",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Pueblo Nuevo",
+        "latitud": -6.64026,
+        "longitud": -79.7962,
+        "altitud_m": 36,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137771",
+      "distancia_costa_km": 24.7,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140301",
+      "nombre": "Lambayeque",
+      "provincia": "Lambayeque",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Lambayeque",
+        "latitud": -6.70698,
+        "longitud": -79.89526,
+        "altitud_m": 17,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137771",
+      "distancia_costa_km": 11.6,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140302",
+      "nombre": "Chóchope",
+      "provincia": "Lambayeque",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Chóchope",
+        "latitud": -6.15774,
+        "longitud": -79.64769,
+        "altitud_m": 196,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Motupe",
+      "distancia_costa_km": 75.3,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140303",
+      "nombre": "Íllimo",
+      "provincia": "Lambayeque",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Íllimo",
+        "latitud": -6.47401,
+        "longitud": -79.85474,
+        "altitud_m": 52,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Motupe",
+      "distancia_costa_km": 33.5,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140304",
+      "nombre": "Jayanca",
+      "provincia": "Lambayeque",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Jayanca",
+        "latitud": -6.39283,
+        "longitud": -79.82281,
+        "altitud_m": 62,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Motupe",
+      "distancia_costa_km": 42.8,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140305",
+      "nombre": "Mochumí",
+      "provincia": "Lambayeque",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Mochumí",
+        "latitud": -6.5478,
+        "longitud": -79.8649,
+        "altitud_m": 38,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137771",
+      "distancia_costa_km": 26.4,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140306",
+      "nombre": "Mórrope",
+      "provincia": "Lambayeque",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Mórrope",
+        "latitud": -6.54025,
+        "longitud": -80.01564,
+        "altitud_m": 18,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Motupe",
+      "distancia_costa_km": 16.7,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140307",
+      "nombre": "Motupe",
+      "provincia": "Lambayeque",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Motupe",
+        "latitud": -6.1509,
+        "longitud": -79.7143,
+        "altitud_m": 132,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Motupe",
+      "distancia_costa_km": 71.3,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140308",
+      "nombre": "Olmos",
+      "provincia": "Lambayeque",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Olmos",
+        "latitud": -5.98787,
+        "longitud": -79.74748,
+        "altitud_m": 177,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Olmos",
+      "distancia_costa_km": 84.2,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140309",
+      "nombre": "Pacora",
+      "provincia": "Lambayeque",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Pacora",
+        "latitud": -6.42857,
+        "longitud": -79.83877,
+        "altitud_m": 55,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Motupe",
+      "distancia_costa_km": 38.6,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140310",
+      "nombre": "Salas",
+      "provincia": "Lambayeque",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Salas",
+        "latitud": -6.27463,
+        "longitud": -79.60715,
+        "altitud_m": 160,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Motupe",
+      "distancia_costa_km": 68.0,
+      "zona": "B",
+      "revisar": [
+        "a 68 km del mar, cerca del límite de 60 km entre costa y llanura interior (con 50 km sería zona A)"
+      ]
+    },
+    {
+      "ubigeo": "140311",
+      "nombre": "San José",
+      "provincia": "Lambayeque",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "San José",
+        "latitud": -6.76937,
+        "longitud": -79.96805,
+        "altitud_m": 10,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137771",
+      "distancia_costa_km": 1.0,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "140312",
+      "nombre": "Túcume",
+      "provincia": "Lambayeque",
+      "departamento": "Lambayeque",
+      "capital": {
+        "nombre": "Túcume",
+        "latitud": -6.50991,
+        "longitud": -79.85904,
+        "altitud_m": 45,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 137771",
+      "distancia_costa_km": 30.1,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200101",
+      "nombre": "Piura",
+      "provincia": "Piura",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Piura",
+        "latitud": -5.1524,
+        "longitud": -80.65779,
+        "altitud_m": 44,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 45.7,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200104",
+      "nombre": "Castilla",
+      "provincia": "Piura",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Castilla",
+        "latitud": -5.20147,
+        "longitud": -80.62279,
+        "altitud_m": 31,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 45.0,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200105",
+      "nombre": "Catacaos",
+      "provincia": "Piura",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Catacaos",
+        "latitud": -5.26727,
+        "longitud": -80.67242,
+        "altitud_m": 25,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 36.1,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200107",
+      "nombre": "Cura Mori",
+      "provincia": "Piura",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Cucungará",
+        "latitud": -5.32357,
+        "longitud": -80.66544,
+        "altitud_m": 25,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 33.4,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200108",
+      "nombre": "El Tallán",
+      "provincia": "Piura",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Sinchao",
+        "latitud": -5.4091,
+        "longitud": -80.68106,
+        "altitud_m": 16,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 27.8,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200109",
+      "nombre": "La Arena",
+      "provincia": "Piura",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "La Arena",
+        "latitud": -5.34296,
+        "longitud": -80.7036,
+        "altitud_m": 27,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 28.6,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200110",
+      "nombre": "La Unión",
+      "provincia": "Piura",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "La Unión",
+        "latitud": -5.38821,
+        "longitud": -80.73733,
+        "altitud_m": 13,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 23.1,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200111",
+      "nombre": "Las Lomas",
+      "provincia": "Piura",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Las Lomas",
+        "latitud": -4.64986,
+        "longitud": -80.23931,
+        "altitud_m": 255,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 100.3,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200114",
+      "nombre": "Tambo Grande",
+      "provincia": "Piura",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Tambo Grande",
+        "latitud": -4.92807,
+        "longitud": -80.3372,
+        "altitud_m": 65,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 81.1,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200115",
+      "nombre": "Veintiséis de Octubre",
+      "provincia": "Piura",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "San Martín",
+        "latitud": -5.17929,
+        "longitud": -80.67817,
+        "altitud_m": 38,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 42.0,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200201",
+      "nombre": "Ayabaca",
+      "provincia": "Ayabaca",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Ayabaca",
+        "latitud": -4.6406,
+        "longitud": -79.7153,
+        "altitud_m": 2718,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 149.0,
+      "zona": "C",
+      "revisar": [
+        "altitud 2718 m: con el texto de la tabla (más de 2500 m) sería zona D; es C por los ejemplos de la tabla (Ayabaca, Contumazá, Otuzco)"
+      ]
+    },
+    {
+      "ubigeo": "200202",
+      "nombre": "Frías",
+      "provincia": "Ayabaca",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Frías",
+        "latitud": -4.93159,
+        "longitud": -79.94755,
+        "altitud_m": 1674,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 124.0,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200203",
+      "nombre": "Jililí",
+      "provincia": "Ayabaca",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Jililí",
+        "latitud": -4.5846,
+        "longitud": -79.79716,
+        "altitud_m": 1296,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 139.1,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200204",
+      "nombre": "Lagunas",
+      "provincia": "Ayabaca",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Lagunas",
+        "latitud": -4.78916,
+        "longitud": -79.84508,
+        "altitud_m": 2156,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 137.5,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200205",
+      "nombre": "Montero",
+      "provincia": "Ayabaca",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Montero",
+        "latitud": -4.63234,
+        "longitud": -79.82882,
+        "altitud_m": 1073,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 142.3,
+      "zona": "C",
+      "revisar": [
+        "altitud 1073 m, a 100 m o menos del umbral de 1000 m (con 900 m sería zona B)"
+      ]
+    },
+    {
+      "ubigeo": "200206",
+      "nombre": "Pacaipampa",
+      "provincia": "Ayabaca",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Pacaipampa",
+        "latitud": -4.99552,
+        "longitud": -79.66771,
+        "altitud_m": 1955,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 149.0,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200207",
+      "nombre": "Paimas",
+      "provincia": "Ayabaca",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Paimas",
+        "latitud": -4.62746,
+        "longitud": -79.94562,
+        "altitud_m": 575,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 131.4,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200208",
+      "nombre": "Sapillica",
+      "provincia": "Ayabaca",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Sapillica",
+        "latitud": -4.77917,
+        "longitud": -79.98219,
+        "altitud_m": 1438,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 122.8,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200209",
+      "nombre": "Sícchez",
+      "provincia": "Ayabaca",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Sícchez",
+        "latitud": -4.56995,
+        "longitud": -79.764,
+        "altitud_m": 1383,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 139.5,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200210",
+      "nombre": "Suyo",
+      "provincia": "Ayabaca",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Suyo",
+        "latitud": -4.51264,
+        "longitud": -80.00247,
+        "altitud_m": 400,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 119.4,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200301",
+      "nombre": "Huancabamba",
+      "provincia": "Huancabamba",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Huancabamba",
+        "latitud": -5.23859,
+        "longitud": -79.45034,
+        "altitud_m": 1940,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 162.3,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200302",
+      "nombre": "Canchaque",
+      "provincia": "Huancabamba",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Canchaque",
+        "latitud": -5.37593,
+        "longitud": -79.60569,
+        "altitud_m": 1203,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 141.8,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200303",
+      "nombre": "El Carmen de la Frontera",
+      "provincia": "Huancabamba",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Sapalache",
+        "latitud": -5.14843,
+        "longitud": -79.42838,
+        "altitud_m": 2459,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 167.6,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200304",
+      "nombre": "Huarmaca",
+      "provincia": "Huancabamba",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Huarmaca",
+        "latitud": -5.56797,
+        "longitud": -79.52452,
+        "altitud_m": 2166,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 136.9,
+      "zona": "C",
+      "revisar": [
+        "capital a 0.1 km de la divisoria Pacífico-Atlántico (en la otra vertiente sería zona D)"
+      ]
+    },
+    {
+      "ubigeo": "200305",
+      "nombre": "Lalaquiz",
+      "provincia": "Huancabamba",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Tunal",
+        "latitud": -5.21576,
+        "longitud": -79.67999,
+        "altitud_m": 969,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 138.8,
+      "zona": "B",
+      "revisar": [
+        "altitud 969 m, a 100 m o menos del umbral de 1000 m (con 1100 m sería zona C)"
+      ]
+    },
+    {
+      "ubigeo": "200306",
+      "nombre": "San Miguel de el Faique",
+      "provincia": "Huancabamba",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "San Miguel de el Faique",
+        "latitud": -5.40208,
+        "longitud": -79.60625,
+        "altitud_m": 1237,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 141.1,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200307",
+      "nombre": "Sóndor",
+      "provincia": "Huancabamba",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Sóndor",
+        "latitud": -5.31554,
+        "longitud": -79.40985,
+        "altitud_m": 1994,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 164.4,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200308",
+      "nombre": "Sondorillo",
+      "provincia": "Huancabamba",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Sondorillo",
+        "latitud": -5.3395,
+        "longitud": -79.42873,
+        "altitud_m": 1876,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "atlantico",
+      "cuenca": "Cuenca Chamaya",
+      "distancia_costa_km": 161.8,
+      "zona": "D",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200401",
+      "nombre": "Chulucanas",
+      "provincia": "Morropón",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Chulucanas",
+        "latitud": -5.09719,
+        "longitud": -80.16034,
+        "altitud_m": 95,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 94.7,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200402",
+      "nombre": "Buenos Aires",
+      "provincia": "Morropón",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Buenos Aires",
+        "latitud": -5.26697,
+        "longitud": -79.967,
+        "altitud_m": 140,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 106.8,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200403",
+      "nombre": "Chalaco",
+      "provincia": "Morropón",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Chalaco",
+        "latitud": -5.04107,
+        "longitud": -79.79564,
+        "altitud_m": 2244,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 134.0,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200404",
+      "nombre": "La Matanza",
+      "provincia": "Morropón",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "La Matanza",
+        "latitud": -5.21367,
+        "longitud": -80.09045,
+        "altitud_m": 107,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 96.3,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200405",
+      "nombre": "Morropón",
+      "provincia": "Morropón",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Morropón",
+        "latitud": -5.18622,
+        "longitud": -79.96924,
+        "altitud_m": 131,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 109.8,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200406",
+      "nombre": "Salitral",
+      "provincia": "Morropón",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Salitral",
+        "latitud": -5.34181,
+        "longitud": -79.8335,
+        "altitud_m": 160,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 118.3,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200407",
+      "nombre": "San Juan de Bigote",
+      "provincia": "Morropón",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Bigote",
+        "latitud": -5.31939,
+        "longitud": -79.78616,
+        "altitud_m": 189,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 124.1,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200408",
+      "nombre": "Santa Catalina de Mossa",
+      "provincia": "Morropón",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Paltashaco",
+        "latitud": -5.10275,
+        "longitud": -79.88504,
+        "altitud_m": 872,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 122.1,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200409",
+      "nombre": "Santo Domingo",
+      "provincia": "Morropón",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Santo Domingo",
+        "latitud": -5.02933,
+        "longitud": -79.8758,
+        "altitud_m": 1474,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 126.5,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200410",
+      "nombre": "Yamango",
+      "provincia": "Morropón",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Yamango",
+        "latitud": -5.18083,
+        "longitud": -79.75098,
+        "altitud_m": 1138,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 132.6,
+      "zona": "C",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200501",
+      "nombre": "Paita",
+      "provincia": "Paita",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Paita",
+        "latitud": -5.09319,
+        "longitud": -81.09949,
+        "altitud_m": 76,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 1379",
+      "distancia_costa_km": 1.4,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200502",
+      "nombre": "Amotape",
+      "provincia": "Paita",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Amotape",
+        "latitud": -4.88192,
+        "longitud": -81.01521,
+        "altitud_m": 14,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 12.7,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200503",
+      "nombre": "Arenal",
+      "provincia": "Paita",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Arenal",
+        "latitud": -4.88352,
+        "longitud": -81.02644,
+        "altitud_m": 31,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 11.7,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200504",
+      "nombre": "Colán",
+      "provincia": "Paita",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "San Lucas (Pueblo Nuevo de Colan)",
+        "latitud": -4.90065,
+        "longitud": -81.05643,
+        "altitud_m": 16,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 1379",
+      "distancia_costa_km": 8.0,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200505",
+      "nombre": "La Huaca",
+      "provincia": "Paita",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "La Huaca",
+        "latitud": -4.91016,
+        "longitud": -80.96133,
+        "altitud_m": 20,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 15.5,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200506",
+      "nombre": "Tamarindo",
+      "provincia": "Paita",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Tamarindo",
+        "latitud": -4.87834,
+        "longitud": -80.97593,
+        "altitud_m": 25,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 16.1,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200507",
+      "nombre": "Vichayal",
+      "provincia": "Paita",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "San Felipe de Vichayal",
+        "latitud": -4.86428,
+        "longitud": -81.07299,
+        "altitud_m": 18,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 9.8,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200601",
+      "nombre": "Sullana",
+      "provincia": "Sullana",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Sullana",
+        "latitud": -4.89044,
+        "longitud": -80.68788,
+        "altitud_m": 62,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 44.1,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200602",
+      "nombre": "Bellavista",
+      "provincia": "Sullana",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Bellavista",
+        "latitud": -4.89006,
+        "longitud": -80.68019,
+        "altitud_m": 57,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 44.9,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200603",
+      "nombre": "Ignacio Escudero",
+      "provincia": "Sullana",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "San Jacinto",
+        "latitud": -4.84604,
+        "longitud": -80.87305,
+        "altitud_m": 38,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 27.5,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200604",
+      "nombre": "Lancones",
+      "provincia": "Sullana",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Lancones",
+        "latitud": -4.63192,
+        "longitud": -80.54635,
+        "altitud_m": 131,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 70.8,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200605",
+      "nombre": "Marcavelica",
+      "provincia": "Sullana",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Marcavelica",
+        "latitud": -4.88171,
+        "longitud": -80.70356,
+        "altitud_m": 54,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 42.8,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200606",
+      "nombre": "Miguel Checa",
+      "provincia": "Sullana",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Sojo",
+        "latitud": -4.90028,
+        "longitud": -80.81469,
+        "altitud_m": 48,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 30.7,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200607",
+      "nombre": "Querecotillo",
+      "provincia": "Sullana",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Querecotillo",
+        "latitud": -4.83927,
+        "longitud": -80.6482,
+        "altitud_m": 55,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 50.3,
+      "zona": "A",
+      "revisar": [
+        "a 50 km del mar, cerca del límite de 60 km entre costa y llanura interior (con 70 km sería zona B)"
+      ]
+    },
+    {
+      "ubigeo": "200608",
+      "nombre": "Salitral",
+      "provincia": "Sullana",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Salitral",
+        "latitud": -4.85693,
+        "longitud": -80.68083,
+        "altitud_m": 51,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Chira",
+      "distancia_costa_km": 46.2,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200701",
+      "nombre": "Pariñas",
+      "provincia": "Talara",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Talara",
+        "latitud": -4.5795,
+        "longitud": -81.26936,
+        "altitud_m": 12,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 1391",
+      "distancia_costa_km": 4.8,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200702",
+      "nombre": "El Alto",
+      "provincia": "Talara",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "El Alto",
+        "latitud": -4.26862,
+        "longitud": -81.2213,
+        "altitud_m": 276,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13931",
+      "distancia_costa_km": 4.7,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200703",
+      "nombre": "La Brea",
+      "provincia": "Talara",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Negritos",
+        "latitud": -4.65464,
+        "longitud": -81.30588,
+        "altitud_m": 4,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 1391",
+      "distancia_costa_km": 0.8,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200704",
+      "nombre": "Lobitos",
+      "provincia": "Talara",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Lobitos",
+        "latitud": -4.45699,
+        "longitud": -81.28513,
+        "altitud_m": 18,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13931",
+      "distancia_costa_km": 2.5,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200705",
+      "nombre": "Los Órganos",
+      "provincia": "Talara",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Los Órganos",
+        "latitud": -4.17925,
+        "longitud": -81.12941,
+        "altitud_m": 6,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13931",
+      "distancia_costa_km": 2.9,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200706",
+      "nombre": "Máncora",
+      "provincia": "Talara",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Máncora",
+        "latitud": -4.10702,
+        "longitud": -81.05376,
+        "altitud_m": 6,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13931",
+      "distancia_costa_km": 2.3,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200801",
+      "nombre": "Sechura",
+      "provincia": "Sechura",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Sechura",
+        "latitud": -5.55723,
+        "longitud": -80.82224,
+        "altitud_m": 15,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 6.8,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200802",
+      "nombre": "Bellavista de la Unión",
+      "provincia": "Sechura",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Bellavista",
+        "latitud": -5.44035,
+        "longitud": -80.75497,
+        "altitud_m": 13,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 18.9,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200803",
+      "nombre": "Bernal",
+      "provincia": "Sechura",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Bernal",
+        "latitud": -5.45895,
+        "longitud": -80.74197,
+        "altitud_m": 12,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 19.3,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200804",
+      "nombre": "Cristo Nos Valga",
+      "provincia": "Sechura",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "San Cristo",
+        "latitud": -5.49316,
+        "longitud": -80.74097,
+        "altitud_m": 10,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 17.8,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200805",
+      "nombre": "Vice",
+      "provincia": "Sechura",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Vice",
+        "latitud": -5.42219,
+        "longitud": -80.77625,
+        "altitud_m": 16,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 17.6,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "200806",
+      "nombre": "Rinconada Llícuar",
+      "provincia": "Sechura",
+      "departamento": "Piura",
+      "capital": {
+        "nombre": "Dos Pueblos",
+        "latitud": -5.46361,
+        "longitud": -80.76542,
+        "altitud_m": 9,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Piura",
+      "distancia_costa_km": 16.8,
+      "zona": "A",
+      "revisar": []
+    },
+    {
+      "ubigeo": "240101",
+      "nombre": "Tumbes",
+      "provincia": "Tumbes",
+      "departamento": "Tumbes",
+      "capital": {
+        "nombre": "Tumbes",
+        "latitud": -3.571,
+        "longitud": -80.45913,
+        "altitud_m": 12,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Tumbes",
+      "distancia_costa_km": 9.0,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "240102",
+      "nombre": "Corrales",
+      "provincia": "Tumbes",
+      "departamento": "Tumbes",
+      "capital": {
+        "nombre": "San Pedro de los Incas",
+        "latitud": -3.60152,
+        "longitud": -80.48058,
+        "altitud_m": 12,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Tumbes",
+      "distancia_costa_km": 10.4,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "240103",
+      "nombre": "La Cruz",
+      "provincia": "Tumbes",
+      "departamento": "Tumbes",
+      "capital": {
+        "nombre": "Caleta Cruz",
+        "latitud": -3.63718,
+        "longitud": -80.5901,
+        "altitud_m": 4,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13939",
+      "distancia_costa_km": 3.5,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "240104",
+      "nombre": "Pampas de Hospital",
+      "provincia": "Tumbes",
+      "departamento": "Tumbes",
+      "capital": {
+        "nombre": "Pampas de Hospital",
+        "latitud": -3.69326,
+        "longitud": -80.43903,
+        "altitud_m": 26,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Tumbes",
+      "distancia_costa_km": 19.9,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "240105",
+      "nombre": "San Jacinto",
+      "provincia": "Tumbes",
+      "departamento": "Tumbes",
+      "capital": {
+        "nombre": "San Jacinto",
+        "latitud": -3.64096,
+        "longitud": -80.4452,
+        "altitud_m": 16,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Tumbes",
+      "distancia_costa_km": 16.1,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "240106",
+      "nombre": "San Juan de la Virgen",
+      "provincia": "Tumbes",
+      "departamento": "Tumbes",
+      "capital": {
+        "nombre": "San Juan de la Virgen",
+        "latitud": -3.62768,
+        "longitud": -80.43356,
+        "altitud_m": 13,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Tumbes",
+      "distancia_costa_km": 15.2,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "240201",
+      "nombre": "Zorritos",
+      "provincia": "Contralmirante Villar",
+      "departamento": "Tumbes",
+      "capital": {
+        "nombre": "Zorritos",
+        "latitud": -3.67761,
+        "longitud": -80.66814,
+        "altitud_m": 8,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13939",
+      "distancia_costa_km": 2.8,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "240202",
+      "nombre": "Casitas",
+      "provincia": "Contralmirante Villar",
+      "departamento": "Tumbes",
+      "capital": {
+        "nombre": "Cañaveral",
+        "latitud": -3.94232,
+        "longitud": -80.6511,
+        "altitud_m": 132,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Bocapán",
+      "distancia_costa_km": 25.3,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "240203",
+      "nombre": "Canoas de Punta Sal",
+      "provincia": "Contralmirante Villar",
+      "departamento": "Tumbes",
+      "capital": {
+        "nombre": "Cancas",
+        "latitud": -3.95049,
+        "longitud": -80.93993,
+        "altitud_m": 60,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13935",
+      "distancia_costa_km": 2.5,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "240301",
+      "nombre": "Zarumilla",
+      "provincia": "Zarumilla",
+      "departamento": "Tumbes",
+      "capital": {
+        "nombre": "Zarumilla",
+        "latitud": -3.50121,
+        "longitud": -80.27556,
+        "altitud_m": 13,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Intercuenca 13951",
+      "distancia_costa_km": 11.0,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "240302",
+      "nombre": "Aguas Verdes",
+      "provincia": "Zarumilla",
+      "departamento": "Tumbes",
+      "capital": {
+        "nombre": "Aguas Verdes",
+        "latitud": -3.48177,
+        "longitud": -80.24512,
+        "altitud_m": 11,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Zarumilla",
+      "distancia_costa_km": 13.4,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "240303",
+      "nombre": "Matapalo",
+      "provincia": "Zarumilla",
+      "departamento": "Tumbes",
+      "capital": {
+        "nombre": "Matapalo",
+        "latitud": -3.68213,
+        "longitud": -80.19978,
+        "altitud_m": 63,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Zarumilla",
+      "distancia_costa_km": 30.5,
+      "zona": "B",
+      "revisar": []
+    },
+    {
+      "ubigeo": "240304",
+      "nombre": "Papayal",
+      "provincia": "Zarumilla",
+      "departamento": "Tumbes",
+      "capital": {
+        "nombre": "Papayal",
+        "latitud": -3.57132,
+        "longitud": -80.23502,
+        "altitud_m": 50,
+        "fuente_ubicacion": "inei-ccpp"
+      },
+      "vertiente": "pacifico",
+      "cuenca": "Cuenca Zarumilla",
+      "distancia_costa_km": 18.9,
+      "zona": "B",
+      "revisar": []
+    }
+  ]
+}

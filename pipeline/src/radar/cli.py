@@ -8,6 +8,9 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+from radar.catalogo.cargar import NOMBRE_ARCHIVO as NOMBRE_CATALOGO
+from radar.catalogo.generar import generar_archivo
+from radar.catalogo.resumen import resumen_catalogo
 from radar.contratos import CONTRATOS, ProductoPublicado
 from radar.fuentes.crw_erddap import FuenteCrwMarPaita
 from radar.fuentes.enfen import FuenteEnfenEstatica
@@ -81,10 +84,43 @@ def main(argv: Sequence[str] | None = None) -> int:
         help="Carpeta con los datos mantenidos a mano (por defecto, la del repositorio).",
     )
 
+    distritos = ordenes.add_parser(
+        "generar-distritos",
+        help="Regenera el catálogo de distritos desde las fuentes (usa la red).",
+    )
+    distritos.add_argument(
+        "--destino",
+        type=Path,
+        default=DATOS_ESTATICOS / NOMBRE_CATALOGO,
+        help="Archivo de salida (por defecto, datos-estaticos/distritos.json).",
+    )
+    distritos.add_argument(
+        "--instantanea-wikidata",
+        type=Path,
+        default=DATOS_ESTATICOS / "fuentes" / "wikidata-etiquetas.json",
+        help="Etiquetas de Wikidata guardadas, de donde salen las tildes.",
+    )
+    distritos.add_argument(
+        "--contacto-wikidata",
+        help=(
+            "URL o correo para el agente de usuario. Si se da, la instantánea de Wikidata"
+            " se renueva en línea antes de generar (Wikimedia rechaza clientes sin contacto)."
+        ),
+    )
+
     argumentos = analizador.parse_args(argv)
     if argumentos.orden == "exportar-esquemas":
         for ruta in exportar_esquemas(argumentos.destino):
             print(ruta)
+    elif argumentos.orden == "generar-distritos":
+        logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
+        logging.getLogger("httpx").setLevel(logging.WARNING)
+        catalogo, informe, comparaciones = generar_archivo(
+            argumentos.destino,
+            argumentos.instantanea_wikidata,
+            contacto_wikidata=argumentos.contacto_wikidata,
+        )
+        print(resumen_catalogo(catalogo, informe, comparaciones))
     else:
         logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
         publicar(argumentos.destino, fuentes_nino(argumentos.datos_estaticos))

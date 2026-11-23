@@ -7,6 +7,15 @@ Todo contrato nuevo debe registrarse en ``CONTRATOS`` para que se exporte.
 from pydantic import BaseModel
 
 from radar.contratos.base import Contrato, FechaUtc
+from radar.contratos.distritos import (
+    DEPARTAMENTOS,
+    CapitalDistrital,
+    CatalogoDistritos,
+    Distrito,
+    FuenteCatalogo,
+    Vertiente,
+    Zona,
+)
 from radar.contratos.manifiesto import Manifiesto, ProductoPublicado
 from radar.contratos.nino import (
     Bloque,
@@ -25,23 +34,31 @@ from radar.contratos.nino import (
 CONTRATOS: dict[str, type[BaseModel]] = {
     "manifiesto": Manifiesto,
     "estado_nino": EstadoNino,
+    "catalogo_distritos": CatalogoDistritos,
 }
 
 __all__ = [
     "CONTRATOS",
+    "DEPARTAMENTOS",
     "Bloque",
     "BloqueEnfen",
     "BloqueIcen",
     "BloqueIndicesSemanales",
     "BloqueMarPaita",
     "Caja",
+    "CapitalDistrital",
+    "CatalogoDistritos",
     "ComunicadoEnfen",
     "Contrato",
+    "Distrito",
     "EstadoNino",
     "FechaUtc",
+    "FuenteCatalogo",
     "IndiceSemanal",
     "Manifiesto",
     "ProductoPublicado",
     "ValorMensual",
     "ValorSemanal",
+    "Vertiente",
+    "Zona",
 ]

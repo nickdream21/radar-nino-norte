@@ -1,6 +1,85 @@
 // GENERADO por scripts/generar.mjs desde esquemas/*.schema.json. No editar.
 
 /**
+ * Todos los distritos de los cinco departamentos, ordenados por ubigeo.
+ */
+export interface CatalogoDistritos {
+  version_esquema: 1;
+  generado_en: string;
+  /**
+   * @minItems 1
+   */
+  fuentes: [FuenteCatalogo, ...FuenteCatalogo[]];
+  /**
+   * @minItems 1
+   */
+  distritos: [Distrito, ...Distrito[]];
+}
+/**
+ * Procedencia de uno o varios campos del catálogo.
+ */
+export interface FuenteCatalogo {
+  /**
+   * Campos que aporta esta fuente.
+   */
+  campos: string;
+  nombre: string;
+  url: string;
+  licencia: string;
+  atribucion: string;
+  descargado_en: string;
+}
+/**
+ * Un distrito con su capital y su zona pluviométrica.
+ */
+export interface Distrito {
+  /**
+   * Código INEI de 6 dígitos.
+   */
+  ubigeo: string;
+  nombre: string;
+  provincia: string;
+  departamento: string;
+  capital: CapitalDistrital;
+  vertiente: 'pacifico' | 'atlantico';
+  /**
+   * Unidad hidrográfica (ANA) en la que está la capital.
+   */
+  cuenca: string;
+  /**
+   * De la capital a la línea de costa.
+   */
+  distancia_costa_km: number;
+  /**
+   * Calculada con la regla de zonas, nunca escrita a mano.
+   */
+  zona: 'A' | 'B' | 'C' | 'D';
+  /**
+   * Motivos por los que la zona es dudosa o fronteriza y debe revisarla el meteorólogo. Vacía si la regla se aplica sin ambigüedad.
+   */
+  revisar: string[];
+}
+/**
+ * Capital del distrito: el punto que representa al distrito en los pronósticos.
+ */
+export interface CapitalDistrital {
+  nombre: string;
+  /**
+   * Grados decimales, WGS 84.
+   */
+  latitud: number;
+  /**
+   * Grados decimales, WGS 84.
+   */
+  longitud: number;
+  /**
+   * Metros sobre el nivel del mar, del modelo de elevación.
+   */
+  altitud_m: number;
+  fuente_ubicacion: 'inei-ccpp' | 'geonames';
+}
+
+/**
  * Estado observado de El Niño para el termómetro de la web.
  */
 export interface EstadoNino {

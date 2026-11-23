@@ -1,0 +1,544 @@
+{
+ "descargado_en": "2026-11-23T15:19:27+00:00",
+ "url": "https://query.wikidata.org/sparql",
+ "licencia": "CC0 1.0",
+ "consulta": "(extracto de la instantánea de datos-estaticos/fuentes/wikidata-etiquetas.json)",
+ "respuesta": {
+  "head": {
+   "vars": [
+    "item",
+    "gn",
+    "l"
+   ]
+  },
+  "results": {
+   "bindings": [
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8351200"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q56835"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Víctor Larco Herrera"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "3691175"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q214173"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Trujillo"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "12077072"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q5808908"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Veintiséis de Octubre"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "3691174"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2013427"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "provincia de Trujillo"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8350388"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3825342"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Cura Mori"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8350622"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3826215"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Castilla"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "3693528"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q223966"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Piura"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "3699088"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q205119"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Cajamarca"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8350636"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2039785"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Tumbes"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "3694256"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q27194541"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Olmos"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "3693524"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q676572"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "provincia de Piura"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8350399"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q5390290"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Laredo"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8350639"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3824884"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Tambogrande"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8351227"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2842398"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Trujillo"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8350117"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3031295"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Huanchaco"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8350497"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3312431"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Cajamarca"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8349657"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3825225"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de El Tallán"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8350449"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3825445"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Piura"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8350440"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3826644"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de La Unión"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8350648"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3826737"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Las Lomas"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8351019"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q6318390"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de La Esperanza"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8350772"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q5460848"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Florencia de Mora"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8349805"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3824926"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de La Arena"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8350423"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q8560899"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Pataz"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "13562177"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q137715676"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Alto Trujillo"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8350411"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q5051137"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Catacaos"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8351232"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q6320079"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de El Porvenir"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8351235"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q7230322"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Poroto"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8350345"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q7403732"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Salaverry"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8351226"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q6318896"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Moche"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "3691530"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q7681046"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Tambogrande"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8349822"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q15116736"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Jaén"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8350405"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q951783"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Simbal"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "3691148"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q827640"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Tumbes"
+     }
+    },
+    {
+     "gn": {
+      "type": "literal",
+      "value": "8350585"
+     },
+     "item": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q6317660"
+     },
+     "l": {
+      "xml:lang": "es",
+      "type": "literal",
+      "value": "Distrito de Olmos"
+     }
+    }
+   ]
+  }
+ }
+}

@@ -6,5 +6,7 @@ package-lock.json
 pipeline
 packages/contratos/esquemas
 packages/contratos/src/generado.ts
+datos-estaticos/distritos.json
+datos-estaticos/fuentes
 CHANGELOG.md
 .release-please-manifest.json

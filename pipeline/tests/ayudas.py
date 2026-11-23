@@ -20,6 +20,17 @@ OM_ENSAMBLE = "open_meteo_ensamble_{sistema}_2026-11-23.json"
 OM_META = "open_meteo_meta_{sistema}_2026-11-23.json"
 OM_ERROR = "open_meteo_error_400.json"
 
+RENAMU = "inei_renamu_2026_extracto.csv"
+INEI_CAPITALES = "inei_capitales_2026-11-23.json"
+INEI_EXCEPCION = "inei_wfs_excepcion_2026-11-23.xml"
+ANA = "ana_unidades_huarmaca_2026-11-23.json"
+ANA_ERROR = "ana_error_2026-11-23.json"
+ELEVACION = "open_meteo_elevacion_2026-11-23.json"
+ELEVACION_ERROR = "open_meteo_elevacion_error_2026-11-23.json"
+COSTA = "natural_earth_costa_norte_peru.geojson"
+GEONAMES = "geonames_pe_extracto_2026-11-23.txt"
+WIKIDATA = "wikidata_etiquetas_extracto_2026-11-23.json"
+
 
 def leer_fixture(nombre: str) -> str:
     """Respuesta grabada de una fuente real."""
