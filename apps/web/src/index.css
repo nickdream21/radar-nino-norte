@@ -1,12 +1,73 @@
 @import 'tailwindcss';
 
+/*
+ * Paleta. Los colores cálidos (ámbar, rojo) quedan reservados para el futuro semáforo de
+ * lluvia: enlaces y botones usan blanco y celeste. Contrastes sobre `fondo` (#0b2545):
+ * blanco 15,4:1; `texto-suave` 8,6:1. Sobre `superficie` (#13315c): blanco 13,0:1;
+ * `texto-suave` 7,2:1. `texto-suave` solo para texto secundario.
+ */
 @theme {
   --color-fondo: #0b2545;
   --color-superficie: #13315c;
-  --color-acento: #ffb703;
   --color-texto-suave: #8ecae6;
 }
 
 body {
   @apply bg-fondo text-white antialiased;
+  /* Con la letra del sistema muy grande, una palabra larga se parte antes que desbordar. */
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Foco visible en todo control: anillo blanco con borde oscuro, visible sobre el fondo
+   oscuro, sobre los botones claros y sobre el mapa claro. */
+:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--color-fondo);
+}
+
+@layer components {
+  .pantalla {
+    @apply mx-auto flex w-full max-w-xl flex-col gap-6 px-4 py-6;
+  }
+
+  .tarjeta {
+    @apply bg-superficie flex flex-col gap-2 rounded-xl p-4;
+  }
+
+  .enlace {
+    @apply font-semibold text-white underline decoration-2 underline-offset-4;
+  }
+
+  /* Objetivo táctil de al menos 44 × 44 px; crece con la letra del sistema. */
+  .boton {
+    @apply bg-white text-fondo inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-lg px-4 py-2 text-center font-semibold;
+  }
+
+  .boton-secundario {
+    @apply border-2 border-white bg-transparent text-white;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Botones de zoom de MapLibre con objetivo táctil de 44 px. La hoja de MapLibre se carga
+   después (de forma diferida), así que el selector necesita más especificidad que el suyo. */
+.maplibregl-ctrl.maplibregl-ctrl-group button {
+  width: 44px;
+  height: 44px;
+}
+
+.maplibregl-ctrl-attrib {
+  font-size: 11px;
 }
