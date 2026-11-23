@@ -1,0 +1,198 @@
+{
+  "$defs": {
+    "CapitalDistrital": {
+      "additionalProperties": false,
+      "description": "Capital del distrito: el punto que representa al distrito en los pronósticos.",
+      "properties": {
+        "nombre": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "latitud": {
+          "description": "Grados decimales, WGS 84.",
+          "maximum": 90,
+          "minimum": -90,
+          "type": "number"
+        },
+        "longitud": {
+          "description": "Grados decimales, WGS 84.",
+          "maximum": 180,
+          "minimum": -180,
+          "type": "number"
+        },
+        "altitud_m": {
+          "description": "Metros sobre el nivel del mar, del modelo de elevación.",
+          "maximum": 6000,
+          "minimum": -50,
+          "type": "integer"
+        },
+        "fuente_ubicacion": {
+          "enum": [
+            "inei-ccpp",
+            "geonames"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "nombre",
+        "latitud",
+        "longitud",
+        "altitud_m",
+        "fuente_ubicacion"
+      ],
+      "title": "CapitalDistrital",
+      "type": "object"
+    },
+    "Distrito": {
+      "additionalProperties": false,
+      "description": "Un distrito con su capital y su zona pluviométrica.",
+      "properties": {
+        "ubigeo": {
+          "description": "Código INEI de 6 dígitos.",
+          "pattern": "^\\d{6}$",
+          "type": "string"
+        },
+        "nombre": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "provincia": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "departamento": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "capital": {
+          "$ref": "#/$defs/CapitalDistrital"
+        },
+        "vertiente": {
+          "enum": [
+            "pacifico",
+            "atlantico"
+          ],
+          "type": "string"
+        },
+        "cuenca": {
+          "description": "Unidad hidrográfica (ANA) en la que está la capital.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "distancia_costa_km": {
+          "description": "De la capital a la línea de costa.",
+          "minimum": 0,
+          "type": "number"
+        },
+        "zona": {
+          "description": "Calculada con la regla de zonas, nunca escrita a mano.",
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "type": "string"
+        },
+        "revisar": {
+          "description": "Motivos por los que la zona es dudosa o fronteriza y debe revisarla el meteorólogo. Vacía si la regla se aplica sin ambigüedad.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ubigeo",
+        "nombre",
+        "provincia",
+        "departamento",
+        "capital",
+        "vertiente",
+        "cuenca",
+        "distancia_costa_km",
+        "zona",
+        "revisar"
+      ],
+      "title": "Distrito",
+      "type": "object"
+    },
+    "FuenteCatalogo": {
+      "additionalProperties": false,
+      "description": "Procedencia de uno o varios campos del catálogo.",
+      "properties": {
+        "campos": {
+          "description": "Campos que aporta esta fuente.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "nombre": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "url": {
+          "pattern": "^https?://",
+          "type": "string"
+        },
+        "licencia": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "atribucion": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "descargado_en": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "campos",
+        "nombre",
+        "url",
+        "licencia",
+        "atribucion",
+        "descargado_en"
+      ],
+      "title": "FuenteCatalogo",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Todos los distritos de los cinco departamentos, ordenados por ubigeo.",
+  "properties": {
+    "version_esquema": {
+      "const": 1,
+      "default": 1,
+      "type": "integer"
+    },
+    "generado_en": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "fuentes": {
+      "items": {
+        "$ref": "#/$defs/FuenteCatalogo"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "distritos": {
+      "items": {
+        "$ref": "#/$defs/Distrito"
+      },
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": [
+    "version_esquema",
+    "generado_en",
+    "fuentes",
+    "distritos"
+  ],
+  "title": "CatalogoDistritos",
+  "type": "object"
+}
