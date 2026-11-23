@@ -2,7 +2,7 @@ import httpx
 import pytest
 
 from radar.fuentes import FuenteNoDisponible
-from radar.fuentes.http import PoliticaReintentos, descargar_texto
+from radar.fuentes.http import PoliticaReintentos, descargar_bytes, descargar_texto
 from tests.ayudas import Esperas, cliente_simulado, politica_sin_espera, respuesta_fija
 
 URL = "https://ejemplo.test/datos.txt"
@@ -67,6 +67,7 @@ def test_404_no_se_reintenta() -> None:
     [
         ("<html><body>Mantenimiento</body></html>", "text/html"),
         ("<!DOCTYPE html><title>Just a moment...</title>", "text/plain"),
+        ('<?xml version="1.0" ?><ServiceExceptionReport/>', "text/xml;charset=UTF-8"),
     ],
 )
 def test_html_en_lugar_de_datos(cuerpo: str, tipo: str) -> None:
@@ -88,3 +89,38 @@ def test_sin_cliente_usa_uno_propio_con_tiempo_de_espera() -> None:
 def test_politica_exige_un_intento() -> None:
     with pytest.raises(ValueError, match="al menos un intento"):
         PoliticaReintentos(intentos=0)
+
+
+def test_descarga_binaria_sin_decodificar() -> None:
+    contenido = b"PK\x03\x04\xff\xfe"
+
+    def zip_(_: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, content=contenido, headers={"content-type": "application/zip"})
+
+    assert (
+        descargar_bytes(
+            "prueba", URL, cliente=cliente_simulado(zip_), politica=politica_sin_espera()
+        )
+        == contenido
+    )
+
+
+def test_formulario_se_envia_por_post_con_cabeceras() -> None:
+    recibidas: list[httpx.Request] = []
+
+    def manejador(request: httpx.Request) -> httpx.Response:
+        recibidas.append(request)
+        return httpx.Response(200, text="{}")
+
+    descargar_texto(
+        "prueba",
+        URL,
+        formulario={"query": "SELECT 1"},
+        cabeceras={"User-Agent": "prueba/1.0"},
+        cliente=cliente_simulado(manejador),
+        politica=politica_sin_espera(),
+    )
+
+    assert recibidas[0].method == "POST"
+    assert recibidas[0].content == b"query=SELECT+1"
+    assert recibidas[0].headers["User-Agent"] == "prueba/1.0"

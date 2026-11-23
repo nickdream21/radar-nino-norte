@@ -47,6 +47,8 @@ def descargar_texto(
     fuente: str,
     url: str,
     *,
+    formulario: dict[str, str] | None = None,
+    cabeceras: dict[str, str] | None = None,
     cliente: httpx.Client | None = None,
     politica: PoliticaReintentos | None = None,
 ) -> str:
@@ -55,7 +57,33 @@ def descargar_texto(
     Reintenta ante tiempos de espera, errores de conexión y respuestas 429/5xx.
     Un 4xx distinto de 429 no se reintenta: no se arreglará solo. Una respuesta
     HTML (portal caído, página de captcha) se rechaza aunque llegue con 200.
+    Con ``formulario`` la petición es un POST con esos campos (consultas largas).
     """
+    return _descargar(
+        fuente, url, formulario=formulario, cabeceras=cabeceras, cliente=cliente, politica=politica
+    ).text
+
+
+def descargar_bytes(
+    fuente: str,
+    url: str,
+    *,
+    cliente: httpx.Client | None = None,
+    politica: PoliticaReintentos | None = None,
+) -> bytes:
+    """Como ``descargar_texto``, pero devuelve el cuerpo sin decodificar (p. ej. un ZIP)."""
+    return _descargar(fuente, url, cliente=cliente, politica=politica).content
+
+
+def _descargar(
+    fuente: str,
+    url: str,
+    *,
+    formulario: dict[str, str] | None = None,
+    cabeceras: dict[str, str] | None = None,
+    cliente: httpx.Client | None = None,
+    politica: PoliticaReintentos | None = None,
+) -> httpx.Response:
     politica = politica or PoliticaReintentos()
     propio = cliente is None
     cliente = cliente or httpx.Client(timeout=TIEMPO_ESPERA, follow_redirects=True)
@@ -63,7 +91,10 @@ def descargar_texto(
     try:
         for intento in range(1, politica.intentos + 1):
             try:
-                respuesta = cliente.get(url)
+                if formulario is None:
+                    respuesta = cliente.get(url, headers=cabeceras)
+                else:
+                    respuesta = cliente.post(url, data=formulario, headers=cabeceras)
             except httpx.TimeoutException:
                 ultimo_motivo = "tiempo de espera agotado"
             except httpx.RequestError as error:
@@ -71,8 +102,8 @@ def descargar_texto(
             else:
                 if respuesta.status_code == 200:
                     if _parece_html(respuesta):
-                        raise FuenteNoDisponible(fuente, "respondió HTML en lugar de datos")
-                    return respuesta.text
+                        raise FuenteNoDisponible(fuente, "respondió HTML o XML en lugar de datos")
+                    return respuesta
                 ultimo_motivo = f"HTTP {respuesta.status_code}"
                 if respuesta.status_code not in ESTADOS_REINTENTABLES:
                     raise FuenteNoDisponible(fuente, ultimo_motivo)
