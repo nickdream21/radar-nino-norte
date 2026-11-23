@@ -2,19 +2,9 @@
 
 from typing import Literal
 
-from pydantic import AwareDatetime, BaseModel, ConfigDict, Field
+from pydantic import AwareDatetime, Field
 
-
-class Contrato(BaseModel):
-    """Base de todos los contratos: inmutable y sin campos desconocidos."""
-
-    model_config = ConfigDict(
-        frozen=True,
-        extra="forbid",
-        # Lo publicado siempre incluye los campos con valor por defecto, así que
-        # el esquema que consume la web los declara obligatorios.
-        json_schema_serialization_defaults_required=True,
-    )
+from radar.contratos.base import Contrato
 
 
 class ProductoPublicado(Contrato):

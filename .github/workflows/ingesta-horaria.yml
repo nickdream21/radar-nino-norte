@@ -1,0 +1,107 @@
+name: Ingesta horaria
+
+# Ejecuta el pipeline, publica sus productos en la rama huérfana `datos`
+# (ADR 0002) y despliega la página con los datos nuevos.
+
+on:
+  schedule:
+    # Minuto 17: lejos de la congestión del minuto 0. GitHub puede retrasarlo.
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+# Un solo escritor de `datos` a la vez. Una ejecución retrasada espera a la que
+# está en curso en vez de cancelarla, para no cortar un push a medias.
+concurrency:
+  group: datos
+  cancel-in-progress: false
+
+jobs:
+  ingerir:
+    name: Ejecutar pipeline y publicar
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    outputs:
+      publicado: ${{ steps.publicar.outputs.publicado }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
+        with:
+          enable-cache: true
+      - name: Instalar el pipeline
+        working-directory: pipeline
+        run: uv sync --locked
+
+      - name: Recuperar la publicación anterior (rama datos), si existe
+        id: anterior
+        run: |
+          set -euo pipefail
+          DESTINO="$RUNNER_TEMP/publicacion"
+          echo "DESTINO=$DESTINO" >> "$GITHUB_ENV"
+          rm -rf "$DESTINO"
+          mkdir -p "$DESTINO"
+          if git ls-remote --exit-code --heads origin datos > /dev/null; then
+            git fetch --no-tags --depth=1 origin datos
+            git archive FETCH_HEAD | tar -x -C "$DESTINO"
+            echo "commit=$(git rev-parse FETCH_HEAD)" >> "$GITHUB_OUTPUT"
+            echo "arbol=$(git rev-parse 'FETCH_HEAD^{tree}')" >> "$GITHUB_OUTPUT"
+          else
+            echo "La rama datos aún no existe; el pipeline empieza sin publicación anterior."
+            echo "commit=" >> "$GITHUB_OUTPUT"
+            echo "arbol=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Ejecutar el pipeline
+        working-directory: pipeline
+        run: uv run radar publicar --destino "$DESTINO"
+
+      - name: Comprobar que hay un manifiesto válido
+        run: |
+          set -euo pipefail
+          test -s "$DESTINO/manifiesto.json" || { echo "::error::El pipeline no escribió manifiesto.json"; exit 1; }
+          jq empty "$DESTINO/manifiesto.json"
+
+      - name: Publicar en la rama datos (un commit sin historial)
+        id: publicar
+        env:
+          COMMIT_ANTERIOR: ${{ steps.anterior.outputs.commit }}
+          ARBOL_ANTERIOR: ${{ steps.anterior.outputs.arbol }}
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          set -euo pipefail
+          # Repositorio del checkout (por sus credenciales), pero con el destino
+          # como árbol de trabajo y un índice aparte: el checkout de main no se toca.
+          export GIT_DIR="$GITHUB_WORKSPACE/.git"
+          export GIT_WORK_TREE="$DESTINO"
+          export GIT_INDEX_FILE="$RUNNER_TEMP/indice-datos"
+          rm -f "$GIT_INDEX_FILE"
+          cd "$DESTINO"
+          git add --all --force
+          arbol=$(git write-tree)
+          if [ "$arbol" = "$ARBOL_ANTERIOR" ]; then
+            echo "Sin cambios respecto a la publicación anterior; no se publica."
+            echo "publicado=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          commit=$(git commit-tree "$arbol" -m "datos: publicación $(date -u +%Y-%m-%dT%H:%MZ) (ejecución ${GITHUB_RUN_ID})")
+          # El lease rechaza el push si otra ejecución cambió `datos` desde que
+          # leímos la publicación anterior (vacío = la rama no debe existir).
+          git push --force-with-lease="refs/heads/datos:${COMMIT_ANTERIOR}" origin "${commit}:refs/heads/datos"
+          echo "publicado=true" >> "$GITHUB_OUTPUT"
+
+  desplegar:
+    name: Desplegar la página
+    needs: ingerir
+    if: needs.ingerir.outputs.publicado == 'true'
+    # Flujo reutilizable: un push hecho con GITHUB_TOKEN no dispara otros flujos.
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/despliegue.yml
