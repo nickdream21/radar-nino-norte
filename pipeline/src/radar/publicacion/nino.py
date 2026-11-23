@@ -32,9 +32,12 @@ VIGENCIA_MIN = 4 * 24 * 60
 """Cuatro días, medidos desde el dato más reciente del producto.
 
 El bloque más rápido es la anomalía diaria de Coral Reef Watch, que llega con unos
-dos días de retraso; con una ingesta diaria, ``actualizado_en`` va normalmente de
-dos a tres días por detrás. Pasados cuatro días se han perdido al menos dos
-actualizaciones seguidas y la web debe marcar el producto como antiguo. Los
+dos días de retraso y se publica una vez al día. Con la ingesta horaria cada
+publicación se recoge en menos de una hora, así que ``actualizado_en`` va
+normalmente de dos a tres días por detrás; si falta una publicación diaria llega a
+unos cuatro. Pasados cuatro días se han perdido al menos dos publicaciones seguidas
+(o la ingesta lleva más de un día caída) y la web debe marcar el producto como
+antiguo. Los
 bloques semanales, mensuales y del ENFEN llevan su propia fecha para que la web
 juzgue cada uno a su ritmo.
 """
