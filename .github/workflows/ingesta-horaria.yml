@@ -64,6 +64,45 @@ jobs:
           test -s "$DESTINO/manifiesto.json" || { echo "::error::El pipeline no escribió manifiesto.json"; exit 1; }
           jq empty "$DESTINO/manifiesto.json"
 
+      # ADR 0006: cada archivo de corrida va a un release mensual marcado como
+      # prerelease. Si la subida falla, el pronóstico se publica igual y el archivo
+      # se queda en archivo-pendiente/ (dentro de datos) para reintentarlo.
+      - name: Subir el archivo de pronósticos (GitHub Releases)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          pendientes=("$DESTINO"/archivo-pendiente/lluvia-distritos-*.json.gz)
+          if [ ${#pendientes[@]} -eq 0 ]; then
+            echo "Sin archivos de pronóstico por subir."
+            exit 0
+          fi
+          fallos=0
+          for archivo in "${pendientes[@]}"; do
+            nombre=$(basename "$archivo")
+            mes=$(sed -E 's/^lluvia-distritos-([0-9]{4})([0-9]{2}).*$/\1-\2/' <<< "$nombre")
+            etiqueta="archivo-pronosticos-$mes"
+            if ! gh release view "$etiqueta" > /dev/null 2>&1; then
+              # Otra ejecución pudo crearlo a la vez: si falla, se comprueba de nuevo.
+              gh release create "$etiqueta" --prerelease --latest=false --target "$GITHUB_SHA" \
+                --title "Archivo de pronósticos $mes" \
+                --notes "Pronósticos de lluvia emitidos en $mes, con los valores por miembro. Formato: docs/archivo-pronosticos.md. No es una versión de la aplicación." \
+                || gh release view "$etiqueta" > /dev/null
+            fi
+            if gh release upload "$etiqueta" "$archivo" --clobber; then
+              rm -- "$archivo"
+              echo "Subido $nombre a $etiqueta."
+            else
+              echo "::error::No se pudo subir $nombre a $etiqueta; se reintentará en la próxima ejecución."
+              fallos=1
+            fi
+          done
+          rmdir --ignore-fail-on-non-empty "$DESTINO/archivo-pendiente"
+          exit "$fallos"
+
       - name: Publicar en la rama datos (un commit sin historial)
         id: publicar
         env:
