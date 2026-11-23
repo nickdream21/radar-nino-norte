@@ -29,6 +29,7 @@ Fuentes abiertas → `pipeline` (Python, cron de GitHub Actions) → productos J
 
 - `main` protegida. Ramas `feat/…`, `fix/…`, `docs/…`, `chore/…`.
 - Conventional Commits en español (`feat(pipeline): …`). release-please genera versiones y `CHANGELOG.md`.
+- Los commits hechos a mano tienen como único autor al dueño del repositorio: sin líneas `Co-Authored-By`, sin firmas ni menciones de herramientas en commits ni en PR. Los robots de GitHub (Dependabot, release-please) sí pueden fusionarse.
 - Todo cambio entra por PR con CI en verde y squash merge.
 - Cada decisión estructural se registra como ADR nuevo en `docs/adr/` (no se reescriben los anteriores; se reemplazan con uno nuevo).
 - Un modelo predictivo solo reemplaza a su versión anterior si la supera en las métricas de verificación archivadas.
