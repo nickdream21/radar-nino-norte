@@ -10,3 +10,21 @@
 body {
   @apply bg-fondo text-white antialiased;
 }
+
+/* Foco visible en todo control, con contraste sobre el fondo oscuro y sobre el mapa claro. */
+:focus-visible {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--color-fondo);
+}
+
+/* Botones de zoom de MapLibre con objetivo táctil de 44 px. La hoja de MapLibre se carga
+   después (de forma diferida), así que el selector necesita más especificidad que el suyo. */
+.maplibregl-ctrl.maplibregl-ctrl-group button {
+  width: 44px;
+  height: 44px;
+}
+
+.maplibregl-ctrl-attrib {
+  font-size: 11px;
+}
