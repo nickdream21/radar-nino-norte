@@ -37,6 +37,17 @@ export const FUENTES: readonly { nombre: string; aporta: string; url: string }[]
     url: 'https://enfen.imarpe.gob.pe/',
   },
   {
+    nombre: 'INEI',
+    aporta:
+      'Lista de distritos y ubicación de sus capitales (RENAMU 2026 y Censos Nacionales 2017).',
+    url: 'https://www.inei.gob.pe/',
+  },
+  {
+    nombre: 'GeoNames',
+    aporta: 'Ubicación de la capital de Alto Trujillo y tildes de los nombres.',
+    url: 'https://www.geonames.org/',
+  },
+  {
     nombre: 'OpenFreeMap',
     aporta: 'Mapa base, con datos de OpenStreetMap y OpenMapTiles.',
     url: 'https://openfreemap.org/',

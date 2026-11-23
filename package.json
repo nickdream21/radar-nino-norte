@@ -19,7 +19,8 @@
     "format": "prettier --write .",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
-    "contratos:generar": "npm run generar -w @radar/contratos"
+    "contratos:generar": "npm run generar -w @radar/contratos",
+    "distritos:generar": "npm run distritos:generar -w @radar/web"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
