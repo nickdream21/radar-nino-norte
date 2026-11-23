@@ -21,7 +21,9 @@ def zona_segun_regla(distrito: Distrito) -> Zona:
             ubigeo=distrito.ubigeo,
             altitud_m=distrito.capital.altitud_m,
             vertiente=distrito.vertiente,
+            cuenca=distrito.cuenca,
             distancia_costa_km=distrito.distancia_costa_km,
+            latitud=distrito.capital.latitud,
         )
     )
 
