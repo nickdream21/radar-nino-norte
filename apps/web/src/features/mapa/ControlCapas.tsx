@@ -36,7 +36,7 @@ export function ControlCapas({ estados, ahora, alAlternar, alReintentar }: Props
               <label className="flex min-h-11 cursor-pointer items-center gap-3 py-1">
                 <input
                   type="checkbox"
-                  className="accent-acento size-6 shrink-0"
+                  className="size-6 shrink-0 accent-[#8ecae6]"
                   checked={encendida}
                   onChange={() => alAlternar(id)}
                   aria-describedby={encendida ? idEstado : undefined}
@@ -87,11 +87,7 @@ function DetalleCapa({
       return (
         <div className="flex flex-wrap items-center gap-x-3">
           <Aviso>{TEXTOS_MAPA.errorHora}</Aviso>
-          <button
-            type="button"
-            onClick={alReintentar}
-            className="text-acento min-h-11 font-semibold underline underline-offset-4"
-          >
+          <button type="button" onClick={alReintentar} className="boton mt-1">
             {TEXTOS_MAPA.reintentar}
           </button>
         </div>
@@ -110,7 +106,7 @@ function DetalleCapa({
 /** Aviso con icono y texto: el color nunca es la única señal. */
 function Aviso({ children }: { children: string }) {
   return (
-    <p className="text-acento flex items-start gap-1.5 font-semibold">
+    <p className="flex items-start gap-1.5 font-semibold">
       <svg aria-hidden="true" viewBox="0 0 20 20" className="mt-0.5 size-4 shrink-0">
         <path
           fill="currentColor"

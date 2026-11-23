@@ -30,16 +30,28 @@ function interruptor(nombre: RegExp) {
 }
 
 describe('SeccionMapa', () => {
-  it('enciende el satélite al abrir y dice de qué hora es la imagen', async () => {
+  it('abre con Nubes y Rayos encendidas, Lluvia apagada, y dice de qué hora es cada imagen', async () => {
     const { MapaFalso } = crearMapaFalso();
     render(<SeccionMapa leerHora={leerHoraFija} ahora={ahora} Mapa={MapaFalso} />);
 
-    expect(interruptor(/Nubes de tormenta/)).toBeChecked();
-    expect(screen.getByText('Consultando la hora de la imagen…')).toBeInTheDocument();
+    expect(interruptor(/Nubes/)).toBeChecked();
+    expect(interruptor(/Rayos/)).toBeChecked();
+    expect(interruptor(/Lluvia/)).not.toBeChecked();
+    expect(screen.getAllByText('Consultando la hora de la imagen…')).toHaveLength(2);
     expect(
       await screen.findByText('Imagen de las 8:50 a. m. (hora de Perú), hace 49 min'),
     ).toBeInTheDocument();
-    expect(screen.getByTestId('mapa')).toHaveTextContent('satelite');
+    expect(await screen.findByText(/Imagen de las 9:15 a. m./)).toBeInTheDocument();
+    expect(screen.getByTestId('mapa')).toHaveTextContent('satelite,rayos');
+  });
+
+  it('avisa siempre que las imágenes llegan con retraso', () => {
+    const { MapaFalso } = crearMapaFalso();
+    render(<SeccionMapa leerHora={leerHoraFija} ahora={ahora} Mapa={MapaFalso} />);
+
+    expect(
+      screen.getByText('Imágenes de satélite con retraso. No es en vivo.'),
+    ).toBeInTheDocument();
   });
 
   it('pasa al mapa la URL con la hora exacta consultada', async () => {
@@ -52,10 +64,17 @@ describe('SeccionMapa', () => {
 
   it('enciende y apaga cada capa por separado, con el estado en texto', async () => {
     const { MapaFalso } = crearMapaFalso();
-    render(<SeccionMapa leerHora={leerHoraFija} ahora={ahora} Mapa={MapaFalso} />);
+    render(
+      <SeccionMapa
+        leerHora={leerHoraFija}
+        ahora={ahora}
+        Mapa={MapaFalso}
+        encendidasAlInicio={['satelite']}
+      />,
+    );
     await screen.findByText(/Imagen de las 8:50/);
 
-    const rayos = interruptor(/Rayos recientes/);
+    const rayos = interruptor(/Rayos/);
     expect(rayos.closest('label')).toHaveTextContent('Apagada');
 
     fireEvent.click(rayos);
@@ -64,7 +83,7 @@ describe('SeccionMapa', () => {
     expect(await screen.findByText(/Imagen de las 9:15 a. m./)).toBeInTheDocument();
     expect(screen.getByTestId('mapa')).toHaveTextContent('satelite,rayos');
 
-    fireEvent.click(interruptor(/Nubes de tormenta/));
+    fireEvent.click(interruptor(/Nubes/));
     expect(screen.getByTestId('mapa')).toHaveTextContent(/^rayos$/);
     expect(screen.queryByText(/Imagen de las 8:50/)).not.toBeInTheDocument();
   });
@@ -77,7 +96,7 @@ describe('SeccionMapa', () => {
       <SeccionMapa leerHora={leerHora} ahora={ahora} Mapa={MapaFalso} encendidasAlInicio={[]} />,
     );
 
-    fireEvent.click(interruptor(/Lluvia estimada/));
+    fireEvent.click(interruptor(/Lluvia/));
 
     expect(
       await screen.findByText('Imagen de las 12:00 a. m. (hora de Perú), hace 9 h'),
@@ -90,10 +109,17 @@ describe('SeccionMapa', () => {
     const leerHora = vi.fn((capa: DefinicionCapa) =>
       capa.id === 'rayos' ? Promise.reject(new Error('sin red')) : leerHoraFija(capa),
     );
-    render(<SeccionMapa leerHora={leerHora} ahora={ahora} Mapa={MapaFalso} />);
+    render(
+      <SeccionMapa
+        leerHora={leerHora}
+        ahora={ahora}
+        Mapa={MapaFalso}
+        encendidasAlInicio={['satelite']}
+      />,
+    );
     await screen.findByText(/Imagen de las 8:50/);
 
-    fireEvent.click(interruptor(/Rayos recientes/));
+    fireEvent.click(interruptor(/Rayos/));
 
     expect(await screen.findByText(/No pudimos consultar esta capa/)).toBeInTheDocument();
     expect(screen.getByTestId('mapa')).toHaveTextContent(/^satelite$/);
@@ -107,7 +133,7 @@ describe('SeccionMapa', () => {
     const { MapaFalso } = crearMapaFalso();
     render(<SeccionMapa leerHora={() => Promise.resolve(null)} ahora={ahora} Mapa={MapaFalso} />);
 
-    expect(await screen.findByText(/no tiene imágenes recientes/)).toBeInTheDocument();
+    expect(await screen.findAllByText(/no tiene imágenes recientes/)).toHaveLength(2);
     expect(screen.getByTestId('mapa')).toBeEmptyDOMElement();
   });
 
@@ -149,7 +175,13 @@ describe('SeccionMapa', () => {
         .mockResolvedValueOnce(HORAS.satelite)
         .mockResolvedValue(new Date('2026-11-23T14:00:00Z'));
       render(
-        <SeccionMapa leerHora={leerHora} ahora={ahora} Mapa={MapaFalso} refrescoMs={60_000} />,
+        <SeccionMapa
+          leerHora={leerHora}
+          ahora={ahora}
+          Mapa={MapaFalso}
+          refrescoMs={60_000}
+          encendidasAlInicio={['satelite']}
+        />,
       );
       await screen.findByText(/Imagen de las 8:50/);
 

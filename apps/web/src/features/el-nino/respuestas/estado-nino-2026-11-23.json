@@ -1,0 +1,101 @@
+{
+  "version_esquema": 1,
+  "generado_en": "2026-11-23T14:53:16.692238Z",
+  "indices_semanales": {
+    "fuente": "NOAA CPC",
+    "url": "https://www.cpc.ncep.noaa.gov/data/indices/wksst9120.for",
+    "fecha_dato": "2026-11-18T00:00:00Z",
+    "obtenido_en": "2026-11-23T14:53:17.363603Z",
+    "nino12": {
+      "ultimo": {
+        "fecha": "2026-11-18T00:00:00Z",
+        "temperatura": 27.5,
+        "anomalia": 5.7
+      },
+      "serie": [
+        {
+          "fecha": "2026-11-11T00:00:00Z",
+          "temperatura": 27.1,
+          "anomalia": 5.4
+        },
+        {
+          "fecha": "2026-11-18T00:00:00Z",
+          "temperatura": 27.5,
+          "anomalia": 5.7
+        }
+      ]
+    },
+    "nino34": {
+      "ultimo": {
+        "fecha": "2026-11-18T00:00:00Z",
+        "temperatura": 30.1,
+        "anomalia": 3.3
+      },
+      "serie": [
+        {
+          "fecha": "2026-11-11T00:00:00Z",
+          "temperatura": 29.9,
+          "anomalia": 3.2
+        },
+        {
+          "fecha": "2026-11-18T00:00:00Z",
+          "temperatura": 30.1,
+          "anomalia": 3.3
+        }
+      ]
+    }
+  },
+  "icen": {
+    "fuente": "IGP (ICEN, ENFEN)",
+    "url": "http://met.igp.gob.pe/datos/ICEN.txt",
+    "fecha_dato": "2026-09-01T00:00:00Z",
+    "obtenido_en": "2026-11-23T14:53:18.300665Z",
+    "ultimo": {
+      "anio": 2026,
+      "mes": 9,
+      "fecha": "2026-09-01T00:00:00Z",
+      "valor": 4.5
+    },
+    "serie": [
+      {
+        "anio": 2026,
+        "mes": 8,
+        "fecha": "2026-08-01T00:00:00Z",
+        "valor": 3.98
+      },
+      {
+        "anio": 2026,
+        "mes": 9,
+        "fecha": "2026-09-01T00:00:00Z",
+        "valor": 4.5
+      }
+    ]
+  },
+  "mar_paita": {
+    "fuente": "NOAA Coral Reef Watch 5 km (ERDDAP PacIOOS)",
+    "url": "https://pae-paha.pacioos.hawaii.edu/erddap/griddap/dhw_5km",
+    "fecha_dato": "2026-11-21T12:00:00Z",
+    "obtenido_en": "2026-11-23T14:53:18.595186Z",
+    "anomalia": 8.9,
+    "caja": {
+      "lat_min": -5.15,
+      "lat_max": -5.05,
+      "lon_min": -81.4,
+      "lon_max": -81.2
+    },
+    "celdas_validas": 10,
+    "celdas_totales": 10
+  },
+  "enfen": {
+    "fuente": "ENFEN (comunicado oficial, transcrito a mano)",
+    "url": "https://enfen.imarpe.gob.pe/",
+    "fecha_dato": "2026-11-13T05:00:00Z",
+    "obtenido_en": "2026-11-23T14:53:18.595415Z",
+    "comunicado": {
+      "estado": "Alerta de El Niño Costero",
+      "numero": "20-2026",
+      "fecha": "2026-11-13T05:00:00Z",
+      "enlace": "https://enfen.imarpe.gob.pe/"
+    }
+  }
+}

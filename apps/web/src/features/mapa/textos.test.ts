@@ -27,4 +27,10 @@ describe('textoHoraImagen', () => {
       'Imagen del 20 nov a las 3:00 p. m. (hora de Perú), hace 2 días',
     );
   });
+
+  it('con el reloj del teléfono atrasado no dice "hace un momento": solo la hora', () => {
+    expect(textoHoraImagen(new Date('2026-11-23T16:00:00Z'), AHORA)).toBe(
+      'Imagen de las 11:00 a. m. (hora de Perú)',
+    );
+  });
 });

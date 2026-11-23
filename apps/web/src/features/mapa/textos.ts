@@ -3,27 +3,32 @@
  * revise y cambie sin tocar la lógica.
  */
 import type { IdCapa } from './capas';
-import { describirAntiguedad } from '../estado/antiguedad';
-import { describirDiaPeru, formatearHoraPeru } from './tiempo';
+import {
+  conArticulo,
+  describirAntiguedad,
+  describirDiaCorto,
+  formatearHoraLima,
+} from '../../comun/hora';
 
 export const TEXTOS_CAPAS: Record<IdCapa, { nombre: string; descripcion: string }> = {
   satelite: {
-    nombre: 'Nubes de tormenta',
+    nombre: 'Nubes',
     descripcion: 'Satélite infrarrojo. Las nubes altas y frías, típicas de tormenta, resaltan.',
   },
   lluvia: {
-    nombre: 'Lluvia estimada',
+    nombre: 'Lluvia',
     descripcion:
       'Estimación por satélite, promedio de 30 minutos. Llega con unas 4 a 6 h de retraso.',
   },
   rayos: {
-    nombre: 'Rayos recientes',
+    nombre: 'Rayos',
     descripcion: 'Densidad de rayos detectados en unos 15 minutos.',
   },
 };
 
 export const TEXTOS_MAPA = {
   titulo: 'Mapa',
+  retraso: 'Imágenes de satélite con retraso. No es en vivo.',
   etiquetaMapa: 'Mapa del norte del Perú con capas de tiempo',
   tituloCapas: 'Capas',
   encendida: 'Encendida',
@@ -36,17 +41,20 @@ export const TEXTOS_MAPA = {
   reintentar: 'Reintentar',
   antigua: 'Imagen antigua: el servicio no se ha actualizado.',
   cargandoMapa: 'Cargando el mapa…',
+  errorCodigoMapa: 'No pudimos abrir el mapa. Revisa tu conexión e inténtalo de nuevo.',
   errorMapa: 'No pudimos cargar el mapa base. Revisa tu conexión.',
   errorMapaNoSoportado: 'No pudimos abrir el mapa en este equipo.',
 };
 
-/** `Imagen de las 8:50 a. m. (hora de Perú), hace 49 min`. */
+/**
+ * `Imagen de las 8:50 a. m. (hora de Perú), hace 49 min`. Si la hora de la imagen queda en
+ * el futuro (reloj del teléfono atrasado), se da solo la hora absoluta.
+ */
 export function textoHoraImagen(tiempo: Date, ahora: Date): string {
-  const dia = describirDiaPeru(tiempo, ahora);
-  const reloj = formatearHoraPeru(tiempo);
-  // "la 1:05", pero "las 2:05".
-  const hora = `${reloj.startsWith('1:') ? 'la' : 'las'} ${reloj}`;
+  const dia = describirDiaCorto(tiempo, ahora);
+  const hora = conArticulo(formatearHoraLima(tiempo));
   const cuando =
     dia === null ? `de ${hora}` : dia === 'ayer' ? `de ayer a ${hora}` : `del ${dia} a ${hora}`;
-  return `Imagen ${cuando} (hora de Perú), ${describirAntiguedad(tiempo, ahora)}`;
+  const antiguedad = describirAntiguedad(tiempo, ahora);
+  return `Imagen ${cuando} (hora de Perú)${antiguedad ? `, ${antiguedad}` : ''}`;
 }

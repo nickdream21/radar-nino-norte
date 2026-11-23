@@ -20,12 +20,16 @@ const lectorReal = crearLectorHora();
 const relojReal = () => new Date();
 
 const MINUTO_MS = 60_000;
+const ENCENDIDAS_AL_INICIO: readonly IdCapa[] = ['satelite', 'rayos'];
 
 interface Props {
   leerHora?: LectorHora;
   ahora?: () => Date;
   Mapa?: ComponentType<PropsMapa>;
-  /** Capas encendidas al abrir la sección. */
+  /**
+   * Capas encendidas al abrir la sección. La lluvia empieza apagada: llega con horas de
+   * retraso y es la que más se confunde con "está lloviendo ahora".
+   */
   encendidasAlInicio?: readonly IdCapa[];
   /** Cada cuánto se vuelve a preguntar la hora de las capas encendidas. */
   refrescoMs?: number;
@@ -51,7 +55,7 @@ export function SeccionMapa({
   leerHora = lectorReal,
   ahora = relojReal,
   Mapa = MapaDiferido,
-  encendidasAlInicio = ['satelite'],
+  encendidasAlInicio = ENCENDIDAS_AL_INICIO,
   refrescoMs = 10 * MINUTO_MS,
 }: Props) {
   const [estados, setEstados] = useState(() => estadosIniciales(encendidasAlInicio));
@@ -181,9 +185,9 @@ export function SeccionMapa({
 
   return (
     <section aria-labelledby="titulo-seccion" className="flex min-h-0 flex-1 flex-col">
-      <h1 id="titulo-seccion" tabIndex={-1} className="sr-only">
-        {TEXTOS_MAPA.titulo}
-      </h1>
+      <p className="bg-fondo border-b border-white/20 px-4 py-2 text-sm font-semibold">
+        {TEXTOS_MAPA.retraso}
+      </p>
       <div className="bg-superficie relative min-h-0 flex-1">
         <LimiteError alternativa={avisoMapa(TEXTOS_MAPA.errorMapa)}>
           <Suspense
