@@ -23,6 +23,10 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
+      - name: Lista de distritos de la web al día
+        run: |
+          npm run distritos:generar
+          git diff --exit-code -- apps/web/src/features/mi-distrito/distritos.generado.ts
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
