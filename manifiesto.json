@@ -1,0 +1,21 @@
+{
+  "version_esquema": 1,
+  "generado_en": "2026-11-28T20:55:37.967012Z",
+  "version_pipeline": "0.1.0",
+  "productos": [
+    {
+      "id": "estado-nino",
+      "ruta": "nino/estado.json",
+      "fuente": "NOAA CPC; IGP (ICEN, ENFEN); NOAA Coral Reef Watch 5 km (ERDDAP PacIOOS); ENFEN (comunicado oficial, transcrito a mano)",
+      "actualizado_en": "2026-11-26T12:00:00Z",
+      "vigencia_min": 5760
+    },
+    {
+      "id": "lluvia-distritos",
+      "ruta": "lluvia/distritos.json",
+      "fuente": "Open-Meteo Ensemble API (ECMWF IFS ENS, ECMWF AIFS ENS, NCEP GEFS), CC BY 4.0; M1 v1 de Radar Niño Norte",
+      "actualizado_en": "2026-11-28T12:00:00Z",
+      "vigencia_min": 1800
+    }
+  ]
+}
